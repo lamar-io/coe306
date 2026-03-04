@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COE 306 – Complete Study Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rose:#f4a7b9;--rose-l:#fce4ec;--rose-d:#e47fa0;
+  --mint:#a8d8c8;--mint-l:#e0f4ef;--mint-d:#6fbba6;
+  --lav:#c5b8e8;--lav-l:#ede8f9;--lav-d:#9b8bd0;
+  --peach:#f7c59f;--peach-l:#fdf0e4;--peach-d:#e8a06a;
+  --sky:#a8cfe8;--sky-l:#deeef9;--sky-d:#6aabcf;
+  --butter:#f5e6a3;--butter-l:#fdf8e1;--butter-d:#c8a020;
+  --cream:#fdf6ee;--dark:#2d2535;--mid:#5a4f6a;--light:#8a7f9a;
+  --white:#fff;
+  --sh:0 4px 20px rgba(160,130,180,.12);
+  --sh2:0 8px 32px rgba(160,130,180,.22);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);}
+
+nav{position:sticky;top:0;z-index:200;background:rgba(253,246,238,.96);backdrop-filter:blur(12px);border-bottom:1.5px solid var(--lav-l);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:58px;}
+.nav-brand{font-family:'Lora',serif;font-weight:600;font-size:1.1rem;}
+.nav-brand span{color:var(--lav-d);}
+.nav-links{display:flex;gap:.3rem;}
+.nav-btn{padding:6px 14px;border-radius:20px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:500;background:transparent;color:var(--mid);transition:all .2s;}
+.nav-btn.active,.nav-btn:hover{background:var(--lav-l);color:var(--lav-d);}
+.page{display:none;} .page.active{display:block;}
+
+/* HERO */
+.hero{padding:4rem 2rem 3rem;text-align:center;background:linear-gradient(150deg,var(--lav-l) 0%,var(--mint-l) 55%,var(--rose-l) 100%);border-bottom:2px solid var(--lav-l);}
+.hero-tag{display:inline-block;padding:4px 14px;border-radius:20px;background:var(--lav);color:var(--lav-d);font-size:.73rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:1rem;}
+.hero h1{font-family:'Lora',serif;font-size:2.6rem;font-weight:600;line-height:1.2;margin-bottom:.5rem;}
+.hero h1 em{color:var(--lav-d);font-style:italic;}
+.hero p{font-size:.95rem;color:var(--mid);max-width:520px;margin:0 auto 2.5rem;}
+.ch-cards{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;}
+.ch-card{background:var(--white);border-radius:20px;padding:1.6rem 2rem;box-shadow:var(--sh);cursor:pointer;transition:all .25s;border:2px solid transparent;min-width:200px;text-align:left;}
+.ch-card:hover{transform:translateY(-4px);box-shadow:var(--sh2);}
+.ch-card.ch1{border-color:var(--rose);} .ch-card.ch2{border-color:var(--mint);} .ch-card.ch3{border-color:var(--sky);}
+.ch-num{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--light);margin-bottom:.4rem;}
+.ch-title{font-weight:600;font-size:1rem;margin-bottom:.2rem;}
+.ch-sub{font-size:.78rem;color:var(--light);}
+
+/* LAYOUT */
+.wrap{max-width:1060px;margin:0 auto;padding:2.5rem 2rem 5rem;}
+.ch-tabs{display:flex;gap:.5rem;margin-bottom:2.5rem;flex-wrap:wrap;border-bottom:2px solid var(--lav-l);padding-bottom:1rem;}
+.ch-tab{padding:8px 20px;border-radius:20px;border:2px solid transparent;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.83rem;font-weight:600;background:transparent;color:var(--mid);transition:all .2s;}
+.ch-tab.active{color:#fff;}
+.ch-tab.t1.active{background:var(--rose-d);border-color:var(--rose-d);}
+.ch-tab.t2.active{background:var(--mint-d);border-color:var(--mint-d);}
+.ch-tab.t3.active{background:var(--sky-d);border-color:var(--sky-d);}
+.ch-tab:not(.active):hover{background:var(--lav-l);}
+.ch-content{display:none;} .ch-content.active{display:block;}
+
+/* SECTION */
+.sec{display:flex;align-items:center;gap:.8rem;margin:3rem 0 1.3rem;}
+.pill{padding:4px 12px;border-radius:20px;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;}
+.p-rose{background:var(--rose-l);color:var(--rose-d);}
+.p-mint{background:var(--mint-l);color:var(--mint-d);}
+.p-sky{background:var(--sky-l);color:var(--sky-d);}
+.p-lav{background:var(--lav-l);color:var(--lav-d);}
+.p-peach{background:var(--peach-l);color:var(--peach-d);}
+.p-butter{background:var(--butter-l);color:var(--butter-d);}
+.sec h2{font-family:'Lora',serif;font-size:1.45rem;font-weight:600;}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(295px,1fr));gap:1.2rem;}
+.grid2{display:grid;grid-template-columns:repeat(auto-fill,minmax(430px,1fr));gap:1.2rem;}
+.card{background:var(--white);border-radius:16px;padding:1.5rem;box-shadow:var(--sh);border:1.5px solid transparent;transition:all .2s;}
+.card:hover{transform:translateY(-2px);box-shadow:var(--sh2);}
+.card.cr{border-color:var(--rose-l);} .card.cm{border-color:var(--mint-l);} .card.cs{border-color:var(--sky-l);}
+.card.cl{border-color:var(--lav-l);} .card.cp{border-color:var(--peach-l);} .card.cb{border-color:var(--butter-l);}
+.card.full{grid-column:1/-1;}
+.card h3{font-weight:600;font-size:.95rem;margin-bottom:.8rem;}
+.card p{font-size:.87rem;color:var(--mid);line-height:1.75;}
+.card ul{padding-left:1.2rem;margin-top:.5rem;}
+.card li{font-size:.87rem;color:var(--mid);line-height:1.75;margin-bottom:.12rem;}
+
+/* TABLE */
+.tbl{width:100%;border-collapse:collapse;font-size:.83rem;margin-top:.4rem;}
+.tbl th{padding:8px 10px;text-align:left;font-weight:700;}
+.tbl td{padding:7px 10px;color:var(--mid);border-bottom:1px solid #f0eaf8;vertical-align:top;}
+.tbl tr:last-child td{border-bottom:none;}
+.tbl .lc{font-weight:600;color:var(--dark);}
+.tbl.mint-hd th{background:var(--mint-l);color:var(--mint-d);}
+.tbl.sky-hd th{background:var(--sky-l);color:var(--sky-d);}
+.tbl.lav-hd th{background:var(--lav-l);color:var(--lav-d);}
+.tbl.rose-hd th{background:var(--rose-l);color:var(--rose-d);}
+.tbl.peach-hd th{background:var(--peach-l);color:var(--peach-d);}
+.mono{font-family:'Space Mono',monospace;font-size:.79rem;}
+
+/* CONCEPT BLOCK */
+.cblk{background:var(--white);border-radius:16px;padding:1.8rem 2rem;box-shadow:var(--sh);border-left:4px solid var(--lav-d);margin-bottom:1.2rem;}
+.cblk.br{border-left-color:var(--rose-d);} .cblk.bm{border-left-color:var(--mint-d);}
+.cblk.bs{border-left-color:var(--sky-d);} .cblk.bp{border-left-color:var(--peach-d);}
+.cblk.bb{border-left-color:var(--butter-d);}
+.cblk h3{font-weight:700;font-size:1rem;margin-bottom:.7rem;}
+.desc{font-size:.87rem;color:var(--mid);line-height:1.85;margin-bottom:.9rem;}
+.desc:last-child{margin-bottom:0;}
+
+/* STEPS */
+.steps{margin-top:.8rem;}
+.step{display:flex;gap:1rem;align-items:flex-start;padding:.6rem 0;border-bottom:1px dashed #ede7f6;}
+.step:last-child{border-bottom:none;}
+.sn{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--lav-l);color:var(--lav-d);font-weight:700;font-size:.78rem;display:flex;align-items:center;justify-content:center;}
+.sn.r{background:var(--rose-l);color:var(--rose-d);}
+.sn.m{background:var(--mint-l);color:var(--mint-d);}
+.sn.s{background:var(--sky-l);color:var(--sky-d);}
+.sb{font-size:.87rem;color:var(--mid);line-height:1.75;}
+.sb strong{color:var(--dark);}
+
+/* FORMULA */
+.fbox{background:var(--lav-l);border-radius:10px;padding:.9rem 1.2rem;margin:.8rem 0;font-family:'Space Mono',monospace;font-size:.79rem;color:var(--lav-d);line-height:2;}
+.fbox.fm{background:var(--mint-l);color:var(--mint-d);}
+.fbox.fs{background:var(--sky-l);color:var(--sky-d);}
+.fbox.fp{background:var(--peach-l);color:var(--peach-d);}
+.fbox.fr{background:var(--rose-l);color:var(--rose-d);}
+.fbox.fb{background:var(--butter-l);color:var(--butter-d);}
+
+/* EXAMPLE BOX */
+.ex{background:#f9f6ff;border:1.5px solid var(--lav-l);border-radius:12px;padding:1.2rem 1.4rem;margin-top:.8rem;}
+.ex.em{background:#f0faf6;border-color:var(--mint-l);}
+.ex.es{background:#eef6fd;border-color:var(--sky-l);}
+.ex.ep{background:#fff8f0;border-color:var(--peach-l);}
+.ex-lbl{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--lav-d);margin-bottom:.6rem;}
+.ex.em .ex-lbl{color:var(--mint-d);} .ex.es .ex-lbl{color:var(--sky-d);} .ex.ep .ex-lbl{color:var(--peach-d);}
+.ex-row{display:flex;gap:.8rem;align-items:baseline;font-size:.84rem;line-height:1.9;color:var(--mid);}
+.ex-row strong{color:var(--dark);min-width:115px;font-family:'Space Mono',monospace;font-size:.77rem;}
+
+/* KEY-VALUE */
+.kv-list{margin-top:.4rem;}
+.kv{display:flex;gap:.8rem;align-items:baseline;padding:.35rem 0;border-bottom:1px solid #f4eff9;}
+.kv:last-child{border-bottom:none;}
+.kk{font-weight:600;font-size:.83rem;min-width:155px;color:var(--dark);}
+.kv_{font-size:.85rem;color:var(--mid);line-height:1.65;}
+
+code{font-family:'Space Mono',monospace;font-size:.81em;background:#f0ebfa;color:var(--lav-d);padding:1px 5px;border-radius:4px;}
+
+pre{font-family:'Space Mono',monospace;font-size:.79rem;line-height:1.9;background:#1e1a2e;color:#e8e0ff;border-radius:12px;padding:1.2rem 1.5rem;overflow-x:auto;margin:.8rem 0;}
+
+/* PRACTICE */
+.qhero{text-align:center;padding:3rem 2rem 2rem;background:linear-gradient(135deg,var(--mint-l),var(--sky-l));border-bottom:2px solid var(--sky-l);}
+.qhero h1{font-family:'Lora',serif;font-size:2rem;margin-bottom:.4rem;}
+.qhero p{color:var(--mid);font-size:.9rem;}
+.qwrap{max-width:840px;margin:0 auto;padding:2rem 2rem 5rem;}
+.qch-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem;}
+.qch{padding:8px 20px;border-radius:20px;border:2px solid transparent;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.83rem;font-weight:600;background:transparent;color:var(--mid);transition:all .2s;}
+.qch:hover{background:var(--lav-l);}
+.qch.q1.active{background:var(--rose-d);border-color:var(--rose-d);color:#fff;}
+.qch.q2.active{background:var(--mint-d);border-color:var(--mint-d);color:#fff;}
+.qch.q3.active{background:var(--sky-d);border-color:var(--sky-d);color:#fff;}
+.qset{display:none;} .qset.active{display:block;}
+.q-src{font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--light);margin-bottom:.3rem;}
+.qcard{background:var(--white);border-radius:16px;padding:1.6rem;box-shadow:var(--sh);margin-bottom:1.2rem;border:1.5px solid var(--lav-l);}
+.qtext{font-size:.92rem;color:var(--dark);line-height:1.75;margin-bottom:1rem;font-weight:500;}
+.qcode{font-family:'Space Mono',monospace;font-size:.79rem;background:#1e1a2e;color:#e8e0ff;border-radius:10px;padding:1rem 1.2rem;margin:.8rem 0;line-height:1.9;}
+.opts{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.5rem;}
+.opt{display:flex;align-items:center;gap:.8rem;padding:.7rem 1rem;border-radius:10px;border:1.5px solid #e8e0f0;cursor:pointer;font-size:.86rem;color:var(--mid);transition:all .18s;background:var(--white);}
+.opt:hover{background:var(--lav-l);border-color:var(--lav);}
+.opt.correct{background:#e8f9ef;border-color:#68c98a;color:#2a7a47;}
+.opt.wrong{background:#fce4ec;border-color:var(--rose);color:#b5294a;}
+.opt .ol{font-weight:700;font-size:.78rem;min-width:20px;}
+.ssol{padding:7px 18px;border-radius:20px;border:2px solid var(--mint-d);background:var(--white);color:var(--mint-d);font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .18s;margin-top:.8rem;}
+.ssol:hover{background:var(--mint-d);color:#fff;}
+.sol{display:none;margin-top:1rem;background:var(--mint-l);border-radius:12px;padding:1.2rem 1.4rem;font-size:.87rem;color:var(--dark);line-height:1.9;border-left:4px solid var(--mint-d);}
+.sol.vis{display:block;}
+.sol code{background:rgba(111,187,166,.2);color:#3d8a72;}
+.sbar{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;background:var(--white);border-radius:14px;padding:1rem 1.5rem;box-shadow:var(--sh);}
+.sc-num{font-family:'Lora',serif;font-size:1.6rem;font-weight:600;}
+.sc-lbl{font-size:.83rem;color:var(--light);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">COE 306 <span>Study Guide</span></div>
+  <div class="nav-links">
+    <button class="nav-btn active" onclick="showPage('home',this)">Home</button>
+    <button class="nav-btn" onclick="showPage('guide',this)">Study Guide</button>
+    <button class="nav-btn" onclick="showPage('practice',this)">Practice</button>
+  </div>
+</nav>
+
+<!-- ═══ HOME ═══ -->
+<div class="page active" id="page-home">
+  <div class="hero">
+    <div class="hero-tag">COE 306 · Introduction to Embedded Systems · KFUPM</div>
+    <h1>Your <em>Complete</em><br>Study Companion</h1>
+    <p>Full lecture content — every slide covered — with exact past-quiz questions and conceptual MCQs.</p>
+    <div class="ch-cards">
+      <div class="ch-card ch1" onclick="openChapter(1)">
+        <div class="ch-num">Chapter 1</div>
+        <div class="ch-title">🖥️ Embedded Systems</div>
+        <div class="ch-sub">Definitions · Platforms · Design Process · Real-time</div>
+      </div>
+      <div class="ch-card ch2" onclick="openChapter(2)">
+        <div class="ch-num">Chapter 2</div>
+        <div class="ch-title">⚙️ Instruction Sets</div>
+        <div class="ch-sub">ARM · PIC16F</div>
+      </div>
+      <div class="ch-card ch3" onclick="openChapter(3)">
+        <div class="ch-num">Chapter 3</div>
+        <div class="ch-title">🔌 CPUs</div>
+        <div class="ch-sub">I/O · Interrupts · Cache · Memory · Power</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ STUDY GUIDE ═══ -->
+<div class="page" id="page-guide">
+  <div class="wrap">
+    <div class="ch-tabs">
+      <button class="ch-tab t1 active" onclick="switchCh(1,this)">🖥️ Ch.1 — Embedded Systems</button>
+      <button class="ch-tab t2" onclick="switchCh(2,this)">⚙️ Ch.2 — Instruction Sets</button>
+      <button class="ch-tab t3" onclick="switchCh(3,this)">🔌 Ch.3 — CPUs</button>
+    </div>
+
+<!-- ══════════════════════════ CHAPTER 1 ══════════════════════════ -->
+<div class="ch-content active" id="ch1">
+
+  <div class="sec"><span class="pill p-rose">1.1</span><h2>What is an Embedded System?</h2></div>
+  <div class="grid">
+    <div class="card cr">
+      <h3>📌 Definition</h3>
+      <p>A <strong>programmable computing system</strong> designed to perform a dedicated function as part of a larger product. Takes advantage of application characteristics to optimize design — doesn't need general-purpose features.</p>
+      <p style="margin-top:.6rem"><em>Examples: calculator, microwave, printer, car (40–100 MCUs), GPS moving map display.</em></p>
+    </div>
+    <div class="card cr">
+      <h3>🔄 The Modern Spectrum</h3>
+      <p>Classification is no longer binary — every smart device sits somewhere on the spectrum:</p>
+      <ul>
+        <li>Old embedded: simple MCU, no OS, assembly</li>
+        <li>Modern embedded: can run Linux, touch UI</li>
+        <li>General purpose: multi-core, full OS, user-programmable</li>
+      </ul>
+      <p style="margin-top:.6rem;font-size:.83rem">Portables got more powerful; embedded devices gained user interfaces and networking.</p>
+    </div>
+    <div class="card cr">
+      <h3>⚖️ MCU vs MPU</h3>
+      <table class="tbl lav-hd">
+        <tr><th></th><th>MCU</th><th>MPU</th></tr>
+        <tr><td class="lc">Memory</td><td>On-chip (SRAM/Flash)</td><td>External RAM/ROM</td></tr>
+        <tr><td class="lc">OS</td><td>No (bare-metal/RTOS)</td><td>Yes (Linux/Win)</td></tr>
+        <tr><td class="lc">Power</td><td>Low (mW)</td><td>High (W)</td></tr>
+        <tr><td class="lc">Cost</td><td>Low ($1–$10)</td><td>High ($10–$100s)</td></tr>
+        <tr><td class="lc">Frequency</td><td>~32 MHz</td><td>~3 GHz</td></tr>
+        <tr><td class="lc">Use</td><td>Specific control</td><td>General tasks</td></tr>
+      </table>
+    </div>
+    <div class="card cr">
+      <h3>🏗️ Computing Platforms</h3>
+      <table class="tbl lav-hd" style="table-layout:fixed;width:100%">
+        <tr><th style="width:30%">Platform</th><th style="width:23%">Flexibility</th><th style="width:24%">Performance</th><th style="width:23%">Cost/Unit</th></tr>
+        <tr><td class="lc">MCU/MPU</td><td>Highest</td><td>Medium</td><td>Low</td></tr>
+        <tr><td class="lc">FPGA</td><td>Medium</td><td>High</td><td>Medium</td></tr>
+        <tr><td class="lc">ASIC</td><td>Fixed</td><td>Highest</td><td>Very high NRE</td></tr>
+      </table>
+      <p style="margin-top:.6rem;font-size:.83rem;color:var(--mid)">ASIC embedded developers are VLSI designers — they build the chips that MCU developers program.</p>
+    </div>
+    <div class="card cr">
+      <h3>🔲 SoC, SiP & SBC</h3>
+      <div style="display:flex;flex-direction:column;gap:.7rem;margin-top:.4rem">
+        <div style="background:var(--rose-l);border-radius:10px;padding:.8rem 1rem">
+          <div style="font-weight:700;font-size:.85rem;margin-bottom:.25rem">SoC — System on a Chip</div>
+          <div style="font-size:.83rem;color:var(--mid);line-height:1.65">CPU, memory, I/O, GPU/DSP on a <em>single die</em>. Most compact &amp; power-efficient.<br><span style="font-size:.78rem">e.g. Apple A-series, Qualcomm Snapdragon</span></div>
+        </div>
+        <div style="background:var(--rose-l);border-radius:10px;padding:.8rem 1rem">
+          <div style="font-weight:700;font-size:.85rem;margin-bottom:.25rem">SiP — System in a Package</div>
+          <div style="font-size:.83rem;color:var(--mid);line-height:1.65">Multiple dies in one package — combines different process technologies.<br><span style="font-size:.78rem">e.g. Apple Watch SiP, ESP32 modules</span></div>
+        </div>
+        <div style="background:var(--rose-l);border-radius:10px;padding:.8rem 1rem">
+          <div style="font-weight:700;font-size:.85rem;margin-bottom:.25rem">SBC — Single-Board Computer</div>
+          <div style="font-size:.83rem;color:var(--mid);line-height:1.65">Full computer (CPU, RAM, I/O) on one PCB, typically built around an SoC.<br><span style="font-size:.78rem">e.g. Raspberry Pi, BeagleBone</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec"><span class="pill p-rose">1.2</span><h2>Characteristics of Embedded Systems</h2></div>
+  <div class="grid">
+    <div class="card cr">
+      <h3>⏱️ Real-Time Requirements</h3>
+      <p>Performance = <strong>worst-case</strong>, not average. Must finish operations by <em>deadlines</em>.</p>
+      <ul>
+        <li><strong>Hard:</strong> deadline miss = system failure (ABS brakes, printer page boundary, medical pump)</li>
+        <li><strong>Soft:</strong> miss = degraded performance (video streaming drops frames)</li>
+        <li><strong>Multi-rate:</strong> multiple operations at widely varying rates simultaneously</li>
+      </ul>
+    </div>
+    <div class="card cr">
+      <h3>💡 Key Characteristics</h3>
+      <ul>
+        <li><strong>Sophisticated functionality:</strong> complex algorithms, moving-map GPS</li>
+        <li><strong>Low manufacturing cost:</strong> mass-market pressure</li>
+        <li><strong>Low power:</strong> critical for battery devices; excess power → heat</li>
+        <li><strong>Tight deadlines:</strong> small teams, 6-month market windows</li>
+        <li><strong>Upgradeability:</strong> OTA firmware updates</li>
+      </ul>
+    </div>
+    <div class="card cr">
+      <h3>📊 Performance Analysis Levels</h3>
+      <p>Unlike general purpose (avg throughput), embedded = <strong>deadline meeting</strong>. Must analyze at:</p>
+      <ul>
+        <li>Instruction: CPU microarchitecture effects</li>
+        <li>Platform: I/O and memory subsystem</li>
+        <li>Program: overall structure and behavior</li>
+        <li>Task: RTOS scheduling and interaction</li>
+        <li>Multiprocessor: processor interaction</li>
+      </ul>
+    </div>
+    <div class="card cr">
+      <h3>🖥️ Embedded Software Considerations</h3>
+      <ul>
+        <li>Peripherals: timing, response, data types, power, bandwidth</li>
+        <li>Communication: bandwidth, reliability, redundancy</li>
+        <li>Real-time performance and scheduling</li>
+        <li>Available compute, memory, toolchains</li>
+        <li>Security and privacy</li>
+        <li>Sensor/actuator interfacing</li>
+        <li>Testing under real-world noise and jitter</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sec"><span class="pill p-rose">1.3</span><h2>Design Process</h2></div>
+  <div class="cblk br">
+    <h3>📋 Embedded System Design Flow</h3>
+    <div class="steps">
+      <div class="step"><div class="sn r">1</div><div class="sb"><strong>Requirements</strong> — plain-language description of what the user expects, independent of implementation.<br>
+      • <em>Functional:</em> what the system <em>does</em> (e.g., "display current position on map")<br>
+      • <em>Non-functional:</em> how <em>well</em> (e.g., "GPS lock within 15 seconds", "power-up in 1 second")<br>
+      • <em>Constraints:</em> restrict design choices (e.g., "use 400×600 display", "fits in hand", "$120 price")</div></div>
+      <div class="step"><div class="sn r">2</div><div class="sb"><strong>Specification</strong> — formal, precise, consistent, <em>unambiguous</em> description. Must be: complete and verifiable. Bridges "what user wants" ↔ "what gets built."</div></div>
+      <div class="step"><div class="sn r">3</div><div class="sb"><strong>Architecture Design</strong> — describes <em>how</em> the system implements the spec. Defines H/W + S/W component structure (block diagrams: general, hardware, software architectures).</div></div>
+      <div class="step"><div class="sn r">4</div><div class="sb"><strong>Component Design</strong> — build individual modules. Some ready-made (CPU, GPS receiver, map databases), some custom (PCB, FPGA, software modules).</div></div>
+      <div class="step"><div class="sn r">5</div><div class="sb"><strong>System Integration</strong> — most bugs appear here. Component interactions reveal issues invisible in isolation.<br>
+      • <strong>Verification:</strong> "Did we build the system right?" (matches spec?)<br>
+      • <strong>Validation:</strong> "Did we build the right system?" (does what user actually needs?)</div></div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card cr">
+      <h3>⚠️ Design Challenges</h3>
+      <ul>
+        <li>Deadlines must be met in <strong>worst case</strong></li>
+        <li>Power/energy: sleep modes, clock gating, DVFS</li>
+        <li>Resource constraints: performance vs cost</li>
+        <li>Limited debugging: JTAG, UART logs, oscilloscopes</li>
+        <li>Real-world noise, temperature variation</li>
+        <li>Testing: jitter, race conditions, timing bugs</li>
+        <li>Correctness under uncertainty</li>
+      </ul>
+    </div>
+    <div class="card cr">
+      <h3>🎯 Design Goal Conflicts (GPS Example)</h3>
+      <table class="tbl rose-hd">
+        <tr><th>Goal A</th><th>vs</th><th>Goal B</th></tr>
+        <tr><td>Smooth scrolling</td><td>⚡</td><td>8-hour battery</td></tr>
+        <tr><td>More performance</td><td>⚡</td><td>Lower power</td></tr>
+        <tr><td>Lower cost</td><td>⚡</td><td>More features</td></tr>
+        <tr><td>Smaller size</td><td>⚡</td><td>Better cooling</td></tr>
+        <tr><td>Determinism</td><td>⚡</td><td>Flexibility</td></tr>
+      </table>
+    </div>
+  </div>
+
+</div><!-- end ch1 -->
+
+
+<!-- ══════════════════════════ CHAPTER 2 ══════════════════════════ -->
+<div class="ch-content" id="ch2">
+
+  <div class="sec"><span class="pill p-mint">2.1</span><h2>Architecture Fundamentals</h2></div>
+  <div class="grid">
+    <div class="card cm">
+      <h3>🏛️ Von Neumann vs Harvard</h3>
+      <table class="tbl mint-hd">
+        <tr><th></th><th>Von Neumann</th><th>Harvard</th></tr>
+        <tr><td class="lc">Memory</td><td>Single shared</td><td>Separate inst/data</td></tr>
+        <tr><td class="lc">Simultaneous?</td><td>No</td><td>Yes (higher BW)</td></tr>
+        <tr><td class="lc">Self-modifying</td><td>Yes (possible)</td><td>No</td></tr>
+        <tr><td class="lc">Used in</td><td>ARM7, x86</td><td>ARM9, PIC16F, DSPs</td></tr>
+      </table>
+      <p style="margin-top:.8rem;font-size:.84rem;color:var(--mid)">Harvard preferred for DSP: fetch next instruction and read/write data simultaneously in same cycle.</p>
+    </div>
+    <div class="card cm">
+      <h3>🔧 RISC vs CISC</h3>
+      <table class="tbl mint-hd">
+        <tr><th></th><th>RISC</th><th>CISC</th></tr>
+        <tr><td class="lc">Instructions</td><td>Fewer, simpler</td><td>Many, complex</td></tr>
+        <tr><td class="lc">Instr size</td><td>Fixed</td><td>Variable</td></tr>
+        <tr><td class="lc">Memory access</td><td>Load/Store only</td><td>Any instruction</td></tr>
+        <tr><td class="lc">Addressing</td><td>Few modes</td><td>Many modes</td></tr>
+        <tr><td class="lc">Examples</td><td>ARM, PIC16F</td><td>x86</td></tr>
+      </table>
+      <p style="margin-top:.6rem;font-size:.83rem;color:var(--mid)">Early RISC substantially outperformed CISC. Gap narrowed as CISC used RISC micro-ops internally.</p>
+    </div>
+    <div class="card cm">
+      <h3>⚡ Instruction Execution Parallelism</h3>
+      <div class="kv-list">
+        <div class="kv"><span class="kk">Single-issue</span><span class="kv_">Executes one instruction at a time.</span></div>
+        <div class="kv"><span class="kk">Superscalar</span><span class="kv_">Hardware identifies parallel instructions at <em>runtime</em>. Higher complexity. Multiple instructions issued per cycle automatically.</span></div>
+        <div class="kv"><span class="kk">VLIW</span><span class="kv_">Compiler schedules parallel ops at <em>compile time</em>. More energy-efficient than superscalar. Used in DSP and multimedia processing.</span></div>
+      </div>
+    </div>
+    <div class="card cm">
+      <h3>🔠 Endianness</h3>
+      <div class="kv-list">
+        <div class="kv"><span class="kk">Little-Endian</span><span class="kv_">Least-significant byte at lowest address. Used by x86, ARM (configurable on power-up).</span></div>
+        <div class="kv"><span class="kk">Big-Endian</span><span class="kv_">Most-significant byte at lowest address. Used in some networking stacks, older RISC architectures.</span></div>
+      </div>
+      <p style="margin-top:.6rem;font-size:.83rem;color:var(--mid)">ARM endianness is configurable at power-up.</p>
+    </div>
+  </div>
+
+  <div class="sec"><span class="pill p-mint">2.2</span><h2>ARM Architecture</h2></div>
+  <div class="grid">
+    <div class="card cm">
+      <h3>🏗️ ARM Key Facts</h3>
+      <div class="kv-list">
+        <div class="kv"><span class="kk">ISA type</span><span class="kv_">RISC — load/store architecture</span></div>
+        <div class="kv"><span class="kk">Word size</span><span class="kv_">32-bit words and instructions</span></div>
+        <div class="kv"><span class="kk">ARM7</span><span class="kv_">Von Neumann, 32-bit byte-addressable addresses. <strong>Our focus.</strong></span></div>
+        <div class="kv"><span class="kk">ARM9</span><span class="kv_">Harvard architecture</span></div>
+        <div class="kv"><span class="kk">Cortex-M</span><span class="kv_">Either architecture, model-dependent</span></div>
+        <div class="kv"><span class="kk">Instruction sets</span><span class="kv_">32-bit ARM + 16-bit Thumb</span></div>
+        <div class="kv"><span class="kk">Total registers</span><span class="kv_">37 registers (all 32-bit), mode-banked</span></div>
+        <div class="kv"><span class="kk">Data types</span><span class="kv_">Signed/unsigned: byte (8), halfword (16, 2-byte aligned), word (32, 4-byte aligned)</span></div>
+      </div>
+    </div>
+    <div class="card cm">
+      <h3>🗂️ ARM Processor Modes</h3>
+      <table class="tbl mint-hd">
+        <tr><th>Mode</th><th>CPSR[4:0]</th><th>Triggered by</th></tr>
+        <tr><td class="mono">User</td><td class="mono">10000</td><td>Normal execution (unprivileged)</td></tr>
+        <tr><td class="mono">FIQ</td><td class="mono">10001</td><td>Fast (high-priority) interrupt</td></tr>
+        <tr><td class="mono">IRQ</td><td class="mono">10010</td><td>General interrupt</td></tr>
+        <tr><td class="mono">Supervisor</td><td class="mono">10011</td><td>Reset or SWI instruction</td></tr>
+        <tr><td class="mono">Abort</td><td class="mono">10111</td><td>Memory access violation</td></tr>
+        <tr><td class="mono">Undefined</td><td class="mono">11011</td><td>Undefined instruction</td></tr>
+        <tr><td class="mono">System</td><td class="mono">11111</td><td>Privileged OS (uses User regs)</td></tr>
+      </table>
+    </div>
+    <div class="card cm">
+      <h3>🚩 CPSR — Current Program Status Register</h3>
+      <div class="kv-list">
+        <div class="kv"><span class="kk">N [31]</span><span class="kv_">Negative — 2's complement negative result</span></div>
+        <div class="kv"><span class="kk">Z [30]</span><span class="kv_">Zero — result was zero</span></div>
+        <div class="kv"><span class="kk">C [29]</span><span class="kv_">Carry — carry out of MSb</span></div>
+        <div class="kv"><span class="kk">V [28]</span><span class="kv_">Overflow — signed overflow</span></div>
+        <div class="kv"><span class="kk">I [7]</span><span class="kv_">IRQ disable (1 = disabled)</span></div>
+        <div class="kv"><span class="kk">F [6]</span><span class="kv_">FIQ disable (1 = disabled)</span></div>
+        <div class="kv"><span class="kk">T [5]</span><span class="kv_">Thumb state (0=ARM, 1=Thumb)</span></div>
+        <div class="kv"><span class="kk">Mode [4:0]</span><span class="kv_">Current processor mode bits</span></div>
+      </div>
+    </div>
+    <div class="card cm">
+      <h3>💾 SPSR — Saved Program Status Register</h3>
+      <p>Each privileged mode (except System) has its own SPSR.</p>
+      <ul>
+        <li>On exception entry: SPSR ← CPSR (saves current state)</li>
+        <li>On return: CPSR ← SPSR (restores user state)</li>
+        <li>System mode <strong>has no SPSR</strong> — uses User register set</li>
+        <li>If a nested exception of the same mode occurs, SPSR must be saved manually to support nested exceptions.</li>
+      </ul>
+    </div>
+    <div class="card cm full">
+      <h3>📋 ARM Condition Codes — Complete Table</h3>
+      <table class="tbl mint-hd">
+        <tr><th>Suffix</th><th>Meaning</th><th>Condition (flags)</th><th>Notes</th></tr>
+        <tr><td class="mono">EQ</td><td>Equal</td><td>Z = 1</td><td>After CMP: operands equal</td></tr>
+        <tr><td class="mono">NE</td><td>Not equal</td><td>Z = 0</td><td></td></tr>
+        <tr><td class="mono">CS / HS</td><td>Carry set / Unsigned ≥</td><td>C = 1</td><td>HS = Higher or Same</td></tr>
+        <tr><td class="mono">CC / LO</td><td>Carry clear / Unsigned &lt;</td><td>C = 0</td><td>LO = Lower</td></tr>
+        <tr><td class="mono">MI</td><td>Minus / Negative</td><td>N = 1</td><td></td></tr>
+        <tr><td class="mono">PL</td><td>Plus / Positive or zero</td><td>N = 0</td><td></td></tr>
+        <tr><td class="mono">VS</td><td>Overflow set</td><td>V = 1</td><td></td></tr>
+        <tr><td class="mono">VC</td><td>Overflow clear</td><td>V = 0</td><td></td></tr>
+        <tr><td class="mono">HI</td><td>Unsigned higher</td><td>C = 1 AND Z = 0</td><td></td></tr>
+        <tr><td class="mono">LS</td><td>Unsigned lower or same</td><td>C = 0 OR Z = 1</td><td></td></tr>
+        <tr><td class="mono">GE</td><td>Signed ≥</td><td>N = V</td><td></td></tr>
+        <tr><td class="mono">LT</td><td>Signed &lt;</td><td>N ≠ V</td><td></td></tr>
+        <tr><td class="mono">GT</td><td>Signed &gt;</td><td>Z = 0 AND N = V</td><td></td></tr>
+        <tr><td class="mono">LE</td><td>Signed ≤</td><td>Z = 1 OR N ≠ V</td><td></td></tr>
+        <tr><td class="mono">AL</td><td>Always (default)</td><td>—</td><td>Omit for default behavior</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec"><span class="pill p-mint">2.3</span><h2>ARM Data Processing Instructions</h2></div>
+  <div class="grid">
+    <div class="card cm">
+      <h3>➕ Arithmetic Operations</h3>
+      <p><code>&lt;OP&gt;{cond}{S} Rd, Rn, Operand2</code></p>
+      <table class="tbl mint-hd" style="margin-top:.6rem">
+        <tr><th>Op</th><th>Effect</th></tr>
+        <tr><td class="mono">ADD</td><td>Rd = Rn + Op2</td></tr>
+        <tr><td class="mono">ADC</td><td>Rd = Rn + Op2 + Carry</td></tr>
+        <tr><td class="mono">SUB</td><td>Rd = Rn − Op2</td></tr>
+        <tr><td class="mono">SBC</td><td>Rd = Rn − Op2 + Carry − 1</td></tr>
+        <tr><td class="mono">RSB</td><td>Rd = Op2 − Rn (reverse subtract)</td></tr>
+        <tr><td class="mono">RSC</td><td>Rd = Op2 − Rn + Carry − 1</td></tr>
+        <tr><td class="mono">MUL{S} Rd,Rm,Rs</td><td>Rd = Rm × Rs</td></tr>
+        <tr><td class="mono">MLA{S} Rd,Rm,Rs,Rn</td><td>Rd = Rm × Rs + Rn</td></tr>
+      </table>
+      <p style="font-size:.82rem;color:var(--mid);margin-top:.6rem">MUL/MLA: cannot use PC; operands are sign-agnostic (least-sig 32 bits same).</p>
+    </div>
+    <div class="card cm">
+      <h3>🔍 Comparisons (flag-only)</h3>
+      <p><strong>Only effect: UPDATE CONDITION FLAGS.</strong> No result written, no S suffix needed.</p>
+      <table class="tbl mint-hd" style="margin-top:.6rem">
+        <tr><th>Op</th><th>Computes (flags only)</th></tr>
+        <tr><td class="mono">CMP Rn, Op2</td><td>Rn − Op2</td></tr>
+        <tr><td class="mono">CMN Rn, Op2</td><td>Rn + Op2</td></tr>
+        <tr><td class="mono">TST Rn, Op2</td><td>Rn AND Op2</td></tr>
+        <tr><td class="mono">TEQ Rn, Op2</td><td>Rn XOR Op2</td></tr>
+      </table>
+    </div>
+    <div class="card cm">
+      <h3>🔀 Logical Operations</h3>
+      <p><code>&lt;OP&gt;{cond}{S} Rd, Rn, Operand2</code></p>
+      <table class="tbl mint-hd" style="margin-top:.6rem">
+        <tr><th>Op</th><th>Effect</th></tr>
+        <tr><td class="mono">AND</td><td>Rd = Rn AND Op2</td></tr>
+        <tr><td class="mono">EOR</td><td>Rd = Rn XOR Op2</td></tr>
+        <tr><td class="mono">ORR</td><td>Rd = Rn OR Op2</td></tr>
+        <tr><td class="mono">BIC</td><td>Rd = Rn AND NOT Op2 (bit clear)</td></tr>
+      </table>
+      <p style="font-size:.82rem;color:var(--mid);margin-top:.6rem">Logical ops do not change V flag. If no shift: C flag also unchanged.</p>
+    </div>
+    <div class="card cm">
+      <h3>📦 Data Movement</h3>
+      <p><code>&lt;OP&gt;{cond}{S} Rd, Operand2</code> — no Rn used</p>
+      <div class="kv-list" style="margin-top:.5rem">
+        <div class="kv"><span class="kk"><code>MOV Rd, Op2</code></span><span class="kv_">Rd = Op2</span></div>
+        <div class="kv"><span class="kk"><code>MVN Rd, Op2</code></span><span class="kv_">Rd = NOT Op2</span></div>
+      </div>
+      <pre style="margin-top:.8rem">MOV r0, r1         <span style="color:#7a6a8a">; r0 = r1</span>
+MOVS r2, #10       <span style="color:#7a6a8a">; r2 = 10, update flags</span>
+MVN r1, #0         <span style="color:#7a6a8a">; r1 = 0xFFFFFFFF</span>
+MOV r3, #-1        <span style="color:#7a6a8a">; → MVN r3, #0</span></pre>
+    </div>
+  </div>
+
+  <div class="sec"><span class="pill p-mint">2.4</span><h2>Barrel Shifter & Immediate Values</h2></div>
+  <div class="grid2">
+    <div class="cblk bm">
+      <h3>🔄 Barrel Shifter — Part of Every Data Instruction</h3>
+      <p class="desc">ARM has no dedicated shift instructions. Instead the second operand passes through a barrel shifter before the ALU. Shifts are free inside any data processing instruction.</p>
+      <table class="tbl mint-hd">
+        <tr><th>Shift</th><th>Meaning</th><th>Notes</th></tr>
+        <tr><td class="mono">LSL #n</td><td>Logical shift left n (×2ⁿ)</td><td>Zero-fills right</td></tr>
+        <tr><td class="mono">LSR #n</td><td>Logical shift right n (÷2ⁿ unsigned)</td><td>Zero-fills left</td></tr>
+        <tr><td class="mono">ASR #n</td><td>Arithmetic shift right (sign-preserving)</td><td>Sign-fills left</td></tr>
+        <tr><td class="mono">ROR #n</td><td>Rotate right n bits</td><td>Bits wrap around</td></tr>
+        <tr><td class="mono">RRX</td><td>Rotate right 1 bit through carry</td><td>33-bit rotation</td></tr>
+      </table>
+      <p class="desc" style="margin-top:.8rem">Shift aliases are MOV shorthands: <code>LSL r0,r1,#3</code> ≡ <code>MOV r0,r1,LSL #3</code></p>
+      <pre>ADD r0, r1, r2, LSL #2    <span style="color:#7a6a8a">; r0 = r1 + r2×4</span>
+SUB r3, r4, r5, ASR #1    <span style="color:#7a6a8a">; r3 = r4 - r5/2</span>
+MOV r0, r0, RRX            <span style="color:#7a6a8a">; rotate right thru C</span></pre>
+    </div>
+    <div class="cblk bm">
+      <h3>🔢 Multiplying by Constants — Barrel Shifter Tricks</h3>
+      <p class="desc">Multiplications by constants = (power of 2) ± 1 can be done in one cycle. Combine with RSB for factors of 7, 15, 31, etc.</p>
+      <pre><span style="color:#7a6a8a">; r0 = r1 × 5  →  5 = 4+1</span>
+ADD r0, r1, r1, LSL #2
+
+<span style="color:#7a6a8a">; r0 = r0 × 7  →  7 = 8-1</span>
+RSB r0, r0, r0, LSL #3
+
+<span style="color:#7a6a8a">; r0 = r0 × 35 = 5×7</span>
+ADD r0, r0, r0, LSL #2  <span style="color:#7a6a8a">; ×5</span>
+RSB r0, r0, r0, LSL #3  <span style="color:#7a6a8a">; ×7</span>
+
+<span style="color:#7a6a8a">; r2 = r3 × 105 = 15×7</span>
+RSB r2, r3, r3, LSL #4  <span style="color:#7a6a8a">; r2 = r3×15</span>
+RSB r2, r2, r2, LSL #3  <span style="color:#7a6a8a">; r2 = r2×7</span></pre>
+    </div>
+  </div>
+  <div class="cblk bm">
+    <h3>🔢 Immediate Value Encoding — "8-bit rotated right by even number"</h3>
+    <p class="desc">ARM instructions are fixed 32-bit. Only 12 bits for Operand2: 8-bit value + 4-bit rotation (×2 → 0–30). Not all 32-bit constants can be encoded; those requiring more use a <strong>literal pool</strong>.</p>
+    <div class="grid2" style="gap:.8rem">
+      <div class="fbox fm">
+<span style="color:#3d8a72">; Valid constants (8-bit ror even):</span>
+0–255         [0x00–0xFF]
+256,260,…,1020  [0x40–0xFF ror 30]
+1024,1040,…,4080 [0x40–0xFF ror 28]
+
+<span style="color:#3d8a72">; Load using rotation explicitly:</span>
+MOV r0, #0x40, 26  <span style="color:#3d8a72">; = 0x1000 = 4096</span>
+MOV r0, #4096      <span style="color:#3d8a72">; assembler converts</span>
+MVN r0, #0         <span style="color:#3d8a72">; = 0xFFFFFFFF</span>
+      </div>
+      <div class="fbox fm">
+<span style="color:#3d8a72">; Large constants → literal pool:</span>
+LDR r0, =0xFF         <span style="color:#3d8a72">; → MOV r0, #0xFF</span>
+LDR r0, =0x55555555   <span style="color:#3d8a72">; → LDR r0, [PC,#imm]</span>
+                      <span style="color:#3d8a72">;    DCD 0x55555555</span>
+
+<span style="color:#3d8a72">; Load address of variable:</span>
+ADR r1, FOO    <span style="color:#3d8a72">; PC-relative, ±4KB</span>
+LDR r1, =FOO   <span style="color:#3d8a72">; always works</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec"><span class="pill p-mint">2.5</span><h2>Load / Store Instructions</h2></div>
+  <div class="grid2">
+    <div class="cblk bm">
+      <h3>📥📤 LDR/STR Variants & Addressing Modes</h3>
+      <table class="tbl mint-hd">
+        <tr><th>Instruction</th><th>Transfers</th></tr>
+        <tr><td class="mono">LDR / STR</td><td>32-bit word</td></tr>
+        <tr><td class="mono">LDRB / STRB</td><td>8-bit unsigned byte</td></tr>
+        <tr><td class="mono">LDRH / STRH</td><td>16-bit unsigned halfword</td></tr>
+        <tr><td class="mono">LDRSB</td><td>8-bit sign-extended byte load</td></tr>
+        <tr><td class="mono">LDRSH</td><td>16-bit sign-extended halfword load</td></tr>
+      </table>
+      <p style="margin-top:.8rem;font-size:.84rem;color:var(--mid)">Syntax: <code>LDR{size}{cond} Rd, &lt;address&gt;</code></p>
+      <table class="tbl mint-hd" style="margin-top:.8rem">
+        <tr><th>Syntax</th><th>Address used</th><th>Rn after</th></tr>
+        <tr><td class="mono">[r1, #8]</td><td>r1 + 8</td><td>unchanged</td></tr>
+        <tr><td class="mono">[r1, #8]!</td><td>r1 + 8</td><td>r1 = r1+8</td></tr>
+        <tr><td class="mono">[r1], #8</td><td>r1</td><td>r1 = r1+8</td></tr>
+        <tr><td class="mono">[r1, r2]</td><td>r1 + r2</td><td>unchanged</td></tr>
+        <tr><td class="mono">[r1, r2, LSL#2]</td><td>r1 + r2×4</td><td>unchanged</td></tr>
+        <tr><td class="mono">[r1, -#8]</td><td>r1 − 8</td><td>unchanged</td></tr>
+      </table>
+    </div>
+    <div class="cblk bm">
+      <h3>🧮 Code Examples from Lectures</h3>
+      <pre><span style="color:#7a6a8a">; C: x = (a + b) - c</span>
+ADR r4,a  ;  LDR r0,[r4]
+ADR r4,b  ;  LDR r1,[r4]
+ADD r3,r0,r1
+ADR r4,c  ;  LDR r2,[r4]
+SUB r3,r3,r2
+ADR r4,x  ;  STR r3,[r4]
+
+<span style="color:#7a6a8a">; C: y = a * (b + c)</span>
+LDR r0,[r4]  <span style="color:#7a6a8a">; b</span>
+LDR r1,[r4]  <span style="color:#7a6a8a">; c</span>
+ADD r2,r0,r1
+LDR r0,[r4]  <span style="color:#7a6a8a">; a</span>
+MUL r2,r0,r2
+STR r2,[r4]  <span style="color:#7a6a8a">; → y</span>
+
+<span style="color:#7a6a8a">; C: z = (a << 2) | (b & 15)</span>
+LDR r0,[r4]         <span style="color:#7a6a8a">; a</span>
+MOV r0,r0,LSL #2
+LDR r1,[r4]         <span style="color:#7a6a8a">; b</span>
+AND r1,r1,#15
+ORR r1,r0,r1
+STR r1,[r4]         <span style="color:#7a6a8a">; → z</span></pre>
+    </div>
+  </div>
+
+  <div class="sec"><span class="pill p-mint">2.6</span><h2>Branches, Control Flow & Conditional Execution</h2></div>
+  <div class="grid2">
+    <div class="cblk bm">
+      <h3>🔀 Branch Instructions</h3>
+      <div class="kv-list">
+        <div class="kv"><span class="kk"><code>B{cond} label</code></span><span class="kv_">Branch. PC-relative ±32 MB range.</span></div>
+        <div class="kv"><span class="kk"><code>BL{cond} label</code></span><span class="kv_">Branch with Link: LR ← PC+4, then jump. Used for function calls.</span></div>
+        <div class="kv"><span class="kk"><code>MOV pc, lr</code></span><span class="kv_">Return from function.</span></div>
+        <div class="kv"><span class="kk"><code>BX Rm</code></span><span class="kv_">Branch and exchange (can switch ARM↔Thumb).</span></div>
+      </div>
+    </div>
+    <div class="cblk bm">
+      <h3>✅ Conditional Execution — Every ARM Instruction</h3>
+      <p class="desc">ARM's key feature: predication via 4-bit condition field in every instruction. Avoids pipeline-stalling branches for short if-statements. Preserves pipeline at cost of 1 cycle per skipped instruction (vs branch penalty).</p>
+      <pre><span style="color:#7a6a8a">; if (r0 != 5) { r1=r1+r0; r1=r1-r2; }</span>
+CMP  r0, #5
+ADDNE r1, r1, r0
+SUBNE r1, r1, r2
+
+<span style="color:#7a6a8a">; ADDS sets flags too:</span>
+ADDS r0, r1, r2    <span style="color:#7a6a8a">; r0=r1+r2 AND set N,Z,C,V</span></pre>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="cblk bm">
+      <h3>📋 Conditional Execution Patterns</h3>
+      <pre><span style="color:#7a6a8a">; if (a==0) func(1)  [a in r0]</span>
+CMP  r0, #0
+MOVEQ r0, #1
+BLEQ  func
+
+<span style="color:#7a6a8a">; if (a==0) x=0; if (a>0) x=1</span>
+CMP   r0, #0
+MOVEQ r1, #0
+MOVGT r1, #1
+
+<span style="color:#7a6a8a">; OR: if (a==4 || a==10) x=0</span>
+CMP   r0, #4
+CMPNE r0, #10
+MOVEQ r1, #0
+
+<span style="color:#7a6a8a">; AND: if (a==4 && b==10 && c==5) x=0</span>
+CMP   r0, #4
+CMPEQ r1, #10
+CMPEQ r2, #5
+MOVEQ r3, #0
+
+<span style="color:#7a6a8a">; GCD (Euclidean, no branches)</span>
+loop: CMP  r0, r1
+      SUBGT r0, r0, r1
+      SUBLT r1, r1, r0
+      BNE   loop</pre>
+    </div>
+    <div class="cblk bm">
+      <h3>🔄 Control Flow: If/Else with Branches</h3>
+      <pre><span style="color:#7a6a8a">; C: if (a>b) { x=5; y=c+d; } else x=c-d;</span>
+LDR r0, [r4]    <span style="color:#7a6a8a">; a</span>
+LDR r1, [r4]    <span style="color:#7a6a8a">; b</span>
+CMP r0, r1
+BLE fblock      <span style="color:#7a6a8a">; if a<=b → false block</span>
+<span style="color:#7a6a8a">; true block</span>
+MOV r0, #5  ; STR x
+LDR r0,[r4] ; c
+LDR r1,[r4] ; d
+ADD r0,r0,r1 ; STR y
+B after
+fblock:
+LDR r0,[r4] ; c
+LDR r1,[r4] ; d
+SUB r0,r0,r1 ; STR x
+after: ...
+
+<span style="color:#7a6a8a">; Switch statement via jump table</span>
+LDR r0, [r2]            <span style="color:#7a6a8a">; test value</span>
+ADR r1, switchtab
+LDR r1, [r1, r0, LSL#2] <span style="color:#7a6a8a">; index table</span>
+MOV pc, r1              <span style="color:#7a6a8a">; jump</span>
+switchtab: .word case0, case1 ...</pre>
+    </div>
+    <div class="cblk bm">
+      <h3>🔁 For Loop (FIR Filter Pattern)</h3>
+      <pre><span style="color:#7a6a8a">; C: for(i=0,f=0; i&lt;N; i++) f+=c[i]*x[i]</span>
+MOV r0, #0       <span style="color:#7a6a8a">; i=0</span>
+MOV r8, #0       <span style="color:#7a6a8a">; array byte index</span>
+LDR r1, [r2]     <span style="color:#7a6a8a">; N</span>
+MOV r2, #0       <span style="color:#7a6a8a">; f=0</span>
+ADR r3, c
+ADR r5, x
+loop:
+  LDR r4, [r3,r8] <span style="color:#7a6a8a">; c[i]</span>
+  LDR r6, [r5,r8] <span style="color:#7a6a8a">; x[i]</span>
+  MUL r4, r6, r4
+  ADD r2, r2, r4
+  ADD r8, r8, #4  <span style="color:#7a6a8a">; advance ptr</span>
+  ADD r0, r0, #1  <span style="color:#7a6a8a">; i++</span>
+  CMP r0, r1
+  BLT loop</pre>
+    </div>
+  </div>
+
+  <div class="sec"><span class="pill p-mint">2.7</span><h2>Block Data Transfer & Stack Operations</h2></div>
+  <div class="grid2">
+    <div class="cblk bm">
+      <h3>📚 STM / LDM — Multiple Register Transfer</h3>
+      <p class="desc"><strong>Key rule:</strong> Lowest register number <em>always</em> at lowest memory address — independent of IA/IB/DA/DB ordering.</p>
+      <table class="tbl mint-hd">
+        <tr><th>Suffix</th><th>First store address</th><th>Final r0 (with !)</th></tr>
+        <tr><td class="mono">IA (r0=0x1000, {r1,r2,r3})</td><td>0x1000</td><td>0x100C</td></tr>
+        <tr><td class="mono">IB (r0=0x1000, {r1,r2,r3})</td><td>0x1004</td><td>0x100C</td></tr>
+        <tr><td class="mono">DA (r0=0x1000, {r1,r2,r3})</td><td>0x0FF8 (r1)</td><td>0x0FF4</td></tr>
+        <tr><td class="mono">DB (r0=0x1000, {r1,r2,r3})</td><td>0x0FF4 (r1)</td><td>0x0FF4</td></tr>
+      </table>
+      <div class="ex em" style="margin-top:.8rem">
+        <div class="ex-lbl">STMIA vs STMIB — r0=0x1000, {r1,r2,r3}</div>
+        <div class="ex-row"><strong>STMIA:</strong> r1→0x1000, r2→0x1004, r3→0x1008, r0=0x100C</div>
+        <div class="ex-row"><strong>STMIB:</strong> r1→0x1004, r2→0x1008, r3→0x100C, r0=0x100C</div>
+      </div>
+      <div class="ex em" style="margin-top:.6rem">
+        <div class="ex-lbl">LDMIA Example</div>
+        <pre style="margin:0;border-radius:8px;font-size:.77rem">LDMIA r1, {r0,r2,r4}
+<span style="color:#7a6a8a">; r0 := mem32[r1]
+; r2 := mem32[r1+4]
+; r4 := mem32[r1+8]</span></pre>
+      </div>
+    </div>
+    <div class="cblk bm">
+      <h3>📥 Stack — Full/Empty Ascending/Descending</h3>
+      <p class="desc">Stack grows downward conventionally. SP either points to last occupied (Full) or next free (Empty) location.</p>
+      <table class="tbl mint-hd">
+        <tr><th>Stack Alias</th><th>Equivalent</th><th>SP type</th></tr>
+        <tr><td class="mono">STMFD/LDMFD</td><td>STMDB/LDMIA</td><td>Full Descending ← standard</td></tr>
+        <tr><td class="mono">STMED/LDMED</td><td>STMDA/LDMIB</td><td>Empty Descending</td></tr>
+        <tr><td class="mono">STMFA/LDMFA</td><td>STMIB/LDMDA</td><td>Full Ascending</td></tr>
+        <tr><td class="mono">STMEA/LDMEA</td><td>STMIA/LDMDB</td><td>Empty Ascending</td></tr>
+      </table>
+      <pre style="margin-top:.8rem"><span style="color:#7a6a8a">; Standard subroutine prologue/epilogue:</span>
+STMFD sp!, {r0-r12, lr} <span style="color:#7a6a8a">; save + return addr</span>
+  ...subroutine body...
+LDMFD sp!, {r0-r12, pc} <span style="color:#7a6a8a">; restore + return</span></pre>
+      <p class="desc" style="margin-top:.8rem"><strong>STMFD SP calculation:</strong> SP new = SP_old − (n_regs × 4)</p>
+      <div class="ex em">
+        <div class="ex-lbl">SP=0x100. After STMFD SP!, {r4-r7}</div>
+        <div class="ex-row"><strong>4 regs × 4 = 0x10</strong></div>
+        <div class="ex-row"><strong>SP =</strong> 0x100 − 0x10 = <strong>0xF0</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec"><span class="pill p-mint">2.8</span><h2>Function Calls — APCS</h2></div>
+  <div class="cblk bm">
+    <h3>📞 ARM Procedure Call Standard (APCS) — Register Conventions</h3>
+    <div class="grid" style="gap:.8rem;margin-top:.5rem">
+      <div>
+        <table class="tbl mint-hd">
+          <tr><th>Register</th><th>Role</th><th>Caller/Callee saved</th></tr>
+          <tr><td class="mono">r0–r3</td><td>First 4 arguments; r0 = return value</td><td>Caller-saved</td></tr>
+          <tr><td class="mono">r4–r8, r10</td><td>General purpose</td><td>Callee-saved</td></tr>
+          <tr><td class="mono">r9</td><td>Platform dependent</td><td>Platform</td></tr>
+          <tr><td class="mono">r11 (fp)</td><td>Frame pointer</td><td>Callee-saved</td></tr>
+          <tr><td class="mono">r12 (ip)</td><td>Intra-procedure scratch</td><td>Caller-saved</td></tr>
+          <tr><td class="mono">r13 (sp)</td><td>Stack pointer</td><td>Callee-saved</td></tr>
+          <tr><td class="mono">r14 (lr)</td><td>Link register (return addr)</td><td>Caller-saved</td></tr>
+          <tr><td class="mono">r15 (pc)</td><td>Program counter</td><td>—</td></tr>
+        </table>
+      </div>
+      <div>
+        <p class="desc"><strong>Function call flow:</strong></p>
+        <div class="steps">
+          <div class="step"><div class="sn m">1</div><div class="sb"><strong>BL func</strong> — saves PC+4 into LR, jumps to func</div></div>
+          <div class="step"><div class="sn m">2</div><div class="sb"><strong>Callee pushes</strong> {r4–r11, lr} to preserve registers it will use</div></div>
+          <div class="step"><div class="sn m">3</div><div class="sb"><strong>Function body</strong> executes; uses r0–r3 for args, r4+ for locals</div></div>
+          <div class="step"><div class="sn m">4</div><div class="sb"><strong>Return value</strong> placed in r0</div></div>
+          <div class="step"><div class="sn m">5</div><div class="sb"><strong>Callee pops</strong> {r4–r11, pc} — restores regs, PC ← old LR</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec"><span class="pill p-mint">2.9</span><h2>PIC16F Architecture</h2></div>
+  <div class="grid">
+    <div class="card cm">
+      <h3>🏗️ PIC16F Key Facts</h3>
+      <div class="kv-list">
+        <div class="kv"><span class="kk">Architecture</span><span class="kv_">Harvard (separate program/data)</span></div>
+        <div class="kv"><span class="kk">Instruction width</span><span class="kv_"><strong>14 bits</strong></span></div>
+        <div class="kv"><span class="kk">Data width</span><span class="kv_"><strong>8 bits</strong></span></div>
+        <div class="kv"><span class="kk">Program Counter</span><span class="kv_"><strong>13 bits</strong> → up to 8192 instructions (4 pages × 2K)</span></div>
+        <div class="kv"><span class="kk">Stack</span><span class="kv_"><strong>8-level circular hardware stack</strong> — for CALL/RETURN only. Separate from data/program memory.</span></div>
+        <div class="kv"><span class="kk">W register</span><span class="kv_">Working accumulator (like ARM's destination reg)</span></div>
+        <div class="kv"><span class="kk">Register file</span><span class="kv_">All data memory is the register file. Peripherals are memory-mapped into data memory.</span></div>
+        <div class="kv"><span class="kk">Data memory</span><span class="kv_">4 banks × 128 bytes + Special Function Registers</span></div>
+        <div class="kv"><span class="kk">SRAM/EEPROM</span><span class="kv_">Up to 368 words SRAM, 256 words EEPROM</span></div>
+      </div>
+    </div>
+    <div class="card cm">
+      <h3>🚩 STATUS Register</h3>
+      <div class="kv-list">
+        <div class="kv"><span class="kk">IRP [7]</span><span class="kv_">Bank select for <strong>indirect</strong> addressing (9th bit of FSR). 0=Banks 0,1; 1=Banks 2,3</span></div>
+        <div class="kv"><span class="kk">RP1:RP0 [6:5]</span><span class="kv_">Bank select for <strong>direct</strong> addressing. 00=Bank0, 01=Bank1, 10=Bank2, 11=Bank3</span></div>
+        <div class="kv"><span class="kk">TO [4]</span><span class="kv_">Watchdog timer timeout (0 = timeout occurred)</span></div>
+        <div class="kv"><span class="kk">PD [3]</span><span class="kv_">Power-down (0 = SLEEP executed)</span></div>
+        <div class="kv"><span class="kk">Z [2]</span><span class="kv_">Zero — result = 0</span></div>
+        <div class="kv"><span class="kk">DC [1]</span><span class="kv_">Digit carry — carry from bit 3 (BCD)</span></div>
+        <div class="kv"><span class="kk">C [0]</span><span class="kv_">Carry — used by RRF/RLF; 1 = carry/no-borrow</span></div>
+      </div>
+    </div>
+    <div class="card cm">
+      <h3>📋 Program Counter Details</h3>
+      <div class="kv-list">
+        <div class="kv"><span class="kk">Size</span><span class="kv_">13 bits → addresses 0x0000–0x1FFF</span></div>
+        <div class="kv"><span class="kk">Points to</span><span class="kv_">NEXT instruction (already incremented)</span></div>
+        <div class="kv"><span class="kk">PCL</span><span class="kv_">Lower 8 bits, accessible in data memory (0x02)</span></div>
+        <div class="kv"><span class="kk">PCLATH</span><span class="kv_">Latch for upper PC bits; supplies bits [4:3] for GOTO/CALL</span></div>
+        <div class="kv"><span class="kk">Computed GOTO</span><span class="kv_"><code>ADDWF PCL,F</code> — PCL already=next addr, so jump = next_addr + W</span></div>
+      </div>
+    </div>
+    <div class="card cm full">
+      <h3>📋 Complete PIC16F Instruction Reference</h3>
+      <table class="tbl mint-hd">
+        <tr><th>Instruction</th><th>Operation</th><th>Flags</th><th>Notes</th></tr>
+        <tr><th colspan="4" style="background:#c8eee4;color:#3a8a72">Byte-Oriented (d=W or d=F)</th></tr>
+        <tr><td class="mono">MOVLW k</td><td>W ← k</td><td>—</td><td>literal to W</td></tr>
+        <tr><td class="mono">MOVWF f</td><td>f ← W</td><td>—</td><td></td></tr>
+        <tr><td class="mono">MOVF f,d</td><td>d ← f</td><td>Z</td><td>d=W: copy to W; d=F: test f, set Z</td></tr>
+        <tr><td class="mono">ADDWF f,d</td><td>d ← W + f</td><td>C,DC,Z</td><td></td></tr>
+        <tr><td class="mono">ADDLW k</td><td>W ← W + k</td><td>C,DC,Z</td><td></td></tr>
+        <tr><td class="mono">SUBWF f,d</td><td>d ← f − W</td><td>C,DC,Z</td><td>note: f minus W</td></tr>
+        <tr><td class="mono">SUBLW k</td><td>W ← k − W</td><td>C,DC,Z</td><td></td></tr>
+        <tr><td class="mono">ANDWF f,d</td><td>d ← W AND f</td><td>Z</td><td></td></tr>
+        <tr><td class="mono">ANDLW k</td><td>W ← W AND k</td><td>Z</td><td></td></tr>
+        <tr><td class="mono">IORWF f,d</td><td>d ← W OR f</td><td>Z</td><td></td></tr>
+        <tr><td class="mono">XORWF f,d</td><td>d ← W XOR f</td><td>Z</td><td></td></tr>
+        <tr><td class="mono">XORLW k</td><td>W ← W XOR k</td><td>Z</td><td></td></tr>
+        <tr><td class="mono">COMF f,d</td><td>d ← NOT f</td><td>Z</td><td></td></tr>
+        <tr><td class="mono">INCF f,d</td><td>d ← f + 1</td><td>Z</td><td></td></tr>
+        <tr><td class="mono">DECF f,d</td><td>d ← f − 1</td><td>Z</td><td></td></tr>
+        <tr><td class="mono">INCFSZ f,d</td><td>d ← f+1; skip if 0</td><td>—</td><td></td></tr>
+        <tr><td class="mono">DECFSZ f,d</td><td>d ← f−1; skip if 0</td><td>—</td><td>★ loop pattern</td></tr>
+        <tr><td class="mono">RRF f,d</td><td>9-bit rotate right through C</td><td>C</td><td>C→bit7, bit0→C</td></tr>
+        <tr><td class="mono">RLF f,d</td><td>9-bit rotate left through C</td><td>C</td><td>C→bit0, bit7→C</td></tr>
+        <tr><td class="mono">SWAPF f,d</td><td>d ← {f[3:0], f[7:4]}</td><td>—</td><td>swap nibbles</td></tr>
+        <tr><td class="mono">CLRF f</td><td>f ← 0</td><td>Z=1</td><td></td></tr>
+        <tr><td class="mono">CLRW</td><td>W ← 0</td><td>Z=1</td><td></td></tr>
+        <tr><th colspan="4" style="background:#c8eee4;color:#3a8a72">Bit-Oriented</th></tr>
+        <tr><td class="mono">BSF f,b</td><td>f[b] ← 1</td><td>—</td><td>set bit b of f</td></tr>
+        <tr><td class="mono">BCF f,b</td><td>f[b] ← 0</td><td>—</td><td>clear bit b</td></tr>
+        <tr><td class="mono">BTFSC f,b</td><td>skip if f[b] = 0</td><td>—</td><td>test & skip if clear</td></tr>
+        <tr><td class="mono">BTFSS f,b</td><td>skip if f[b] = 1</td><td>—</td><td>test & skip if set</td></tr>
+        <tr><th colspan="4" style="background:#c8eee4;color:#3a8a72">Control Flow</th></tr>
+        <tr><td class="mono">GOTO addr</td><td>PC ← addr (11-bit + PCLATH)</td><td>—</td><td>absolute, 2 cycles</td></tr>
+        <tr><td class="mono">CALL addr</td><td>push PC+1, PC ← addr</td><td>—</td><td>2 cycles</td></tr>
+        <tr><td class="mono">RETURN</td><td>PC ← top of stack</td><td>—</td><td></td></tr>
+        <tr><td class="mono">RETLW k</td><td>W ← k; PC ← TOS</td><td>—</td><td>lookup table return</td></tr>
+        <tr><td class="mono">RETFIE</td><td>PC ← TOS; GIE ← 1</td><td>—</td><td>return from interrupt</td></tr>
+        <tr><td class="mono">ADDWF PCL,F</td><td>PCL ← PCL + W</td><td>—</td><td>computed GOTO</td></tr>
+        <tr><td class="mono">SLEEP</td><td>enter standby mode</td><td>TO,PD</td><td></td></tr>
+        <tr><td class="mono">NOP</td><td>no operation</td><td>—</td><td>1 cycle</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec"><span class="pill p-mint">2.10</span><h2>PIC16F Addressing Modes — Worked Examples</h2></div>
+  <div class="grid2">
+    <div class="cblk bm">
+      <h3>🔹 Direct Addressing</h3>
+      <p class="desc">7-bit register address in the instruction selects register in current bank. Bank selected by RP1:RP0 in STATUS.</p>
+      <pre>MOVWF 0x25    <span style="color:#3d8a72">; write W to reg 0x25, current bank</span>
+ADDWF 0x25,W  <span style="color:#3d8a72">; W = W + reg[0x25]</span>
+INCF  0x30,F  <span style="color:#3d8a72">; reg[0x30]++, store back to F</span>
+DECF  0x30,W  <span style="color:#3d8a72">; W = reg[0x30]-1, reg[0x30] unchanged</span></pre>
+    </div>
+    <div class="cblk bm">
+      <h3>🔹 Indirect Addressing via FSR+IRP</h3>
+      <p class="desc">FSR (8 bits) + IRP bit = 9 bits → 512 addressable locations. Writing to INDF accesses mem[FSR] automatically.</p>
+      <pre>MOVLW 0x55     <span style="color:#3d8a72">; W = 0x55</span>
+MOVWF FSR      <span style="color:#3d8a72">; FSR = 0x55 (pointer)</span>
+MOVLW 0xAA
+MOVWF INDF     <span style="color:#3d8a72">; mem[0x55] = 0xAA</span>
+<span style="color:#3d8a72">; Read back:</span>
+MOVF  INDF,W   <span style="color:#3d8a72">; W = mem[FSR] = mem[0x55]</span></pre>
+    </div>
+    <div class="cblk bm">
+      <h3>🔹 PC Absolute (GOTO / CALL)</h3>
+      <p class="desc">GOTO/CALL encode 11 bits. Upper 2 bits of 13-bit PC come from PCLATH[4:3]. Must set PCLATH to cross 2K page boundaries.</p>
+      <pre>GOTO 0x200     <span style="color:#3d8a72">; PC[10:0]=0x200; PC[12:11] from PCLATH[4:3]</span>
+CALL my_func   <span style="color:#3d8a72">; push PC+1, jump</span></pre>
+    </div>
+    <div class="cblk bm">
+      <h3>🔹 Computed GOTO — Jump Table</h3>
+      <p class="desc">When ADDWF PCL,F executes at address N, PC already holds N+1. Result = N+1+W.</p>
+      <pre>    org  0x010
+    MOVLW 0x03       <span style="color:#3d8a72">; addr 0x010</span>
+    ADDWF PCL,F      <span style="color:#3d8a72">; addr 0x011 → PCL=0x012+3=0x015</span>
+    NOP              <span style="color:#3d8a72">; 0x012</span>
+    NOP              <span style="color:#3d8a72">; 0x013</span>
+    NOP              <span style="color:#3d8a72">; 0x014</span>
+    MOVLW 0x99       <span style="color:#3d8a72">; 0x015 ← jumps here</span></pre>
+    </div>
+    <div class="cblk bm">
+      <h3>🔹 RRF — 9-bit Rotate Right Through Carry</h3>
+      <p class="desc">Carries the entire 9-bit value {C, reg[7:0]} right by 1. Old bit[0] → C; old C → new bit[7].</p>
+      <pre>Before: C=0, reg=1011 0100 (0xB4)
+After RRF:
+  new bit7 = old C = 0
+  reg → 0101 1010 (0x5A)
+  new C = old bit0 = 0
+
+<span style="color:#3d8a72">; Extract 2 bits at a time from byte:</span>
+RRF byte,W  <span style="color:#3d8a72">; get bits 1:0 via carry + bit7</span>
+RRF byte,W  <span style="color:#3d8a72">; get bits 3:2</span></pre>
+    </div>
+    <div class="cblk bm">
+      <h3>🔹 DECFSZ Loop</h3>
+      <p class="desc">Standard PIC count-down loop. DECFSZ decrements and skips the next instruction if result = 0.</p>
+      <pre>    MOVLW 0x05
+    MOVWF COUNT      <span style="color:#3d8a72">; COUNT = 5</span>
+LOOP:
+    ...              <span style="color:#3d8a72">; loop body</span>
+    DECFSZ COUNT,F   <span style="color:#3d8a72">; COUNT--; skip if 0</span>
+    GOTO LOOP        <span style="color:#3d8a72">; repeat</span>
+    ...              <span style="color:#3d8a72">; after loop</span></pre>
+      <p class="desc" style="margin-top:.6rem">GOTO executes <strong>N−1 times</strong> for initial value N. (Skipped on the Nth decrement to zero.)</p>
+    </div>
+  </div>
+
+
+</div><!-- end ch2 -->
+
+
+<!-- ══════════════════════════ CHAPTER 3 ══════════════════════════ -->
+<div class="ch-content" id="ch3">
+
+  <div class="sec"><span class="pill p-sky">3.1</span><h2>I/O Devices & Polling</h2></div>
+  <div class="grid">
+    <div class="card cs">
+      <h3>🔌 I/O Device Interface</h3>
+      <p>Typical I/O devices expose three register types:</p>
+      <ul>
+        <li><strong>Data registers:</strong> hold input/output data exchanged with device</li>
+        <li><strong>Status registers:</strong> indicate device state (ready, busy, error, flags)</li>
+        <li><strong>Control registers:</strong> configure and command the device</li>
+      </ul>
+      <p style="margin-top:.6rem;font-size:.83rem;color:var(--mid)"><em>Example: 8251 UART — configures baud rate, parity, stop bits, character width.</em></p>
+    </div>
+    <div class="card cs">
+      <h3>🗺️ Memory-Mapped vs Port-Mapped I/O</h3>
+      <div class="kv-list">
+        <div class="kv"><span class="kk">Memory-mapped</span><span class="kv_">Device registers at memory addresses. CPU uses normal LDR/STR. Common in ARM and most RISC architectures.</span></div>
+        <div class="kv"><span class="kk">Port I/O (isolated)</span><span class="kv_">Separate address space. Special IN/OUT instructions. Used in x86.</span></div>
+      </div>
+    </div>
+    <div class="card cs">
+      <h3>⏳ Busy-Wait I/O (Polling)</h3>
+      <p>Repeatedly read status register until device ready. Simple but wasteful.</p>
+      <pre style="font-size:.76rem">
+<span style="color:#7a6a8a">// Write a char:</span>
+*OUT_CHAR = c;
+*OUT_STATUS = 1;           <span style="color:#7a6a8a">// start</span>
+while(*OUT_STATUS != 0);   <span style="color:#7a6a8a">// wait
+
+// Copy input→output:</span>
+while(1) {
+  while(*IN_STATUS == 0);  <span style="color:#7a6a8a">// wait</span>
+  c = *IN_DATA;
+  *IN_STATUS = 0;          <span style="color:#7a6a8a">// ack</span>
+  *OUT_DATA = c;
+  *OUT_STATUS = 1;
+  while(*OUT_STATUS != 0);
+}</pre>
+    </div>
+    <div class="card cs">
+      <h3>⚖️ Polling vs Interrupts</h3>
+      <table class="tbl sky-hd">
+        <tr><th></th><th>Polling</th><th>Interrupts</th></tr>
+        <tr><td class="lc">CPU when idle</td><td>Wasted spinning</td><td>Free for work</td></tr>
+        <tr><td class="lc">Multiple devices</td><td>Poor scalability</td><td>Good</td></tr>
+        <tr><td class="lc">Power</td><td>High</td><td>Lower</td></tr>
+        <tr><td class="lc">Debugging</td><td>Simple</td><td>Harder (async)</td></tr>
+        <tr><td class="lc">Response</td><td>Predictable</td><td>Variable latency</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec"><span class="pill p-sky">3.2</span><h2>Interrupt Systems</h2></div>
+  <div class="cblk bs">
+    <h3>📋 Complete Interrupt Event Sequence</h3>
+    <div class="steps">
+      <div class="step"><div class="sn s">1</div><div class="sb"><strong>Interrupt source asserts request</strong> — device raises interrupt line</div></div>
+      <div class="step"><div class="sn s">2</div><div class="sb"><strong>CPU finishes current instruction</strong> — never interrupts mid-instruction; checks at instruction boundaries</div></div>
+      <div class="step"><div class="sn s">3</div><div class="sb"><strong>CPU acknowledges interrupt</strong> — signals to device/controller</div></div>
+      <div class="step"><div class="sn s">4</div><div class="sb"><strong>Hardware supplies interrupt vector</strong> — interrupt controller or device sends vector number; CPU indexes the interrupt vector table</div></div>
+      <div class="step"><div class="sn s">5</div><div class="sb"><strong>CPU saves execution state</strong> — PC, flags, mode-specific registers</div></div>
+      <div class="step"><div class="sn s">6</div><div class="sb"><strong>CPU jumps to ISR</strong> — PC = handler address from vector table</div></div>
+      <div class="step"><div class="sn s">7</div><div class="sb"><strong>ISR executes</strong> — services the device, clears the interrupt flag</div></div>
+      <div class="step"><div class="sn s">8</div><div class="sb"><strong>Return-from-interrupt restores state</strong></div></div>
+      <div class="step"><div class="sn s">9</div><div class="sb"><strong>Foreground program resumes</strong></div></div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="cblk bs">
+      <h3>⚡ Interrupt Priorities, Masking & Vectors</h3>
+      <div class="kv-list">
+        <div class="kv"><span class="kk">Masking</span><span class="kv_">Lower-priority interrupt not serviced while higher is being handled. Hardware tracks current priority level.</span></div>
+        <div class="kv"><span class="kk">NMI</span><span class="kv_">Non-Maskable Interrupt — highest priority, cannot be disabled. For critical hardware events (power failure, hardware fault).</span></div>
+        <div class="kv"><span class="kk">Non-vectored / shared</span><span class="kv_">Multiple devices share one interrupt line. ISR must poll each device's status to identify source. Earlier checks = higher software priority.</span></div>
+        <div class="kv"><span class="kk">Vectored</span><span class="kv_">Device sends vector number → CPU indexes table directly to correct ISR. Faster dispatch.</span></div>
+        <div class="kv"><span class="kk">Additional levels</span><span class="kv_">External hardware: interrupt controllers, priority encoders, daisy chains.</span></div>
+      </div>
+      <div class="fbox fs" style="margin-top:.8rem">
+Vectored entry address:
+  addr = base + (vector_num × entry_size)
+
+Example: base=0x80001000, entry_size=4, vector=5
+  addr = 0x80001000 + 20 = 0x80001014
+      </div>
+    </div>
+    <div class="cblk bs">
+      <h3>⏱️ Interrupt Timing Calculation</h3>
+      <p class="desc">When a higher-priority interrupt preempts a running handler, use this formula:</p>
+      <div class="fbox fs">
+finish_cycle = resume_cycle + remaining_cycles − 1
+      </div>
+      <div class="steps">
+        <div class="step"><div class="sn s">1</div><div class="sb">Find cycles already run: <em>ran = interrupt_cycle − start</em></div></div>
+        <div class="step"><div class="sn s">2</div><div class="sb">Remaining = total_cycles − ran</div></div>
+        <div class="step"><div class="sn s">3</div><div class="sb">Higher-priority handler runs to completion</div></div>
+        <div class="step"><div class="sn s">4</div><div class="sb">Preempted resumes next cycle after. Apply formula.</div></div>
+      </div>
+      <div class="ex es" style="margin-top:.8rem">
+        <div class="ex-lbl">Quiz 3-181: A(30cy, higher) preempts B(25cy) at end of cycle 5</div>
+        <div class="ex-row"><strong>B ran:</strong> 5 cycles → remaining = 20</div>
+        <div class="ex-row"><strong>A runs:</strong> cycles 6–35 (30 cycles)</div>
+        <div class="ex-row"><strong>B resumes:</strong> cycle 36</div>
+        <div class="ex-row"><strong>B finishes:</strong> 36 + 20 − 1 = <strong>cycle 55</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card cs">
+      <h3>🤖 ARM7 IRQ Response (Responding)</h3>
+      <div class="steps">
+        <div class="step"><div class="sn s">①</div><div class="sb"><strong>LR ← PC + 4</strong> — save return address (PC was 2 ahead due to pipeline; +4 to point to instruction after the interrupted one)</div></div>
+        <div class="step"><div class="sn s">②</div><div class="sb"><strong>SPSR ← CPSR</strong> — save current processor state</div></div>
+        <div class="step"><div class="sn s">③</div><div class="sb"><strong>CPSR mode bits ← IRQ</strong> — switch to IRQ mode</div></div>
+        <div class="step"><div class="sn s">④</div><div class="sb"><strong>CPSR[I] ← 1</strong> — disable further IRQs</div></div>
+        <div class="step"><div class="sn s">⑤</div><div class="sb"><strong>PC ← 0x00000018</strong> — jump to IRQ vector entry</div></div>
+      </div>
+      <p style="font-size:.83rem;color:var(--mid);margin-top:.8rem">Leaving ISR: <code>SUBS PC, LR, #4</code> → restores CPSR from SPSR_irq and returns.</p>
+    </div>
+    <div class="card cs">
+      <h3>🗺️ ARM Vector Table</h3>
+      <div class="kv-list">
+        <div class="kv"><span class="kk mono">0x00</span><span class="kv_">Reset</span></div>
+        <div class="kv"><span class="kk mono">0x04</span><span class="kv_">Undefined Instruction</span></div>
+        <div class="kv"><span class="kk mono">0x08</span><span class="kv_">SWI / SVC (software interrupt)</span></div>
+        <div class="kv"><span class="kk mono">0x0C</span><span class="kv_">Prefetch Abort</span></div>
+        <div class="kv"><span class="kk mono">0x10</span><span class="kv_">Data Abort</span></div>
+        <div class="kv"><span class="kk mono">0x18</span><span class="kv_"><strong>IRQ</strong> ← general hardware interrupts</span></div>
+        <div class="kv"><span class="kk mono">0x1C</span><span class="kv_">FIQ (fast interrupt)</span></div>
+      </div>
+      <p style="font-size:.83rem;color:var(--mid);margin-top:.6rem">High vectors alternative: 0xFFFF0000. IRQ latency: ~4–27 cycles.</p>
+    </div>
+    <div class="card cs">
+      <h3>🔒 Exceptions, Traps & Supervisor Mode</h3>
+      <div class="kv-list">
+        <div class="kv"><span class="kk">Exception</span><span class="kv_">Any event deviating normal flow: divide-by-zero, illegal instruction, reset, page fault.</span></div>
+        <div class="kv"><span class="kk">Synchronous</span><span class="kv_">Caused by currently executing instruction (trap, page fault).</span></div>
+        <div class="kv"><span class="kk">Asynchronous</span><span class="kv_">Caused by internal processor events independent of current instruction.</span></div>
+        <div class="kv"><span class="kk">Trap</span><span class="kv_">Synchronous, precise exception (divide-by-zero, illegal access). Used to implement system calls.</span></div>
+        <div class="kv"><span class="kk">ARM SWI/SVC</span><span class="kv_">Software interrupt: enters Supervisor mode to request OS services. Explicitly invoked by software.</span></div>
+        <div class="kv"><span class="kk">Supervisor mode</span><span class="kv_">Privileged mode for OS kernel: access to MMU, interrupt control, protected resources.</span></div>
+      </div>
+    </div>
+    <div class="card cs">
+      <h3>🔧 Co-Processors</h3>
+      <div class="kv-list">
+        <div class="kv"><span class="kk">Role</span><span class="kv_">Extend CPU with specialized hardware (floating point, MMU, crypto, etc.)</span></div>
+        <div class="kv"><span class="kk">ARM slots</span><span class="kv_">ARM7 defines up to 16 co-processor slots (CP0–CP15)</span></div>
+        <div class="kv"><span class="kk">Absent CP</span><span class="kv_">If CP instruction executed without CP present: undefined-instruction trap fires → OS can emulate in software (slower but compatible)</span></div>
+        <div class="kv"><span class="kk">Data exchange</span><span class="kv_">CPU and CP exchange data via architecturally defined instructions</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec"><span class="pill p-sky">3.3</span><h2>Cache Memory</h2></div>
+  <div class="grid">
+    <div class="card cs">
+      <h3>💾 Cache Basics</h3>
+      <ul>
+        <li>Small, fast memory storing copies of recently accessed main memory <strong>blocks (cache lines)</strong></li>
+        <li>May be: instruction cache + data cache (split/Harvard), or unified</li>
+        <li><strong>Cache hit:</strong> block found → fast</li>
+        <li><strong>Cache miss:</strong> not found → fetch from main memory → slow</li>
+        <li><strong>Working set:</strong> set of locations repeatedly accessed; cache most effective when it fits</li>
+        <li>Caches increase average speed but increase <em>variability</em></li>
+      </ul>
+    </div>
+    <div class="card cs">
+      <h3>❌ Three Types of Cache Misses</h3>
+      <div class="kv-list">
+        <div class="kv"><span class="kk">Compulsory (cold)</span><span class="kv_">First-ever access to a block — unavoidable. Occurs regardless of cache size.</span></div>
+        <div class="kv"><span class="kk">Capacity</span><span class="kv_">Working set exceeds cache size — too many blocks needed.</span></div>
+        <div class="kv"><span class="kk">Conflict</span><span class="kv_">Multiple blocks compete for same cache line in direct-mapped or set-associative caches.</span></div>
+      </div>
+    </div>
+    <div class="card cs">
+      <h3>📐 AMAT Formulas</h3>
+      <p><strong>Single-level:</strong></p>
+      <div class="fbox fs" style="margin:.4rem 0">
+t_avg = t_cache + (1−h) × t_main
+      </div>
+      <p><strong>Two-level L1+L2:</strong></p>
+      <div class="fbox fs" style="margin:.4rem 0">
+t_avg = tL1 + (1−h1)tL2 + (1−h1)(1−h2)tmain
+      </div>
+      <p style="font-size:.83rem;color:var(--mid);margin-top:.5rem">Always pay tL1. Only pay tL2 if L1 misses. Only pay tmain if both miss.</p>
+    </div>
+    <div class="card cs">
+      <h3>🔢 Cache Organizations & Policies</h3>
+      <div class="kv-list">
+        <div class="kv"><span class="kk">Direct-mapped</span><span class="kv_">Each block maps to exactly one cache line → fastest, highest conflict misses</span></div>
+        <div class="kv"><span class="kk">Fully-associative</span><span class="kv_">Any block can go anywhere → fewest misses, most complex</span></div>
+        <div class="kv"><span class="kk">N-way set-assoc</span><span class="kv_">Each block maps to a set, can go in any of N ways → balance</span></div>
+        <div class="kv"><span class="kk">Write-through</span><span class="kv_">Update main memory on every write → simpler but more traffic</span></div>
+        <div class="kv"><span class="kk">Write-back</span><span class="kv_">Update main memory only when dirty line evicted → less traffic</span></div>
+        <div class="kv"><span class="kk">Replacement</span><span class="kv_">LRU (best), Random, FIFO — which line to evict on miss</span></div>
+      </div>
+    </div>
+    <div class="card cs full">
+      <h3>🔎 Example Implementations</h3>
+      <table class="tbl sky-hd">
+        <tr><th>Processor</th><th>Cache</th><th>Associativity</th><th>Line Size</th><th>Write Policy</th></tr>
+        <tr><td class="lc">ARM600</td><td>4 KB unified</td><td>64-way set assoc</td><td>16 bytes</td><td>—</td></tr>
+        <tr><td class="lc">StrongARM</td><td>16 KB inst + 16 KB data</td><td>32-way</td><td>32 bytes</td><td>Write-back (data)</td></tr>
+        <tr><td class="lc">C5510</td><td>16 KB inst</td><td>2-way set assoc</td><td>16 bytes</td><td>—</td></tr>
+        <tr><td class="lc">ARM7 (core)</td><td><strong>No cache</strong></td><td>—</td><td>—</td><td>Predictable timing</td></tr>
+        <tr><td class="lc">ARM720T/740T</td><td>8 KB unified</td><td>2-way set assoc</td><td>32 bytes</td><td>Write-back</td></tr>
+      </table>
+      <p style="margin-top:.6rem;font-size:.83rem;color:var(--mid)">ARM7 core has NO cache — this gives <strong>predictable timing</strong> (important for real-time systems), lower complexity, and lower power.</p>
+    </div>
+  </div>
+
+  <div class="sec"><span class="pill p-sky">3.4</span><h2>Memory Management</h2></div>
+
+  <div class="cblk" style="border-left-color:var(--peach-d)">
+    <h3>📦 Virtual Memory Overview</h3>
+    <p class="desc">Virtual memory provides each process its own <strong>virtual address space</strong>, independent of physical memory layout. The MMU translates virtual → physical addresses and enforces memory protection.</p>
+    <div class="grid" style="gap:.8rem">
+      <div>
+        <p class="desc"><strong>Advantages:</strong></p>
+        <ul style="font-size:.85rem;color:var(--mid);padding-left:1.2rem;line-height:1.9">
+          <li>Flexibility: memory can be relocated/resized transparently</li>
+          <li>Abstraction: each process sees contiguous private address space</li>
+          <li>Efficiency: physical memory used efficiently via demand paging</li>
+          <li>Protection: isolate processes; protect kernel from user programs</li>
+          <li>Sharing: shared libraries, shared memory, copy-on-write</li>
+        </ul>
+      </div>
+      <div>
+        <p class="desc"><strong>MMU tasks:</strong></p>
+        <ul style="font-size:.85rem;color:var(--mid);padding-left:1.2rem;line-height:1.9">
+          <li>Virtual-to-physical address translation</li>
+          <li>Memory protection and access control</li>
+          <li>Detection of page faults</li>
+          <li>Support for demand paging (pages in swap space)</li>
+        </ul>
+        <p class="desc" style="margin-top:.6rem"><strong>Page fault:</strong> CPU accesses a virtual page not resident in physical memory → OS handler loads it from disk.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cblk bp">
+    <h3>📦 Segmentation</h3>
+    <p class="desc">Memory divided into variable-size <strong>segments</strong>. Each segment: base address + limit (size). Provides protection with variable-sized regions, but suffers from fragmentation.</p>
+    <div class="fbox fp">
+Physical address = segment_base + offset
+Constraint: offset &lt; segment_limit (else → protection fault)
+    </div>
+    <p class="desc">Segment number N starts at address N × 0x10 (segments at 16-byte boundaries).</p>
+    <div class="ex ep">
+      <div class="ex-lbl">Quiz 3-252: Segment #8 allocated 8 KB. Next available segment?</div>
+      <div class="ex-row"><strong>Base of #8:</strong> 8 × 0x10 = 0x80</div>
+      <div class="ex-row"><strong>Size 8 KB:</strong> 0x2000</div>
+      <div class="ex-row"><strong>End addr:</strong> 0x80 + 0x2000 = 0x2080</div>
+      <div class="ex-row"><strong>Next seg #:</strong> 0x2080 ÷ 0x10 = <strong>0x208</strong></div>
+    </div>
+  </div>
+
+  <div class="cblk bs">
+    <h3>📄 Paging — Step-by-Step Method</h3>
+    <p class="desc">Fixed-size pages in virtual space map to fixed-size frames in physical memory. The OS maintains a page table per process; the MMU does translation using it. Offset bits are identical in virtual and physical addresses.</p>
+    <div class="fbox fs">
+Virtual  = [ Page Number  | Offset ]
+Physical = [ Frame Number | Offset ]   (offset unchanged)
+    </div>
+    <div class="steps">
+      <div class="step"><div class="sn s">1</div><div class="sb"><strong>offset_bits</strong> = log₂(page_size_bytes) <br>4 KB → log₂(4096) = <strong>12 bits</strong></div></div>
+      <div class="step"><div class="sn s">2</div><div class="sb"><strong>page_number_bits</strong> = total_address_bits − offset_bits <br>32-bit addr, 12 offset → <strong>20 bits</strong></div></div>
+      <div class="step"><div class="sn s">3</div><div class="sb"><strong>flat table entries</strong> = 2^(page_number_bits) <br>20 bits → <strong>1,048,576 = 1M entries</strong></div></div>
+      <div class="step"><div class="sn s">4</div><div class="sb"><strong>frame_number_bits</strong> = log₂(physical_memory) − offset_bits <br>1 GB physical → log₂(1GB) = 30, so 30 − 12 = <strong>18 bits per entry</strong></div></div>
+      <div class="step"><div class="sn s">5</div><div class="sb"><strong>Decompose virtual address:</strong><br>page# = vaddr &gt;&gt; offset_bits<br>offset = vaddr &amp; (page_size − 1)<br>Addr 0x00ABC123: page# = 0x00ABC, offset = 0x123</div></div>
+      <div class="step"><div class="sn s">6</div><div class="sb"><strong>Physical address:</strong> concatenate [frame#][offset]<br>Frame 0x02000, offset 0x123 → phys = <strong>0x02000123</strong></div></div>
+    </div>
+    <div class="ex es" style="margin-top:1rem">
+      <div class="ex-lbl">Full Example — 32-bit, 4 KB pages, 1 GB physical</div>
+      <div class="ex-row"><strong>offset bits:</strong> 12 | <strong>page# bits:</strong> 20 | <strong>entries:</strong> 1M | <strong>frame bits:</strong> 18</div>
+      <div class="ex-row"><strong>addr 0x00ABC123:</strong> page#=0x00ABC, offset=0x123</div>
+      <div class="ex-row"><strong>physical (frame 0x02000):</strong> 0x02000123</div>
+    </div>
+  </div>
+
+  <div class="cblk">
+    <h3>🗂️ Two-Level Page Tables</h3>
+    <p class="desc">A flat page table for 32-bit addresses with 4 KB pages = 4 MB per process — wasteful for sparse address spaces. Multi-level tables only allocate second-level tables for used address ranges.</p>
+    <div class="fbox">
+Virtual = [ L1_index | L2_index | Offset ]
+
+L1 table: always 1, always allocated
+L2 tables: 1 per used L1 entry (allocated on demand)
+    </div>
+    <p class="desc"><strong>Pentium (x86) 2-level example:</strong> 10-bit L1, 10-bit L2, 12-bit offset. L1 = 1024 entries, each points to L2 table of 1024 entries.</p>
+    <div class="steps">
+      <div class="step"><div class="sn">1</div><div class="sb"><strong>L2 entries per table</strong> = total_flat_entries ÷ L1_entries</div></div>
+      <div class="step"><div class="sn">2</div><div class="sb"><strong>Pages needed by program</strong> = program_size ÷ page_size</div></div>
+      <div class="step"><div class="sn">3</div><div class="sb"><strong>L2 tables needed</strong> = ⌈pages_needed ÷ L2_entries_per_table⌉</div></div>
+      <div class="step"><div class="sn">4</div><div class="sb"><strong>Total tables</strong> = 1 (L1) + L2_tables_needed</div></div>
+    </div>
+    <div class="ex" style="margin-top:.8rem">
+      <div class="ex-lbl">Quiz 3-252: 4KB pages, 1024 L1 entries, 20 MB program</div>
+      <div class="ex-row"><strong>L2 entries each:</strong> 1M ÷ 1024 = 1024 (covers 4MB)</div>
+      <div class="ex-row"><strong>Pages for 20MB:</strong> 20MB ÷ 4KB = 5120</div>
+      <div class="ex-row"><strong>L2 tables:</strong> ⌈5120 ÷ 1024⌉ = 5</div>
+      <div class="ex-row"><strong>Total:</strong> 1 + 5 = <strong>6 page tables</strong></div>
+    </div>
+  </div>
+
+  <div class="cblk bs">
+    <h3>⚡ TLB — Translation Lookaside Buffer</h3>
+    <p class="desc">Page tables are in main memory → every address translation needs a memory access. The TLB is a <strong>hardware cache of recent page table entries</strong> (virtual → physical mappings) that dramatically speeds up address translation.</p>
+    <div class="kv-list">
+      <div class="kv"><span class="kk">TLB hit</span><span class="kv_">Translation found in TLB → very fast (same cycle)</span></div>
+      <div class="kv"><span class="kk">TLB miss</span><span class="kv_">Walk the page table in memory → slow. Update TLB with the result.</span></div>
+      <div class="kv"><span class="kk">PTE contents</span><span class="kv_">Frame number + Present bit + Dirty bit + Permission bits (R/W/X)</span></div>
+    </div>
+  </div>
+
+  <div class="sec"><span class="pill p-sky">3.5</span><h2>CPU Performance & Power</h2></div>
+  <div class="grid">
+    <div class="card cs">
+      <h3>⚡ CPU Performance</h3>
+      <div class="fbox fs" style="margin:.4rem 0">
+Execution Time = IC × CPI × T_cycle
+      </div>
+      <div class="kv-list">
+        <div class="kv"><span class="kk">IC</span><span class="kv_">Instruction count</span></div>
+        <div class="kv"><span class="kk">CPI</span><span class="kv_">Cycles per instruction (ARM7 pipeline: 3)</span></div>
+        <div class="kv"><span class="kk">T_cycle</span><span class="kv_">Clock period = 1/frequency</span></div>
+        <div class="kv"><span class="kk">Latency</span><span class="kv_">Cycles for one instruction to complete</span></div>
+        <div class="kv"><span class="kk">Throughput (IPC)</span><span class="kv_">Instructions completed per cycle</span></div>
+        <div class="kv"><span class="kk">Pipelining</span><span class="kv_">↑ throughput, latency unchanged. Pipeline stalls (bubbles) from: data hazards, control hazards, memory latency</span></div>
+      </div>
+    </div>
+    <div class="card cs">
+      <h3>🔋 CMOS Power Consumption</h3>
+      <div class="fbox fs" style="margin:.4rem 0">
+P_total = P_dynamic + P_leakage
+P_dynamic = α × C × V² × f
+      </div>
+      <div class="kv-list">
+        <div class="kv"><span class="kk">α (alpha)</span><span class="kv_">Switching activity — fraction of transitions</span></div>
+        <div class="kv"><span class="kk">C</span><span class="kv_">Load capacitance</span></div>
+        <div class="kv"><span class="kk">V²</span><span class="kv_">Supply voltage — <strong>quadratic!</strong> Halving V → ¼ power</span></div>
+        <div class="kv"><span class="kk">f</span><span class="kv_">Clock frequency — linear</span></div>
+        <div class="kv"><span class="kk">Leakage</span><span class="kv_">Transistor leakage; increases with process scaling; eliminated by power-gating</span></div>
+      </div>
+    </div>
+    <div class="card cs">
+      <h3>💤 Power-Saving Strategies</h3>
+      <ul>
+        <li><strong>Lower V (DVFS):</strong> quadratic reduction in dynamic power</li>
+        <li><strong>Lower f:</strong> linear reduction</li>
+        <li><strong>Clock gating:</strong> reduce α by not clocking idle units</li>
+        <li><strong>DVFS:</strong> dynamically adjust both V and f per workload</li>
+        <li><strong>Power gating:</strong> disconnect idle blocks (eliminates leakage)</li>
+        <li><strong>Sleep modes:</strong> halt most chip activity</li>
+        <li><strong>Static PM:</strong> fixed user-selected mode (e.g., low-power mode)</li>
+        <li><strong>Dynamic PM:</strong> OS adjusts automatically based on workload</li>
+      </ul>
+    </div>
+    <div class="card cs">
+      <h3>💡 PowerPC 603 Power Example</h3>
+      <p>Consumes 2.2W at 80 MHz. Techniques used:</p>
+      <ul>
+        <li>Clock gating of unused execution units</li>
+        <li>Unused pipeline stage clock gating</li>
+        <li>8 KB cache divided into 8 subarrays — at most 2 subarrays accessed per cycle (reduces switching capacitance)</li>
+      </ul>
+      <p style="margin-top:.6rem;font-size:.83rem;color:var(--mid)">SPEC benchmarks showed high idle rates → dynamic clock gating highly beneficial.</p>
+    </div>
+  </div>
+
+</div><!-- end ch3 -->
+
+  </div><!-- wrap -->
+</div><!-- page-guide -->
+
+
+<!-- ═══ PRACTICE ═══ -->
+<div class="page" id="page-practice">
+  <div class="qhero">
+    <div class="hero-tag">Past Quiz Questions + Conceptual MCQs</div>
+    <h1>Practice by Chapter</h1>
+    <p>Exact questions from Quiz 1–3 Term 252 + Terms 171, 181, 191 · Plus conceptual questions</p>
+  </div>
+  <div class="qwrap">
+    <div id="score-wrap" class="sbar" style="display:none">
+      <div><div class="sc-num" id="score-txt">0/0</div><div class="sc-lbl">MCQ Score</div></div>
+    </div>
+    <div class="qch-tabs">
+      <button class="qch q1 active" onclick="switchQ(1,this)">🖥️ Ch.1 — Embedded Systems</button>
+      <button class="qch q2" onclick="switchQ(2,this)">⚙️ Ch.2 — Instruction Sets</button>
+      <button class="qch q3" onclick="switchQ(3,this)">🔌 Ch.3 — CPUs</button>
+    </div>
+    <div class="qset active" id="qs1"><div id="q1c"></div></div>
+    <div class="qset" id="qs2"><div id="q2c"></div></div>
+    <div class="qset" id="qs3"><div id="q3c"></div></div>
+  </div>
+</div>
+
+<script>
+function showPage(id,btn){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));document.getElementById('page-'+id).classList.add('active');btn.classList.add('active');if(id==='practice')renderAll();}
+function openChapter(n){showPage('guide',document.querySelectorAll('.nav-btn')[1]);switchCh(n,document.querySelectorAll('.ch-tab')[n-1]);}
+function switchCh(n,btn){document.querySelectorAll('.ch-tab').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.ch-content').forEach(c=>c.classList.remove('active'));btn.classList.add('active');document.getElementById('ch'+n).classList.add('active');}
+function switchQ(n,btn){document.querySelectorAll('.qch').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.qset').forEach(s=>s.classList.remove('active'));btn.classList.add('active');document.getElementById('qs'+n).classList.add('active');}
+function toggleSol(btn){const s=btn.nextElementSibling;const v=s.classList.contains('vis');s.classList.toggle('vis',!v);btn.textContent=v?'Show Solution':'Hide Solution';}
+
+const sc={c1:{c:0,t:0},c2:{c:0,t:0},c3:{c:0,t:0}};
+function selOpt(el,ci){
+  const g=el.parentElement;if(g.dataset.a==='1')return;g.dataset.a='1';
+  const correct=parseInt(g.dataset.correct);const key=g.dataset.key;
+  g.querySelectorAll('.opt')[correct].classList.add('correct');
+  if(ci!==correct)el.classList.add('wrong');
+  if(ci===correct)sc[key].c++;sc[key].t++;
+  g.querySelectorAll('.opt').forEach(o=>{if(!o.classList.contains('correct')&&!o.classList.contains('wrong'))o.style.opacity='0.5';});
+  const tot=sc.c1.c+sc.c2.c+sc.c3.c,totQ=sc.c1.t+sc.c2.t+sc.c3.t;
+  if(totQ>0){document.getElementById('score-wrap').style.display='flex';document.getElementById('score-txt').textContent=tot+'/'+totQ;}
+}
+
+const L=['A','B','C','D','E','F'];
+function qMCQ(q,key){
+  let h=`<div class="qcard"><div class="q-src">${q.src}</div><div class="qtext">${q.text}</div>`;
+  h+=`<div class="opts" data-correct="${q.correct}" data-key="${key}" data-a="0">`;
+  q.opts.forEach((o,i)=>h+=`<div class="opt" onclick="selOpt(this,${i})"><span class="ol">${L[i]}</span>${o}</div>`);
+  h+=`</div></div>`;return h;
+}
+function qW(q){
+  let h=`<div class="qcard"><div class="q-src">${q.src}</div><div class="qtext">${q.text.replace(/\n/g,'<br>')}</div>`;
+  if(q.code)h+=`<div class="qcode">${q.code}</div>`;
+  h+=`<button class="ssol" onclick="toggleSol(this)">Show Solution</button><div class="sol">${q.sol}</div></div>`;
+  return h;
+}
+
+/* ══ CHAPTER 1 ══ */
+const q1=[
+  {src:'Quiz 1 · Term 252 · MCQ',text:'Which best captures the modern definition of an embedded system?',opts:['A system with no user interface and fixed hardware','A programmable computing system designed to perform a dedicated function as part of a larger product','Any system using a microcontroller instead of a microprocessor','A low-frequency system programmed only in assembly','A device that cannot run an operating system'],correct:1},
+  {src:'Quiz 1 · Term 252 · MCQ',text:'Which scenario is MOST appropriately classified as an embedded system application?',opts:['A desktop computer running simulation software','A cloud server dynamically allocating virtual machines','A washing machine controller adjusting water level and cycle timing from sensors','A laptop used to develop and debug firmware','A workstation performing batch data analytics with GPUs'],correct:2},
+  {src:'Quiz 1 · Term 252 · MCQ',text:'Which combination MOST strongly suggests an MCU rather than an MPU?',opts:['External DDR, high-speed I/O, multitasking OS','Multi-core CPU, GPU, external chipset','High flexibility, large memory, dynamic application loading','Software abstraction layers and hardware virtualization','Low power, on-chip peripherals, software tailored to a specific product function'],correct:4},
+  {src:'Quiz 1 · Term 252 · MCQ',text:'Which characteristics BEST distinguish an embedded system from a general-purpose system?',opts:['High clock frequency, large memory, feature-rich OS','User-programmable software, dynamic scheduling, abstraction-heavy APIs','High computational throughput, average-case performance','Dedicated functionality, real-time constraints, tight hardware integration','Extensive peripheral libraries, virtualized resources'],correct:3},
+  {src:'Quiz 1 · Term 252 · MCQ',text:'Why is worst-case execution time more critical than average-case in embedded systems?',opts:['Missing a deadline may cause system failure even if average is good','Average-case is difficult to measure accurately','Embedded systems typically run faster than general-purpose','Worst-case is easier to compute','Embedded systems do not execute tasks repeatedly'],correct:0},
+  {src:'Quiz 1 · Term 252 · MCQ',text:'Which scenario BEST demonstrates a hard real-time requirement?',opts:['A video stream occasionally drops frames','A navigation system takes longer to compute a route','A printer misses a page boundary and corrupts output','A web server experiences increased latency','A smartwatch delays updating step count'],correct:2},
+  {src:'Quiz 1 · Term 252 · MCQ',text:'Which GPS Moving Map requirement is best classified as a CONSTRAINT?',opts:['Display the current position on a map','Lock onto GPS within 15 seconds','Map should scroll smoothly','Use a 400×600 pixel display','Update the screen within 0.25 s of movement'],correct:3},
+  {src:'Quiz 1 · Term 252 · MCQ',text:'Which is a FUNCTIONAL requirement?',opts:['The system shall process sensor data and compute control output at every sampling instant','The system shall operate reliably between −20°C and 70°C','The system shall consume less than 2 W during normal operation','The system shall comply with ISO 26262','The system shall use an ARM Cortex-M processor'],correct:0},
+  {src:'Quiz 1 · Term 252 · MCQ',text:'Which design trade-off is illustrated by smooth map scrolling vs 8-hour battery life?',opts:['Peak processing vs algorithmic accuracy','Performance vs power','Feature richness vs energy','Usability vs physical size','Frame rate vs memory footprint'],correct:1},
+  {src:'Quiz 1 · Term 252 · MCQ',text:'Which software stack layer provides hardware abstraction improving portability across boards?',opts:['Bare Metal','Chip SDK','Hardware Abstraction Layer (HAL)','Kernel/OS','Application Framework'],correct:2},
+  {src:'Quiz 1 · Term 252 · MCQ',text:'Which statement best distinguishes requirements from specifications?',opts:['Requirements define implementation details, specifications define user needs','Requirements are informal; specifications are precise and verifiable','Specifications precede requirements in the design flow','Requirements describe architecture; specifications describe testing','Specifications describe why; requirements describe what to implement'],correct:1},
+  {src:'Quiz 1 · Term 252 · MCQ',text:'Why is system integration one of the most challenging phases?',opts:['Embedded systems lack debugging tools entirely','Most bugs originate from incorrect requirements','Integration only involves hardware components','Integration focuses on performance optimization','Component interactions reveal issues not visible during isolated development'],correct:4},
+  {src:'Quiz 1 · Term 252 · MCQ',text:'For a battery-powered medical infusion pump guaranteeing precise drug timing, which metric is MOST critical?',opts:['Average throughput','Peak CPU frequency','Worst-case execution time','Memory bandwidth','Energy per instruction'],correct:2},
+  {src:'Quiz 1 · Term 252 · MCQ',text:'Which situation BEST justifies an FPGA instead of an MCU?',opts:['High-speed parallel data processing with custom interfaces','Low-cost consumer appliance','Simple periodic sensor polling','Battery-powered wearable device','System requiring OTA firmware updates'],correct:0},
+  {src:'Quiz 1 · Term 252 · MCQ',text:'A GPS device meets all specifications but users say it is hard to use while driving. Failure in:',opts:['Verification','Validation','Architecture','Integration','Component design'],correct:1},
+  {src:'Quiz 1 · Term 252 · MCQ',text:'Correct design process sequence?',opts:['Specifications → Requirements → Architecture → Component → Integration','Requirements → Architecture → Specifications → Component → Integration','Requirements → Specifications → Architecture → Component → Integration','Requirements → Specifications → Component → Architecture → Integration','Architecture → Requirements → Specifications → Component → Integration'],correct:2},
+  {src:'Conceptual · Ch.1',text:'Which is an example of a SOFT real-time system?',opts:['Automotive ABS brakes','Pacemaker timing control','Medical infusion pump','Video streaming over a network','Nuclear reactor shutdown'],correct:3},
+  {src:'Conceptual · Ch.1',text:'The key advantage of an ASIC over an MCU for a specific task is:',opts:['ASICs can be reprogrammed after deployment','ASICs are cheaper to develop','ASICs provide the highest performance and lowest power for that task','ASICs support running operating systems','ASICs have more flexibility than MCUs'],correct:2},
+  {src:'Conceptual · Ch.1',text:'In the GPS Moving Map, which requirement is NON-FUNCTIONAL?',opts:['Display current position on a map','Show major roads and landmarks','Lock onto GPS within 15 seconds','Use a pop-up menu interface','Store map data locally'],correct:2},
+  {src:'Conceptual · Ch.1',text:'Which tool provides the most direct access to CPU registers during embedded testing?',opts:['UART logging','JTAG / in-circuit debugger','Power analyzer','Logic analyzer','SWO tracing'],correct:1},
+  /* ── Terms 161 / 171 / 181 / 191 ── */
+  {src:'Quiz 1 · Terms 181 & 191 · Fill-in',type:'w',text:'What is an embedded system? Give two examples.',sol:`An embedded system is <strong>any device that includes a programmable computer but is not itself a general-purpose computer</strong>.<br><br>Examples: calculator, fax machine, clock, coffee maker, printer, TV, microwave, camera, car ECU.`},
+  {src:'Quiz 1 · Terms 161 & 171',type:'w',text:'List at least three characteristics of embedded systems.',sol:`1. <strong>Sophisticated functionality</strong><br>2. <strong>Real-time operation</strong> — must meet timing deadlines<br>3. <strong>Low manufacturing cost</strong><br>4. <strong>Low power</strong><br>5. <strong>Designed to tight deadlines by small teams</strong>`},
+  {src:'Quiz 1 · Term 171',type:'w',text:'Explain the types of real-time deadlines and give an example of each.',sol:`<strong>Hard real-time:</strong> Missing the deadline causes system failure.<br>Example: missed deadlines in printers result in scrambled pages.<br><br><strong>Soft real-time:</strong> Missing the deadline results in degraded performance but not failure.<br>Example: streaming audio/video drops frames.`},
+  {src:'Quiz 1 · Terms 161 & 171',type:'w',text:'List the steps in the embedded system design process.',sol:`1. <strong>Requirements</strong><br>2. <strong>Specification</strong><br>3. <strong>Architecture</strong><br>4. <strong>Component design</strong><br>5. <strong>System integration</strong>`},
+  {src:'Quiz 1 · Term 171',type:'w',text:'What should a specification provide, and what should it NOT do?',sol:`A specification should:<br>• Provide precise, unambiguous, complete description of the system<br>• Provide input to the architecture design process<br>• Clarify design objectives and prevent faulty assumptions<br><br>It should <strong>NOT</strong> imply a particular architecture or implementation.`},
+  {src:'Quiz 1 · Terms 161 & 171',type:'w',text:'Explain the difference between functional and non-functional requirements. Give an example of each.',sol:`<strong>Functional requirements</strong> express what the system <em>does</em> — the output as a function of input.<br>Example: "Display the current GPS position on a map."<br><br><strong>Non-functional requirements</strong> express system constraints — how well it performs.<br>Examples: time required to compute output, cost, size, weight, power consumption, reliability.`},
+  {src:'Quiz 1 · Term 181 / 191 · Fill-in',type:'w',text:'The difference between a microprocessor and a microcontroller is that a microcontroller includes ________ and ________.',sol:`A microcontroller includes <strong>I/O devices</strong> and <strong>on-board memory</strong> (RAM + Flash) — making it a self-contained system on a chip.<br><br>A microprocessor is just the CPU; it requires external chips for memory and peripherals.`},
+  {src:'Quiz 1 · Term 181 / 191 · Fill-in',type:'w',text:'Microprocessors have ________ flexibility and ________ performance than FPGAs.',sol:`Microprocessors have <strong>higher</strong> flexibility and <strong>lower</strong> performance than FPGAs.<br><br>FPGAs are configurable hardware — they implement custom parallel logic that can run much faster for a specific task, but they are harder to reprogram than software.`},
+  {src:'Quiz 1 · Term 161',type:'w',text:'List two challenges in embedded system design.',sol:`1. <strong>Testing for real-time characteristics</strong> — testing on real data and verifying worst-case timing<br>2. <strong>Limited observability and controllability</strong> — no keyboard/screen; debug via JTAG, logic analyzers<br>3. Restricted development environments<br>4. Supporting multiple versions/generations on the same hardware while meeting performance`},
+];
+
+/* ══ CHAPTER 2 ══ */
+const q2=[
+  {src:'Quiz 2 · Term 252 · Q1',type:'w',text:'Compare Von Neumann and Harvard architectures. What is the key difference and why is Harvard preferred for DSP?',sol:`<strong>Von Neumann:</strong> single shared memory for both instructions and data → only one memory access at a time.<br><br><strong>Harvard:</strong> separate memories → simultaneous fetch of next instruction while reading/writing data → higher memory bandwidth.<br><br>Harvard is preferred for DSP because it allows the CPU to <strong>fetch the next instruction and read a data operand in the same clock cycle</strong> — critical for the repeated multiply-accumulate operations in digital signal processing.`},
+  {src:'Quiz 2 · Term 252 · Q2',type:'w',text:'Explain the difference between RISC and CISC architectures.',sol:`<strong>RISC:</strong> Fewer, simpler instructions; fixed instruction sizes; load/store model (only LDR/STR access memory; ALU ops work only on registers); pipelined execution.<br><br><strong>CISC:</strong> Large set of complex instructions; variable instruction sizes; many addressing modes; arithmetic instructions can directly operate on memory.<br><br>Early RISC substantially outperformed CISC. Performance gap narrowed as CISC processors internally translate to RISC-style micro-operations.`},
+  {src:'Quiz 2 · Term 252 · Q3',type:'w',text:'Define superscalar and VLIW processors. Which is more energy-efficient?',sol:`<strong>Superscalar:</strong> Hardware dynamically detects independent instructions at <em>runtime</em> and issues multiple instructions per cycle in parallel. Requires complex out-of-order dispatch logic.<br><br><strong>VLIW:</strong> Compiler statically schedules parallel operations at <em>compile time</em> into wide instruction words. No runtime dispatch hardware needed.<br><br><strong>VLIW is more energy-efficient</strong> — it avoids the power-hungry runtime dependency checking and scheduling hardware. Widely used in DSPs and multimedia processors.`},
+  {src:'Quiz 2 · Term 252 · Q4',type:'w',text:'When do the following condition codes evaluate to true: LO (unsigned lower), GT (signed greater than)?',sol:`<strong>LO (unsigned lower):</strong> C = 0<br>The carry flag is clear after an unsigned comparison — result is strictly lower.<br><br><strong>GT (signed greater than):</strong> Z = 0 AND N = V<br>Z = 0 means not equal. N = V means the sign bit matches the overflow bit — the signed subtraction result was positive (meaning first operand was greater).`},
+  {src:'Quiz 2 · Term 252 · Q5',type:'w',text:'Implement with minimum ARM instructions:\nif (r0 != 0) r1 = r1 + r0;',sol:`<pre style="margin:0.4rem 0;background:#1e1a2e;border-radius:8px;padding:0.8rem;font-size:0.82rem">CMP   r0, #0
+ADDNE r1, r1, r0</pre>CMP sets flags. ADDNE executes only when Z=0 (r0 ≠ 0). No branch needed — avoids pipeline stall.`},
+  {src:'Quiz 2 · Term 252 · Q6',type:'w',text:'Write a single ARM instruction for: r0 = r1 + (r2 × 8)',sol:`<pre style="margin:0.4rem 0;background:#1e1a2e;border-radius:8px;padding:0.8rem;font-size:0.82rem">ADD r0, r1, r2, LSL #3</pre>LSL #3 shifts r2 left by 3 = multiply by 8. ARM's barrel shifter applies this as part of ADD with no extra cycles.`},
+  {src:'Quiz 2 · Term 252 · Q7',type:'w',text:'Implement with minimum ARM instructions (signed numbers):\nif (r0 > r1) r2 = 1; else r2 = 0;',sol:`<pre style="margin:0.4rem 0;background:#1e1a2e;border-radius:8px;padding:0.8rem;font-size:0.82rem">CMP   r0, r1
+MOVGT r2, #1
+MOVLE r2, #0</pre>GT (signed greater): Z=0 and N=V. LE is its complement.`},
+  {src:'Quiz 2 · Term 252 · Q8',type:'w',text:'Write a single ARM instruction to initialize r0 with −5 using MVN.',sol:`<pre style="margin:0.4rem 0;background:#1e1a2e;border-radius:8px;padding:0.8rem;font-size:0.82rem">MVN r0, #4</pre>MVN stores NOT(operand). NOT(4) = NOT(0b00000100) = 0xFFFFFFFB = −5 in 32-bit two's complement. General rule: to load −N, use MVN with #(N−1).`},
+  {src:'Quiz 2 · Term 252 · Q9',type:'w',text:'Write minimum ARM instructions for: r0 = r0 × 35',sol:`<pre style="margin:0.4rem 0;background:#1e1a2e;border-radius:8px;padding:0.8rem;font-size:0.82rem">ADD r0, r0, r0, LSL #2   ; r0 = r0 + 4×r0 = 5×r0
+RSB r0, r0, r0, LSL #3   ; r0 = 8×r0 − r0 = 7×(5×original)</pre>35 = 5 × 7. RSB = reverse subtract: Op2 − Rn. RSB r0,r0,r0,LSL#3 = 8r0−r0 = 7r0.`},
+  {src:'Quiz 2 · Term 252 · Q10',type:'w',text:'Write a single ARM instruction to load 0xFF0 using the rotate-right immediate encoding.',sol:`<pre style="margin:0.4rem 0;background:#1e1a2e;border-radius:8px;padding:0.8rem;font-size:0.82rem">MOV r0, #0xFF, 28</pre>0xFF rotated right by 28 = 0xFF shifted left by 4 = 0xFF0. Follows the "8-bit value rotated right by an even number" rule.`},
+  {src:'Quiz 2 · Term 252 · Q11',type:'w',text:'r0=0x10, r1=0x20. After: STR r0, [r1, #8]\nAddress written? Value stored? r1 after?',sol:`Pre-indexed without writeback:<br><strong>Address:</strong> r1 + 8 = 0x20 + 8 = <strong>0x28</strong><br><strong>Value stored:</strong> r0 = <strong>0x10</strong><br><strong>r1 after:</strong> <strong>0x20</strong> (unchanged — no ! suffix)`},
+  {src:'Quiz 2 · Term 252 · Q12',type:'w',text:'r0=0x10, r1=0x20. After: STR r0, [r1], #8\nAddress written? Value stored? r1 after?',sol:`Post-indexed: address = base register BEFORE update.<br><strong>Address:</strong> r1 = <strong>0x20</strong><br><strong>Value stored:</strong> r0 = <strong>0x10</strong><br><strong>r1 after:</strong> 0x20 + 8 = <strong>0x28</strong>`},
+  {src:'Quiz 2 · Term 252 · Q13',type:'w',text:'Minimum ARM instructions for:\nif (r0==4 || r1==10 || r2==5) r3=0;',sol:`<pre style="margin:0.4rem 0;background:#1e1a2e;border-radius:8px;padding:0.8rem;font-size:0.82rem">CMP   r0, #4
+CMPNE r1, #10
+CMPNE r2, #5
+MOVEQ r3, #0</pre>OR chain: CMPNE executes only if Z=0 (previous was not equal). If any comparison sets Z=1, subsequent CMPNEs skip and MOVEQ fires.`},
+  {src:'Quiz 2 · Term 252 · Q14',type:'w',text:'Minimum ARM instructions for:\nif (r0==4 && r1==10 && r2==5) r3=0;',sol:`<pre style="margin:0.4rem 0;background:#1e1a2e;border-radius:8px;padding:0.8rem;font-size:0.82rem">CMP   r0, #4
+CMPEQ r1, #10
+CMPEQ r2, #5
+MOVEQ r3, #0</pre>AND chain: CMPEQ only executes if Z=1 (previous was equal). All must match for MOVEQ to execute.`},
+  {src:'Quiz 2 · Term 252 · Q15',type:'w',text:'r0=0x100, r1=1, r2=2, r3=3, r4=4\nSTMIB r0!, {r1,r2,r3,r4}\nShow memory contents and r0 after.',sol:`IB = Increment Before: first address = r0 + 4 = <strong>0x104</strong>. Lowest reg → lowest address.<br><br><strong>mem[0x104] ← r1 = 1</strong><br><strong>mem[0x108] ← r2 = 2</strong><br><strong>mem[0x10C] ← r3 = 3</strong><br><strong>mem[0x110] ← r4 = 4</strong><br><br><strong>r0 = 0x110</strong> (writeback after 4 stores)`},
+  {src:'Quiz 2 · Term 252 · Q16',type:'w',text:'r0=0x100, r1=1, r2=2, r3=3, r4=4\nSTMDA r0!, {r1,r2,r3,r4}\nShow memory contents and r0 after.',sol:`DA = Decrement After: highest reg at highest address, stores go downward. First address = r0 - (n-1)×4 = 0x100 - 12 = <strong>0x0F4</strong>.<br><br><strong>mem[0x100] ← r4 = 4</strong><br><strong>mem[0x0FC] ← r3 = 3</strong><br><strong>mem[0x0F8] ← r2 = 2</strong><br><strong>mem[0x0F4] ← r1 = 1</strong><br><br><strong>r0 = 0x0F0</strong> (decremented by 0x10 = 16)`},
+  {src:'Quiz 2 · Term 252 · Q17',type:'w',text:'Show the ARM instruction used to return from a function.',sol:`<pre style="margin:0.4rem 0;background:#1e1a2e;border-radius:8px;padding:0.8rem;font-size:0.82rem">MOV pc, lr</pre>LR (r14) holds the return address saved by BL. Writing to PC (r15) returns to caller. Alternatively, if registers are popped from stack: <code>LDMFD sp!, {r4-r11, pc}</code>`},
+  {src:'Quiz 2 · Term 252 · Q18',type:'w',text:'SP = 0x100. What is SP after: STMFD SP!, {r0, r1, r3-r6}',sol:`STMFD = Full Descending = STMDB = Decrement Before.<br>Registers: r0, r1, r3, r4, r5, r6 = <strong>6 registers</strong> × 4 bytes = 24 = <strong>0x18</strong><br><br>SP new = 0x100 − 0x18 = <strong>0xE8</strong>`},
+  /* PIC16F from Quiz 3-252 */
+  {src:'Quiz 3 · Term 252 · Q1.1',text:'What memory architecture does PIC16F use?',opts:['Von Neumann','Harvard','Modified Harvard','CISC','RISC with shared memory'],correct:1},
+  {src:'Quiz 3 · Term 252 · Q1.2',text:'PIC16F instruction/data widths:',opts:['8-bit instructions, 13-bit data','13-bit instructions, 8-bit data','14-bit instructions, 8-bit data','8-bit instructions, 14-bit data','16-bit instructions, 8-bit data'],correct:2},
+  {src:'Quiz 3 · Term 252 · Q1.3',text:'The PIC16F Program Counter is:',opts:['11-bit','12-bit','13-bit','14-bit','8-bit'],correct:2},
+  {src:'Quiz 3 · Term 252 · Q1.4',type:'w',text:'Register 0x30 initially contains 0x0F.\nExecute: INCF 0x30, F\n         DECF 0x30, W\nWhat is [0x30] and W after?',sol:`<strong>INCF 0x30, F:</strong> 0x30 = 0x0F + 1 = 0x10. d=F means store back to register.<br><br><strong>DECF 0x30, W:</strong> W = current[0x30] − 1 = 0x10 − 1 = 0x0F. d=W means store to W, register unchanged.<br><br><strong>[0x30] = 0x10,  W = 0x0F</strong>`},
+  {src:'Quiz 3 · Term 252 · Q1.5',type:'w',text:'What memory location is modified and what value after:\nMOVLW 0x55\nMOVWF FSR\nMOVLW 0xAA\nMOVWF INDF',sol:`MOVLW 0x55 → W = 0x55<br>MOVWF FSR → FSR = 0x55 (set indirect pointer)<br>MOVLW 0xAA → W = 0xAA<br>MOVWF INDF → mem[FSR] = <strong>mem[0x55] = 0xAA</strong><br><br>Memory location <strong>0x55</strong> is modified to contain <strong>0xAA</strong>.`},
+  {src:'Quiz 3 · Term 252 · Q1.6',type:'w',text:'How many times does GOTO execute?\n\n    MOVLW 0x03\n    MOVWF 0x21\nLOOP:\n    DECFSZ 0x21, F\n    GOTO LOOP',sol:`Initial [0x21] = 3<br>Iteration 1: 3 → 2. Not zero → <strong>GOTO executes</strong> (count: 1)<br>Iteration 2: 2 → 1. Not zero → <strong>GOTO executes</strong> (count: 2)<br>Iteration 3: 1 → 0. Zero → DECFSZ <strong>skips GOTO</strong>. Loop exits.<br><br><strong>GOTO executes 2 times.</strong> General rule: for initial value N, GOTO executes N−1 times.`},
+  {src:'Quiz 3 · Term 252 · Q1.7',type:'w',text:'What address executes after ADDWF PCL, F?\n\n    org  0x010\n    MOVLW 0x03      ; addr 0x010\n    ADDWF PCL, F    ; addr 0x011\n    NOP             ; 0x012\n    NOP             ; 0x013\n    NOP             ; 0x014\n    MOVLW 0x99      ; 0x015',sol:`When ADDWF PCL,F executes at 0x011, the PC has already incremented to point to the next instruction: PCL = <strong>0x12</strong>.<br><br>W = 0x03<br>PCL ← 0x12 + 0x03 = <strong>0x15</strong><br><br>Execution jumps to address <strong>0x015</strong> → MOVLW 0x99.`},
+  /* Conceptual Ch2 */
+  {src:'Conceptual · Ch.2',text:'What does the S suffix do when added to an ARM data processing instruction (e.g., ADDS)?',opts:['Shifts the second operand','Forces Supervisor mode','Updates the condition flags (N,Z,C,V) based on the result','Stores result to memory','Makes the instruction conditional'],correct:2},
+  {src:'Conceptual · Ch.2',text:'In ARM, STMFD SP!, {r4-r7} stores r4 at the LOWEST memory address because:',opts:['r4 is pushed first to the stack','ARM always stores lowest-numbered register to lowest memory address','The ! reverses the order','SP decrements after each store','r4 has the smallest value'],correct:1},
+  {src:'Conceptual · Ch.2',text:'What is the ARM immediate value encoding rule?',opts:['Any 32-bit value','Any 16-bit value','8-bit value rotated right by any number','8-bit value rotated right by an even number of positions','Any value fitting in 12 bits'],correct:3},
+  {src:'Conceptual · Ch.2',text:'PIC16F maximum nested subroutine calls?',opts:['Unlimited (software stack)','16','8','4','32'],correct:2},
+  {src:'Conceptual · Ch.2',text:'What happens when DECFSZ executes and the result IS zero?',opts:['CPU stops execution','Next instruction is skipped','A trap is triggered','Loop restarts','Carry flag is set'],correct:1},
+  {src:'Conceptual · Ch.2',text:'ARM: RSB r0, r1, #10 computes:',opts:['r0 = r1 − 10','r0 = 10 − r1','r0 = r1 + 10','r0 = r0 − r1','r0 = r1 × 10'],correct:1},
+  {src:'Conceptual · Ch.2',text:'Why does ARM conditional execution avoid branch instructions for short if-statements?',opts:['Branches are not supported in ARM','Conditional instructions execute faster than branches','Branches stall the pipeline; conditional instructions skip with only 1 wasted cycle','Conditional execution uses less memory','All conditions are evaluated simultaneously'],correct:2},
+  {src:'Conceptual · Ch.2',text:'In PIC16F, what is the purpose of the PCLATH register?',opts:['It holds the return address for subroutines','It supplies the upper 2 bits of the 13-bit PC for GOTO/CALL instructions','It sets the bank for indirect addressing','It controls the watchdog timer','It holds the W register backup'],correct:1},
+  {src:'Conceptual · Ch.2',text:'Why does VLIW architecture use less power than superscalar for the same throughput?',opts:['VLIW uses smaller transistors','VLIW eliminates the runtime instruction scheduling and dispatch hardware','VLIW runs at lower clock frequency','VLIW uses Harvard architecture','VLIW has fewer registers'],correct:1},
+];
+
+/* ══ CHAPTER 3 ══ */
+const q3=[
+  {src:'Quiz 3 · Term 252 · Q2.1',type:'w',text:'Why is busy-wait (polling) I/O inefficient? Give three disadvantages.',sol:`<strong>1.</strong> CPU continuously checks device status register → wastes all cycles doing nothing useful while waiting.<br><br><strong>2.</strong> CPU cannot perform any other work while polling — completely blocked.<br><br><strong>3.</strong> Poor scalability: with many devices, each must be polled, greatly increasing response latency and overhead.<br><br>(Also: Higher power consumption due to constant CPU activity.)`},
+  {src:'Quiz 3 · Term 252 · Q2.2',type:'w',text:'List the correct order of events when an interrupt occurs.',sol:`1. Interrupt source asserts interrupt request<br>2. CPU finishes current instruction<br>3. CPU acknowledges interrupt<br>4. Hardware supplies interrupt vector<br>5. CPU saves execution state<br>6. CPU jumps to ISR<br>7. ISR executes (services device)<br>8. Return-from-interrupt restores state<br>9. Foreground program resumes`},
+  {src:'Quiz 3 · Term 252 · Q2.3',type:'w',text:'Vectored interrupt system: table base=0x80001000, entry size=4 bytes, vector number=5. What is the entry address?',sol:`<strong>Formula:</strong> address = base + (vector × entry_size)<br>= 0x80001000 + (5 × 4)<br>= 0x80001000 + 0x14<br>= <strong>0x80001014</strong>`},
+  {src:'Quiz 3 · Term 252 · Q2.4',type:'w',text:'Segment #8 is allocated 8 KB. What is the next available segment number?\n(Segments start at 16-byte boundaries)',sol:`Base of segment #8 = 8 × 0x10 = <strong>0x80</strong><br>Size = 8 KB = <strong>0x2000</strong><br>End (first free byte) = 0x80 + 0x2000 = <strong>0x2080</strong><br>Next segment # = 0x2080 ÷ 0x10 = <strong>0x208</strong>`},
+  {src:'Quiz 3 · Term 252 · Q3(i)',type:'w',text:'32-bit logical addresses, 4 KB pages, 1 GB physical memory.\n(i) How many entries in a flat page table?',sol:`Offset bits = log₂(4096) = <strong>12 bits</strong><br>Page# bits = 32 − 12 = <strong>20 bits</strong><br>Entries = 2²⁰ = <strong>1,048,576 (1M entries)</strong>`},
+  {src:'Quiz 3 · Term 252 · Q3(ii)',type:'w',text:'32-bit logical addresses, 4 KB pages.\nLogical address 0x00ABC123: page number and offset?',sol:`Page size = 4KB → offset = low 12 bits<br><strong>Page # = </strong>0x00ABC123 >> 12 = <strong>0x00ABC</strong><br><strong>Offset = </strong>0x00ABC123 & 0xFFF = <strong>0x123</strong>`},
+  {src:'Quiz 3 · Term 252 · Q3(iii)',type:'w',text:'32-bit logical addresses, 4 KB pages, 1 GB physical memory.\n(iii) How wide is each page table entry (frame number bits)?',sol:`Physical memory = 1 GB = 2³⁰ bytes<br>Physical address bits = 30<br>Offset bits = 12<br>Frame # bits = 30 − 12 = <strong>18 bits per entry</strong>`},
+  {src:'Quiz 3 · Term 252 · Q3(iv)',type:'w',text:'Logical address 0x00ABC123 maps to physical frame 0x02000. Physical address?',sol:`Physical = [frame#][offset] concatenated<br>Frame = 0x02000, Offset = 0x123 (12 bits)<br>Physical = <strong>0x02000123</strong><br><br>Verify: (0x02000 × 4096) + 0x123 = 0x02000000 + 0x123 ✓`},
+  {src:'Quiz 3 · Term 252 · Q3(v)',type:'w',text:'Two-level page table: L1 has 1024 entries.\nEntries per L2 table? Total page tables for a 20 MB program?',sol:`Total flat entries = 2²⁰ = 1,048,576<br>L2 entries per table = 1,048,576 ÷ 1024 = <strong>1024</strong><br>Coverage per L2 table = 1024 × 4KB = 4MB<br>Pages for 20MB = 20MB ÷ 4KB = 5120<br>L2 tables needed = ⌈5120 ÷ 1024⌉ = <strong>5</strong><br>Total = 1 (L1) + 5 = <strong>6 page tables</strong>`},
+  {src:'Quiz 3 · Term 181',type:'w',text:'Fill in: In memory-mapped I/O, a ________ address is assigned to each I/O device register and ________ instructions are used.',sol:`A <strong>memory</strong> address is assigned. <strong>Memory read/write (LDR/STR in ARM)</strong> instructions are used.<br><br>Since device registers are at memory addresses, no special I/O instructions are needed — normal loads and stores communicate with devices.`},
+  {src:'Quiz 3 · Term 181',type:'w',text:'Fill in: A device knows its interrupt request is accepted when it sees its ________ on the interrupt acknowledge lines.',sol:`The device sees its <strong>interrupt vector number (or priority number)</strong> on the acknowledge lines.<br><br>The CPU broadcasts the vector number back after acknowledging. The device recognizes its own vector and responds by supplying the ISR address.`},
+  {src:'Quiz 3 · Term 181',type:'w',text:'Device A (30 cycles, higher priority) and device B (25 cycles). A interrupts at end of cycle 5 while B is executing. When does B finish?',sol:`B started at cycle 1, interrupted at end of cycle 5.<br><strong>B ran:</strong> 5 cycles → remaining = 25 − 5 = <strong>20 cycles</strong><br><strong>A runs:</strong> cycles 6 → 35 (30 cycles)<br><strong>B resumes:</strong> cycle 36<br><strong>B finishes:</strong> 36 + 20 − 1 = <strong>cycle 55</strong>`},
+  {src:'Quiz 3 · Term 181',type:'w',text:'Two-level cache. Write the AMAT formula.',sol:`<pre style="margin:0.4rem 0;background:#1e1a2e;border-radius:8px;padding:0.8rem;font-size:0.82rem">t_avg = tL1 + (1−h1)×tL2 + (1−h1)(1−h2)×tmain</pre><strong>Always pay tL1.</strong> If L1 misses (prob = 1−h1): pay tL2 too. If both miss (prob = (1−h1)(1−h2)): pay tmain too.`},
+  {src:'Quiz 3 · Term 181 · VM',type:'w',text:'Virtual memory: 32-bit addresses, 1 KB pages, 1 GB physical.\n(i) Offset/page# bits?\n(ii) Flat table entries?\n(iii) Frame# entry width?\n(iv) Addr 0x00020FB8: page# and offset?\n(v) Frame 0x20: physical address?\n(vi) Two-level, 2048 L1 entries: L2 size? Tables for 8MB?',sol:`<strong>(i)</strong> offset = log₂(1024) = <strong>10 bits</strong>. page# = 32−10 = <strong>22 bits</strong>.<br><br><strong>(ii)</strong> entries = 2²² = <strong>4M entries</strong>.<br><br><strong>(iii)</strong> 1GB = 2³⁰ → frame bits = 30−10 = <strong>20 bits per entry</strong>.<br><br><strong>(iv)</strong> page# = 0x00020FB8 >> 10 = <strong>0x83</strong> (0x20FB8>>10 = 0x83). offset = 0xFB8 & 0x3FF = <strong>0x3B8</strong>. Actually: 0x00020FB8 = 0x83×0x400 + 0x3B8, so page#=<strong>0x83</strong>, offset=<strong>0x3B8</strong>.<br><br><strong>(v)</strong> Physical = [0x20][0x3B8] = 0x20×1024 + 0x3B8 = 0x8000 + 0x3B8 = <strong>0x83B8</strong>.<br><br><strong>(vi)</strong> L2 entries = 4M ÷ 2048 = <strong>2048 each</strong>. Pages for 8MB = 8MB÷1KB = 8192. L2 tables = ⌈8192÷2048⌉ = 4. Total = 1+4 = <strong>5 page tables</strong>.`},
+  /* Conceptual Ch3 */
+  {src:'Conceptual · Ch.3',text:'The key advantage of interrupt-based I/O over polling:',opts:['Interrupts are always faster','CPU can do useful work between device events instead of spinning','Interrupts use less memory','Polling always has higher latency','Interrupts prevent all timing issues'],correct:1},
+  {src:'Conceptual · Ch.3',text:'Which cache miss occurs because a block has NEVER been accessed before?',opts:['Capacity miss','Conflict miss','Compulsory (cold) miss','Write miss','TLB miss'],correct:2},
+  {src:'Conceptual · Ch.3',text:'In t_avg = t_cache + (1−h)×t_main, h represents:',opts:['Cache hit time','Fraction that misses the cache','Hit rate — fraction of accesses served by cache','Number of cache lines','Memory bandwidth'],correct:2},
+  {src:'Conceptual · Ch.3',text:'Purpose of a Translation Lookaside Buffer (TLB):',opts:['Stores recently accessed data blocks','Caches recent virtual-to-physical address translations','Holds the interrupt vector table','Buffers writes to main memory','Manages cache line eviction'],correct:1},
+  {src:'Conceptual · Ch.3',text:'Why is LR set to PC+4 (not PC) during ARM IRQ response?',opts:['PC+4 skips the instruction after the interrupt','PC+4 ensures return to instruction that caused the interrupt','ARM pipeline already fetched 2 instructions ahead; PC+4 accounts for this to return to the instruction after the interrupted one','SP+4 compensates for the delayed write','+4 is the size of the vector entry'],correct:2},
+  {src:'Conceptual · Ch.3',text:'In P_dynamic = αCV²f, why does reducing V have greater impact than reducing f?',opts:['Voltage affects more transistors','Voltage reduction is quadratic (V²) while frequency is linear','Reducing f also reduces C','Voltage affects both dynamic and leakage equally','Clock gating eliminates need for voltage scaling'],correct:1},
+  {src:'Conceptual · Ch.3',text:'Why does a two-level page table use less memory than a flat table for sparse address spaces?',opts:['L2 tables use smaller entries','Second-level tables are only allocated for address ranges actually used by the program','Two-level tables compress repeated entries','L1 table is stored in cache','Two-level paging reduces offset bits'],correct:1},
+  {src:'Conceptual · Ch.3',text:'What happens when a co-processor instruction is executed and the co-processor is absent?',opts:['The instruction is silently ignored','An undefined-instruction trap fires; the OS may emulate it in software','The CPU hangs indefinitely','The instruction executes using the main ALU','A page fault occurs'],correct:1},
+  {src:'Conceptual · Ch.3',text:'What distinguishes an exception from a trap?',opts:['Exceptions are only caused by hardware; traps only by software','A trap is a synchronous, precise exception caused by the currently executing instruction; exceptions can also be asynchronous','Traps cannot be handled by the OS','Exceptions always cause a reboot','Traps only occur in user mode'],correct:1},
+];
+
+let rendered=false;
+function renderAll(){
+  if(rendered)return;rendered=true;
+  document.getElementById('q1c').innerHTML=q1.map(q=>q.opts?qMCQ(q,'c1'):qW(q)).join('');
+  document.getElementById('q2c').innerHTML=q2.map(q=>q.opts?qMCQ(q,'c2'):qW(q)).join('');
+  document.getElementById('q3c').innerHTML=q3.map(q=>q.opts?qMCQ(q,'c3'):qW(q)).join('');
+}
+</script>
+<footer style="text-align:center;padding:2rem;font-size:.75rem;color:#c0b8cc;letter-spacing:.04em;">made by lamar alotaibi</footer>
+</body>
+</html>
