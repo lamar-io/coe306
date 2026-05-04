@@ -170,15 +170,112 @@ pre{font-family:'Space Mono',monospace;font-size:.79rem;line-height:1.9;backgrou
 .sbar{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;background:var(--white);border-radius:14px;padding:1rem 1.5rem;box-shadow:var(--sh);}
 .sc-num{font-family:'Lora',serif;font-size:1.6rem;font-weight:600;}
 .sc-lbl{font-size:.83rem;color:var(--light);}
-</style>
-</head>
-<body>
 
+/* ── Ch.4-8 tab colors ── */
+.ch-tab.t4.active{background:var(--sky-d);border-color:var(--sky-d);color:#fff;}
+.ch-tab.t5.active{background:var(--peach-d);border-color:var(--peach-d);color:#fff;}
+.ch-tab.t6.active{background:var(--mint-d);border-color:var(--mint-d);color:#fff;}
+.ch-tab.t7.active{background:var(--rose-d);border-color:var(--rose-d);color:#fff;}
+.ch-tab.t8.active{background:var(--lav-d);border-color:var(--lav-d);color:#fff;}
+/* csky/cpeach/cmint/crose/clav/cbutter card borders */
+.csky{border-color:var(--sky-l);}.cpeach{border-color:var(--peach-l);}.cmint{border-color:var(--mint-l);}.crose{border-color:var(--rose-l);}.clav{border-color:var(--lav-l);}.cbutter{border-color:var(--butter-l);}
+/* table header variants */
+.sky-hd th{background:var(--sky-l);color:var(--sky-d);}.peach-hd th{background:var(--peach-l);color:var(--peach-d);}
+.mint-hd th{background:var(--mint-l);color:var(--mint-d);}.rose-hd th{background:var(--rose-l);color:var(--rose-d);}
+.lav-hd th{background:var(--lav-l);color:var(--lav-d);}.butter-hd th{background:var(--butter-l);color:var(--butter-d);}
+/* bsky/bpeach/bmint/brose/blav left-border variants */
+.bsky{border-left-color:var(--sky-d);}.bpeach{border-left-color:var(--peach-d);}.bmint{border-left-color:var(--mint-d);}.brose{border-left-color:var(--rose-d);}.blav{border-left-color:var(--lav-d);}
+/* fbox color variants */
+.fbox{background:var(--lav-l);color:var(--lav-d);}
+.fsky{background:var(--sky-l);color:var(--sky-d);}.fpeach{background:var(--peach-l);color:var(--peach-d);}.fmint{background:var(--mint-l);color:var(--mint-d);}.frose{background:var(--rose-l);color:var(--rose-d);}.flav{background:var(--lav-l);color:var(--lav-d);}
+/* ex box color variants */
+.esky{background:#eef6fd;border-color:var(--sky-l);}.epeach{background:#fff8f0;border-color:var(--peach-l);}.emint{background:#f0faf6;border-color:var(--mint-l);}.erose{background:#fff0f4;border-color:var(--rose-l);}.elav{background:#f9f6ff;border-color:var(--lav-l);}
+.ex-lbl{font-size:.67rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem;}
+.lbl-sky{color:var(--sky-d);}.lbl-peach{color:var(--peach-d);}.lbl-mint{color:var(--mint-d);}.lbl-rose{color:var(--rose-d);}.lbl-lav{color:var(--lav-d);}
+/* sn step-number color variants */
+.ss{background:var(--sky-l);color:var(--sky-d);}.sp{background:var(--peach-l);color:var(--peach-d);}.sm{background:var(--mint-l);color:var(--mint-d);}.sr{background:var(--rose-l);color:var(--rose-d);}.sl{background:var(--lav-l);color:var(--lav-d);}
+/* INTERACTIVE WIDGETS */
+.widget{background:var(--white);border-radius:14px;padding:1.4rem;box-shadow:var(--sh);margin:1rem 0;}
+.slider-row{display:flex;align-items:center;gap:.8rem;margin:.4rem 0;}
+.slider-row label{font-size:.81rem;font-weight:600;min-width:160px;color:var(--dark);}
+input[type=range]{flex:1;height:5px;border-radius:3px;outline:none;cursor:pointer;}
+.sval{font-family:'Space Mono',monospace;font-size:.77rem;padding:2px 8px;border-radius:6px;min-width:70px;text-align:center;font-weight:700;}
+.sv-sky{background:var(--sky-l);color:var(--sky-d);}.sv-peach{background:var(--peach-l);color:var(--peach-d);}.sv-mint{background:var(--mint-l);color:var(--mint-d);}.sv-rose{background:var(--rose-l);color:var(--rose-d);}.sv-lav{background:var(--lav-l);color:var(--lav-d);}
+.out-box{border-radius:9px;padding:.75rem 1.1rem;font-family:'Space Mono',monospace;font-size:.76rem;line-height:1.85;margin-top:.5rem;white-space:pre-wrap;}
+.o-sky{background:var(--sky-l);color:var(--sky-d);}.o-peach{background:var(--peach-l);color:var(--peach-d);}.o-mint{background:var(--mint-l);color:var(--mint-d);}.o-rose{background:var(--rose-l);color:var(--rose-d);}.o-lav{background:var(--lav-l);color:var(--lav-d);}
+/* CODE EDITOR */
+.code-editor-wrap{border-radius:12px;overflow:hidden;margin:.7rem 0;box-shadow:var(--sh);}
+.ce-header{background:#2d2535;padding:.5rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:.6rem;}
+.ce-title{font-family:'Space Mono',monospace;font-size:.73rem;color:#9b8bd0;font-weight:700;}
+.ce-run-btn{padding:5px 14px;border-radius:15px;border:none;background:var(--mint-d);color:#fff;font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .18s;}
+.ce-run-btn:hover{background:var(--mint-l);color:var(--mint-d);}
+.ce-reset-btn{padding:5px 14px;border-radius:15px;border:none;background:#3a3050;color:#9b8bd0;font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:600;cursor:pointer;}
+.ce-reset-btn:hover{background:#4a4060;color:#c5b8e8;}
+textarea.ce-code{width:100%;background:#1e1a2e;color:#e8e0ff;font-family:'Space Mono',monospace;font-size:.77rem;line-height:1.85;padding:1rem 1.2rem;border:none;outline:none;resize:vertical;min-height:120px;}
+.ce-output{background:#0f0b1e;color:#a8d8c8;font-family:'Space Mono',monospace;font-size:.75rem;line-height:1.7;padding:.7rem 1.1rem;min-height:44px;border-top:1px solid #2d2535;white-space:pre-wrap;}
+.ce-output.err{color:#f4a7b9;}
+/* SAR BITS */
+.sar-row{display:flex;gap:4px;margin:.7rem 0;flex-wrap:wrap;}
+.sar-bit{width:36px;height:36px;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-weight:700;font-size:.82rem;transition:all .3s;}
+.sar-bit .bl{font-size:.52rem;font-weight:400;color:rgba(255,255,255,.7);margin-top:1px;}
+.sb-pend{background:#3a3050;color:#9b8bd0;border:2px solid #3a3050;}
+.sb-one{background:var(--mint-d);color:#fff;border:2px solid var(--mint-d);}
+.sb-zero{background:var(--mid);color:#f0e8ff;border:2px solid var(--mid);}
+.sb-test{background:var(--butter-d);color:#fff;border:2px solid var(--butter-d);animation:blink .35s ease-in-out;}
+@keyframes blink{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+/* UART FRAME */
+.uart-frame{display:flex;border-radius:9px;overflow:hidden;font-family:'Space Mono',monospace;font-size:.68rem;font-weight:700;margin:.7rem 0;}
+.uf{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.45rem .1rem;text-align:center;min-width:0;line-height:1.3;}
+/* PWM */
+.pwm-wrap{background:#1e1a2e;border-radius:11px;padding:.4rem;margin:.7rem 0;}
+svg.pwm{width:100%;height:120px;}
+/* FSM */
+.fsm-state-chip{padding:7px 16px;border-radius:20px;font-size:.81rem;font-weight:700;border:2px solid;transition:all .3s;}
+/* BUF */
+.buf-cell{width:50px;height:50px;border-radius:9px;border:2px solid;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-weight:700;font-size:.8rem;transition:all .3s;position:relative;}
+.buf-cell .bi{font-size:.56rem;font-weight:400;color:var(--light);margin-top:2px;}
+/* Practice Ch4-8 tab colors */
+.qch.q4.active{background:var(--sky-d);border-color:var(--sky-d);color:#fff;}
+.qch.q5.active{background:var(--peach-d);border-color:var(--peach-d);color:#fff;}
+.qch.q6.active{background:var(--mint-d);border-color:var(--mint-d);color:#fff;}
+.qch.q7.active{background:var(--rose-d);border-color:var(--rose-d);color:#fff;}
+.qch.q8.active{background:var(--lav-d);border-color:var(--lav-d);color:#fff;}
+/* NUM INPUT */
+.num-q{display:flex;gap:.7rem;align-items:center;flex-wrap:wrap;margin-top:.7rem;}
+.num-q input{padding:7px 12px;border-radius:9px;border:2px solid var(--lav-l);font-family:'Space Mono',monospace;font-size:.86rem;width:120px;text-align:center;outline:none;transition:border-color .2s;}
+.num-q input:focus{border-color:var(--lav-d);}
+.num-q input.ok{border-color:var(--mint-d);background:#e8f9ef;}
+.num-q input.bad{border-color:var(--rose-d);background:#fce4ec;}
+.chk-btn{padding:7px 18px;border-radius:20px;border:2px solid var(--lav-d);background:var(--white);color:var(--lav-d);font-family:'DM Sans',sans-serif;font-size:.81rem;font-weight:600;cursor:pointer;transition:all .18s;}
+.chk-btn:hover{background:var(--lav-d);color:#fff;}
+.qfb{margin-top:.6rem;padding:.6rem .9rem;border-radius:9px;font-size:.83rem;font-family:'Space Mono',monospace;display:none;}
+.qfb.ok{background:#e8f9ef;color:#2a7a47;display:block;}
+.qfb.bad{background:#fce4ec;color:#b5294a;display:block;}
+/* FILL BLANK */
+.fb-blank{display:inline-block;border-bottom:2px solid var(--lav-d);min-width:80px;padding:1px 5px;font-family:'Space Mono',monospace;font-size:.83rem;margin:0 3px;outline:none;border-radius:3px 3px 0 0;background:transparent;color:var(--dark);}
+.fb-blank:focus{background:var(--lav-l);}
+.fb-blank.ok{border-color:var(--mint-d);background:#e8f9ef;}
+.fb-blank.bad{border-color:var(--rose-d);background:#fce4ec;}
+/* CODE Q */
+.code-q textarea{width:100%;background:#1e1a2e;color:#e8e0ff;font-family:'Space Mono',monospace;font-size:.75rem;line-height:1.8;padding:.9rem 1.1rem;border:none;outline:none;resize:vertical;border-radius:10px;margin-top:.5rem;}
+.code-q .q-check-area{display:flex;gap:.6rem;align-items:center;margin-top:.5rem;flex-wrap:wrap;}
+.code-q .hint-btn{padding:5px 14px;border-radius:16px;border:2px solid var(--butter-d);background:var(--white);color:var(--butter-d);font-size:.78rem;font-weight:600;cursor:pointer;}
+.code-q .hint-box{background:var(--butter-l);border:1.5px solid var(--butter-l);border-radius:9px;padding:.6rem .9rem;font-size:.81rem;color:var(--butter-d);margin-top:.5rem;display:none;font-family:'Space Mono',monospace;line-height:1.7;}
+/* SCORE */
+.score-bar{background:var(--white);border-radius:12px;padding:.9rem 1.3rem;box-shadow:var(--sh);margin-bottom:1.4rem;display:flex;align-items:center;gap:1.2rem;}
+.score-num{font-family:'Lora',serif;font-size:1.5rem;font-weight:600;color:var(--lav-d);}
+.score-lbl{font-size:.81rem;color:var(--light);}
+/* opt dim for ch4-8 practice */
+.opt.dim{opacity:.45;pointer-events:none;}
+
+</style>
+
+<body>
 <nav>
   <div class="nav-brand">COE 306 <span>Study Guide</span></div>
   <div class="nav-links">
     <button class="nav-btn active" onclick="showPage('home',this)">Home</button>
-    <button class="nav-btn" onclick="showPage('guide',this)">Study Guide</button>
+    <button class="nav-btn" onclick="showPage('guide',this)">Summary</button>
     <button class="nav-btn" onclick="showPage('practice',this)">Practice</button>
   </div>
 </nav>
@@ -188,7 +285,7 @@ pre{font-family:'Space Mono',monospace;font-size:.79rem;line-height:1.9;backgrou
   <div class="hero">
     <div class="hero-tag">COE 306 · Introduction to Embedded Systems · KFUPM</div>
     <h1>Your <em>Complete</em><br>Study Companion</h1>
-    <p>Full lecture content — every slide covered — with exact past-quiz questions and conceptual MCQs.</p>
+    <p>Full lecture content — Chapters 1–8 — with past-quiz questions, conceptual MCQs, and interactive tools.</p>
     <div class="ch-cards">
       <div class="ch-card ch1" onclick="openChapter(1)">
         <div class="ch-num">Chapter 1</div>
@@ -205,6 +302,31 @@ pre{font-family:'Space Mono',monospace;font-size:.79rem;line-height:1.9;backgrou
         <div class="ch-title">🔌 CPUs</div>
         <div class="ch-sub">I/O · Interrupts · Cache · Memory · Power</div>
       </div>
+      <div class="ch-card" style="border-color:var(--sky)" onclick="openChapter(4)">
+        <div class="ch-num">Chapter 4</div>
+        <div class="ch-title">📟 Computing Platforms</div>
+        <div class="ch-sub">DMA · Bus · Memory · Debugging</div>
+      </div>
+      <div class="ch-card" style="border-color:var(--peach)" onclick="openChapter(5)">
+        <div class="ch-num">Chapter 5</div>
+        <div class="ch-title">🧠 Program Design</div>
+        <div class="ch-sub">State Machines · Buffers · Timers · ISR</div>
+      </div>
+      <div class="ch-card" style="border-color:var(--mint)" onclick="openChapter(6)">
+        <div class="ch-num">Chapter 6</div>
+        <div class="ch-title">🎛️ ADC</div>
+        <div class="ch-sub">Sampling · SAR · Flash · Half-Flash</div>
+      </div>
+      <div class="ch-card" style="border-color:var(--rose)" onclick="openChapter(7)">
+        <div class="ch-num">Chapter 7</div>
+        <div class="ch-title">🌊 PWM</div>
+        <div class="ch-sub">LPC Timer · Duty Cycle · Single/Double Edge</div>
+      </div>
+      <div class="ch-card" style="border-color:var(--lav)" onclick="openChapter(8)">
+        <div class="ch-num">Chapter 8</div>
+        <div class="ch-title">📡 Serial Communication</div>
+        <div class="ch-sub">UART · SPI · I²C · Baud Rate</div>
+      </div>
     </div>
   </div>
 </div>
@@ -216,6 +338,11 @@ pre{font-family:'Space Mono',monospace;font-size:.79rem;line-height:1.9;backgrou
       <button class="ch-tab t1 active" onclick="switchCh(1,this)">🖥️ Ch.1 — Embedded Systems</button>
       <button class="ch-tab t2" onclick="switchCh(2,this)">⚙️ Ch.2 — Instruction Sets</button>
       <button class="ch-tab t3" onclick="switchCh(3,this)">🔌 Ch.3 — CPUs</button>
+      <button class="ch-tab t4" onclick="switchCh(4,this)">📟 Ch.4 — Platforms</button>
+      <button class="ch-tab t5" onclick="switchCh(5,this)">🧠 Ch.5 — Program Design</button>
+      <button class="ch-tab t6" onclick="switchCh(6,this)">🎛️ Ch.6 — ADC</button>
+      <button class="ch-tab t7" onclick="switchCh(7,this)">🌊 Ch.7 — PWM</button>
+      <button class="ch-tab t8" onclick="switchCh(8,this)">📡 Ch.8 — Serial</button>
     </div>
 
 <!-- ══════════════════════════ CHAPTER 1 ══════════════════════════ -->
@@ -240,7 +367,7 @@ pre{font-family:'Space Mono',monospace;font-size:.79rem;line-height:1.9;backgrou
     </div>
     <div class="card cr">
       <h3>⚖️ MCU vs MPU</h3>
-      <table class="tbl lav-hd">
+      <div class="tbl-wrap"><table class="tbl lav-hd">
         <tr><th></th><th>MCU</th><th>MPU</th></tr>
         <tr><td class="lc">Memory</td><td>On-chip (SRAM/Flash)</td><td>External RAM/ROM</td></tr>
         <tr><td class="lc">OS</td><td>No (bare-metal/RTOS)</td><td>Yes (Linux/Win)</td></tr>
@@ -248,16 +375,16 @@ pre{font-family:'Space Mono',monospace;font-size:.79rem;line-height:1.9;backgrou
         <tr><td class="lc">Cost</td><td>Low ($1–$10)</td><td>High ($10–$100s)</td></tr>
         <tr><td class="lc">Frequency</td><td>~32 MHz</td><td>~3 GHz</td></tr>
         <tr><td class="lc">Use</td><td>Specific control</td><td>General tasks</td></tr>
-      </table>
+      </table></div>
     </div>
     <div class="card cr">
       <h3>🏗️ Computing Platforms</h3>
-      <table class="tbl lav-hd" style="table-layout:fixed;width:100%">
+      <div class="tbl-wrap"><table class="tbl lav-hd" style="table-layout:fixed;width:100%">
         <tr><th style="width:30%">Platform</th><th style="width:23%">Flexibility</th><th style="width:24%">Performance</th><th style="width:23%">Cost</th></tr>
         <tr><td class="lc">MCU/MPU</td><td>Highest</td><td>Medium</td><td>Low</td></tr>
         <tr><td class="lc">FPGA</td><td>Medium</td><td>High</td><td>Medium</td></tr>
         <tr><td class="lc">ASIC</td><td>Fixed</td><td>Highest</td><td>Very high</td></tr>
-      </table>
+      </table></div>
       <p style="margin-top:.6rem;font-size:.83rem;color:var(--mid)">ASIC embedded developers are VLSI designers — they build the chips that MCU developers program.</p>
     </div>
     <div class="card cr">
@@ -357,14 +484,14 @@ pre{font-family:'Space Mono',monospace;font-size:.79rem;line-height:1.9;backgrou
     </div>
     <div class="card cr">
       <h3>🎯 Design Goal Conflicts (GPS Example)</h3>
-      <table class="tbl rose-hd">
+      <div class="tbl-wrap"><table class="tbl rose-hd">
         <tr><th>Goal A</th><th>vs</th><th>Goal B</th></tr>
         <tr><td>Smooth scrolling</td><td>⚡</td><td>8-hour battery</td></tr>
         <tr><td>More performance</td><td>⚡</td><td>Lower power</td></tr>
         <tr><td>Lower cost</td><td>⚡</td><td>More features</td></tr>
         <tr><td>Smaller size</td><td>⚡</td><td>Better cooling</td></tr>
         <tr><td>Determinism</td><td>⚡</td><td>Flexibility</td></tr>
-      </table>
+      </table></div>
     </div>
   </div>
 
@@ -378,25 +505,25 @@ pre{font-family:'Space Mono',monospace;font-size:.79rem;line-height:1.9;backgrou
   <div class="grid">
     <div class="card cm">
       <h3>🏛️ Von Neumann vs Harvard</h3>
-      <table class="tbl mint-hd">
+      <div class="tbl-wrap"><table class="tbl mint-hd">
         <tr><th></th><th>Von Neumann</th><th>Harvard</th></tr>
         <tr><td class="lc">Memory</td><td>Single shared</td><td>Separate inst/data</td></tr>
         <tr><td class="lc">Simultaneous?</td><td>No</td><td>Yes (higher BW)</td></tr>
         <tr><td class="lc">Self-modifying</td><td>Yes (possible)</td><td>No</td></tr>
         <tr><td class="lc">Used in</td><td>ARM7, x86</td><td>ARM9, PIC16F, DSPs</td></tr>
-      </table>
+      </table></div>
       <p style="margin-top:.8rem;font-size:.84rem;color:var(--mid)">Harvard preferred for DSP: fetch next instruction and read/write data simultaneously in same cycle.</p>
     </div>
     <div class="card cm">
       <h3>🔧 RISC vs CISC</h3>
-      <table class="tbl mint-hd">
+      <div class="tbl-wrap"><table class="tbl mint-hd">
         <tr><th></th><th>RISC</th><th>CISC</th></tr>
         <tr><td class="lc">Instructions</td><td>Fewer, simpler</td><td>Many, complex</td></tr>
         <tr><td class="lc">Instr size</td><td>Fixed</td><td>Variable</td></tr>
         <tr><td class="lc">Memory access</td><td>Load/Store only</td><td>Any instruction</td></tr>
         <tr><td class="lc">Addressing</td><td>Few modes</td><td>Many modes</td></tr>
         <tr><td class="lc">Examples</td><td>ARM, PIC16F</td><td>x86</td></tr>
-      </table>
+      </table></div>
       <p style="margin-top:.6rem;font-size:.83rem;color:var(--mid)">Early RISC substantially outperformed CISC. Gap narrowed as CISC used RISC micro-ops internally.</p>
     </div>
     <div class="card cm">
@@ -434,7 +561,7 @@ pre{font-family:'Space Mono',monospace;font-size:.79rem;line-height:1.9;backgrou
     </div>
     <div class="card cm">
       <h3>🗂️ ARM Processor Modes</h3>
-      <table class="tbl mint-hd">
+      <div class="tbl-wrap"><table class="tbl mint-hd">
         <tr><th>Mode</th><th>CPSR[4:0]</th><th>Triggered by</th></tr>
         <tr><td class="mono">User</td><td class="mono">10000</td><td>Normal execution (unprivileged)</td></tr>
         <tr><td class="mono">FIQ</td><td class="mono">10001</td><td>Fast (high-priority) interrupt</td></tr>
@@ -443,7 +570,7 @@ pre{font-family:'Space Mono',monospace;font-size:.79rem;line-height:1.9;backgrou
         <tr><td class="mono">Abort</td><td class="mono">10111</td><td>Memory access violation</td></tr>
         <tr><td class="mono">Undefined</td><td class="mono">11011</td><td>Undefined instruction</td></tr>
         <tr><td class="mono">System</td><td class="mono">11111</td><td>Privileged OS (uses User regs)</td></tr>
-      </table>
+      </table></div>
     </div>
     <div class="card cm">
       <h3>🚩 CPSR — Current Program Status Register</h3>
@@ -470,7 +597,7 @@ pre{font-family:'Space Mono',monospace;font-size:.79rem;line-height:1.9;backgrou
     </div>
     <div class="card cm full">
       <h3>📋 ARM Condition Codes — Complete Table</h3>
-      <table class="tbl mint-hd">
+      <div class="tbl-wrap"><table class="tbl mint-hd">
         <tr><th>Suffix</th><th>Meaning</th><th>Condition (flags)</th><th>Notes</th></tr>
         <tr><td class="mono">EQ</td><td>Equal</td><td>Z = 1</td><td>After CMP: operands equal</td></tr>
         <tr><td class="mono">NE</td><td>Not equal</td><td>Z = 0</td><td></td></tr>
@@ -487,7 +614,7 @@ pre{font-family:'Space Mono',monospace;font-size:.79rem;line-height:1.9;backgrou
         <tr><td class="mono">GT</td><td>Signed &gt;</td><td>Z = 0 AND N = V</td><td></td></tr>
         <tr><td class="mono">LE</td><td>Signed ≤</td><td>Z = 1 OR N ≠ V</td><td></td></tr>
         <tr><td class="mono">AL</td><td>Always (default)</td><td>—</td><td>Omit for default behavior</td></tr>
-      </table>
+      </table></div>
     </div>
   </div>
 
@@ -496,7 +623,7 @@ pre{font-family:'Space Mono',monospace;font-size:.79rem;line-height:1.9;backgrou
     <div class="card cm">
       <h3>➕ Arithmetic Operations</h3>
       <p><code>&lt;OP&gt;{cond}{S} Rd, Rn, Operand2</code></p>
-      <table class="tbl mint-hd" style="margin-top:.6rem">
+      <div class="tbl-wrap"><table class="tbl mint-hd" style="margin-top:.6rem">
         <tr><th>Op</th><th>Effect</th></tr>
         <tr><td class="mono">ADD</td><td>Rd = Rn + Op2</td></tr>
         <tr><td class="mono">ADC</td><td>Rd = Rn + Op2 + Carry</td></tr>
@@ -506,30 +633,30 @@ pre{font-family:'Space Mono',monospace;font-size:.79rem;line-height:1.9;backgrou
         <tr><td class="mono">RSC</td><td>Rd = Op2 − Rn + Carry − 1</td></tr>
         <tr><td class="mono">MUL{S} Rd,Rm,Rs</td><td>Rd = Rm × Rs</td></tr>
         <tr><td class="mono">MLA{S} Rd,Rm,Rs,Rn</td><td>Rd = Rm × Rs + Rn</td></tr>
-      </table>
+      </table></div>
       <p style="font-size:.82rem;color:var(--mid);margin-top:.6rem">MUL/MLA: cannot use PC; operands are sign-agnostic (least-sig 32 bits same).</p>
     </div>
     <div class="card cm">
       <h3>🔍 Comparisons (flag-only)</h3>
       <p><strong>Only effect: UPDATE CONDITION FLAGS.</strong> No result written, no S suffix needed.</p>
-      <table class="tbl mint-hd" style="margin-top:.6rem">
+      <div class="tbl-wrap"><table class="tbl mint-hd" style="margin-top:.6rem">
         <tr><th>Op</th><th>Computes (flags only)</th></tr>
         <tr><td class="mono">CMP Rn, Op2</td><td>Rn − Op2</td></tr>
         <tr><td class="mono">CMN Rn, Op2</td><td>Rn + Op2</td></tr>
         <tr><td class="mono">TST Rn, Op2</td><td>Rn AND Op2</td></tr>
         <tr><td class="mono">TEQ Rn, Op2</td><td>Rn XOR Op2</td></tr>
-      </table>
+      </table></div>
     </div>
     <div class="card cm">
       <h3>🔀 Logical Operations</h3>
       <p><code>&lt;OP&gt;{cond}{S} Rd, Rn, Operand2</code></p>
-      <table class="tbl mint-hd" style="margin-top:.6rem">
+      <div class="tbl-wrap"><table class="tbl mint-hd" style="margin-top:.6rem">
         <tr><th>Op</th><th>Effect</th></tr>
         <tr><td class="mono">AND</td><td>Rd = Rn AND Op2</td></tr>
         <tr><td class="mono">EOR</td><td>Rd = Rn XOR Op2</td></tr>
         <tr><td class="mono">ORR</td><td>Rd = Rn OR Op2</td></tr>
         <tr><td class="mono">BIC</td><td>Rd = Rn AND NOT Op2 (bit clear)</td></tr>
-      </table>
+      </table></div>
       <p style="font-size:.82rem;color:var(--mid);margin-top:.6rem">Logical ops do not change V flag. If no shift: C flag also unchanged.</p>
     </div>
     <div class="card cm">
@@ -551,14 +678,14 @@ MOV r3, #-1        <span style="color:#7a6a8a">; → MVN r3, #0</span></pre>
     <div class="cblk bm">
       <h3>🔄 Barrel Shifter — Part of Every Data Instruction</h3>
       <p class="desc">ARM has no dedicated shift instructions. Instead the second operand passes through a barrel shifter before the ALU. Shifts are free inside any data processing instruction.</p>
-      <table class="tbl mint-hd">
+      <div class="tbl-wrap"><table class="tbl mint-hd">
         <tr><th>Shift</th><th>Meaning</th><th>Notes</th></tr>
         <tr><td class="mono">LSL #n</td><td>Logical shift left n (×2ⁿ)</td><td>Zero-fills right</td></tr>
         <tr><td class="mono">LSR #n</td><td>Logical shift right n (÷2ⁿ unsigned)</td><td>Zero-fills left</td></tr>
         <tr><td class="mono">ASR #n</td><td>Arithmetic shift right (sign-preserving)</td><td>Sign-fills left</td></tr>
         <tr><td class="mono">ROR #n</td><td>Rotate right n bits</td><td>Bits wrap around</td></tr>
         <tr><td class="mono">RRX</td><td>Rotate right 1 bit through carry</td><td>33-bit rotation</td></tr>
-      </table>
+      </table></div>
       <p class="desc" style="margin-top:.8rem">Shift aliases are MOV shorthands: <code>LSL r0,r1,#3</code> ≡ <code>MOV r0,r1,LSL #3</code></p>
       <pre>ADD r0, r1, r2, LSL #2    <span style="color:#7a6a8a">; r0 = r1 + r2×4</span>
 SUB r3, r4, r5, ASR #1    <span style="color:#7a6a8a">; r3 = r4 - r5/2</span>
@@ -614,16 +741,16 @@ LDR r1, =FOO   <span style="color:#3d8a72">; always works</span>
   <div class="grid2">
     <div class="cblk bm">
       <h3>📥📤 LDR/STR Variants & Addressing Modes</h3>
-      <table class="tbl mint-hd">
+      <div class="tbl-wrap"><table class="tbl mint-hd">
         <tr><th>Instruction</th><th>Transfers</th></tr>
         <tr><td class="mono">LDR / STR</td><td>32-bit word</td></tr>
         <tr><td class="mono">LDRB / STRB</td><td>8-bit unsigned byte</td></tr>
         <tr><td class="mono">LDRH / STRH</td><td>16-bit unsigned halfword</td></tr>
         <tr><td class="mono">LDRSB</td><td>8-bit sign-extended byte load</td></tr>
         <tr><td class="mono">LDRSH</td><td>16-bit sign-extended halfword load</td></tr>
-      </table>
+      </table></div>
       <p style="margin-top:.8rem;font-size:.84rem;color:var(--mid)">Syntax: <code>LDR{size}{cond} Rd, &lt;address&gt;</code></p>
-      <table class="tbl mint-hd" style="margin-top:.8rem">
+      <div class="tbl-wrap"><table class="tbl mint-hd" style="margin-top:.8rem">
         <tr><th>Syntax</th><th>Address used</th><th>Rn after</th></tr>
         <tr><td class="mono">[r1, #8]</td><td>r1 + 8</td><td>unchanged</td></tr>
         <tr><td class="mono">[r1, #8]!</td><td>r1 + 8</td><td>r1 = r1+8</td></tr>
@@ -631,7 +758,7 @@ LDR r1, =FOO   <span style="color:#3d8a72">; always works</span>
         <tr><td class="mono">[r1, r2]</td><td>r1 + r2</td><td>unchanged</td></tr>
         <tr><td class="mono">[r1, r2, LSL#2]</td><td>r1 + r2×4</td><td>unchanged</td></tr>
         <tr><td class="mono">[r1, -#8]</td><td>r1 − 8</td><td>unchanged</td></tr>
-      </table>
+      </table></div>
     </div>
     <div class="cblk bm">
       <h3>🧮 Code Examples from Lectures</h3>
@@ -766,13 +893,13 @@ loop:
     <div class="cblk bm">
       <h3>📚 STM / LDM — Multiple Register Transfer</h3>
       <p class="desc"><strong>Key rule:</strong> Lowest register number <em>always</em> at lowest memory address — independent of IA/IB/DA/DB ordering.</p>
-      <table class="tbl mint-hd">
+      <div class="tbl-wrap"><table class="tbl mint-hd">
         <tr><th>Suffix</th><th>First store address</th><th>Final r0 (with !)</th></tr>
         <tr><td class="mono">IA (r0=0x1000, {r1,r2,r3})</td><td>0x1000</td><td>0x100C</td></tr>
         <tr><td class="mono">IB (r0=0x1000, {r1,r2,r3})</td><td>0x1004</td><td>0x100C</td></tr>
         <tr><td class="mono">DA (r0=0x1000, {r1,r2,r3})</td><td>0x0FF8 (r1)</td><td>0x0FF4</td></tr>
         <tr><td class="mono">DB (r0=0x1000, {r1,r2,r3})</td><td>0x0FF4 (r1)</td><td>0x0FF4</td></tr>
-      </table>
+      </table></div>
       <div class="ex em" style="margin-top:.8rem">
         <div class="ex-lbl">STMIA vs STMIB — r0=0x1000, {r1,r2,r3}</div>
         <div class="ex-row"><strong>STMIA:</strong> r1→0x1000, r2→0x1004, r3→0x1008, r0=0x100C</div>
@@ -789,13 +916,13 @@ loop:
     <div class="cblk bm">
       <h3>📥 Stack — Full/Empty Ascending/Descending</h3>
       <p class="desc">Stack grows downward conventionally. SP either points to last occupied (Full) or next free (Empty) location.</p>
-      <table class="tbl mint-hd">
+      <div class="tbl-wrap"><table class="tbl mint-hd">
         <tr><th>Stack Alias</th><th>Equivalent</th><th>SP type</th></tr>
         <tr><td class="mono">STMFD/LDMFD</td><td>STMDB/LDMDB</td><td>Full Descending ← standard</td></tr>
         <tr><td class="mono">STMED/LDMED</td><td>STMDA/LDMDA</td><td>Empty Descending</td></tr>
         <tr><td class="mono">STMFA/LDMFA</td><td>STMIB/LDMIB</td><td>Full Ascending</td></tr>
         <tr><td class="mono">STMEA/LDMEA</td><td>STMIA/LDMIA</td><td>Empty Ascending</td></tr>
-      </table>
+      </table></div>
       <pre style="margin-top:.8rem"><span style="color:#7a6a8a">; Standard subroutine prologue/epilogue:</span>
 STMFD sp!, {r0-r12, lr} <span style="color:#7a6a8a">; save + return addr</span>
   ...subroutine body...
@@ -814,7 +941,7 @@ LDMFD sp!, {r0-r12, pc} <span style="color:#7a6a8a">; restore + return</span></p
     <h3>📞 ARM Procedure Call Standard (APCS) — Register Conventions</h3>
     <div class="grid" style="gap:.8rem;margin-top:.5rem">
       <div>
-        <table class="tbl mint-hd">
+        <div class="tbl-wrap"><table class="tbl mint-hd">
           <tr><th>Register</th><th>Role</th><th>Caller/Callee saved</th></tr>
           <tr><td class="mono">r0–r3</td><td>First 4 arguments; r0 = return value</td><td>Caller-saved</td></tr>
           <tr><td class="mono">r4–r8, r10</td><td>General purpose</td><td>Callee-saved</td></tr>
@@ -824,7 +951,7 @@ LDMFD sp!, {r0-r12, pc} <span style="color:#7a6a8a">; restore + return</span></p
           <tr><td class="mono">r13 (sp)</td><td>Stack pointer</td><td>Callee-saved</td></tr>
           <tr><td class="mono">r14 (lr)</td><td>Link register (return addr)</td><td>Caller-saved</td></tr>
           <tr><td class="mono">r15 (pc)</td><td>Program counter</td><td>—</td></tr>
-        </table>
+        </table></div>
       </div>
       <div>
         <p class="desc"><strong>Function call flow:</strong></p>
@@ -879,7 +1006,7 @@ LDMFD sp!, {r0-r12, pc} <span style="color:#7a6a8a">; restore + return</span></p
     </div>
     <div class="card cm full">
       <h3>📋 Complete PIC16F Instruction Reference</h3>
-      <table class="tbl mint-hd">
+      <div class="tbl-wrap"><table class="tbl mint-hd">
         <tr><th>Instruction</th><th>Operation</th><th>Flags</th><th>Notes</th></tr>
         <tr><th colspan="4" style="background:#c8eee4;color:#3a8a72">Byte-Oriented (d=W or d=F)</th></tr>
         <tr><td class="mono">MOVLW k</td><td>W ← k</td><td>—</td><td>literal to W</td></tr>
@@ -918,7 +1045,7 @@ LDMFD sp!, {r0-r12, pc} <span style="color:#7a6a8a">; restore + return</span></p
         <tr><td class="mono">ADDWF PCL,F</td><td>PCL ← PCL + W</td><td>—</td><td>computed GOTO</td></tr>
         <tr><td class="mono">SLEEP</td><td>enter standby mode</td><td>TO,PD</td><td></td></tr>
         <tr><td class="mono">NOP</td><td>no operation</td><td>—</td><td>1 cycle</td></tr>
-      </table>
+      </table></div>
     </div>
   </div>
 
@@ -1033,14 +1160,14 @@ while(1) {
     </div>
     <div class="card cs">
       <h3>⚖️ Polling vs Interrupts</h3>
-      <table class="tbl sky-hd">
+      <div class="tbl-wrap"><table class="tbl sky-hd">
         <tr><th></th><th>Polling</th><th>Interrupts</th></tr>
         <tr><td class="lc">CPU when idle</td><td>Wasted spinning</td><td>Free for work</td></tr>
         <tr><td class="lc">Multiple devices</td><td>Poor scalability</td><td>Good</td></tr>
         <tr><td class="lc">Power</td><td>High</td><td>Lower</td></tr>
         <tr><td class="lc">Debugging</td><td>Simple</td><td>Harder (async)</td></tr>
         <tr><td class="lc">Response</td><td>Predictable</td><td>Variable latency</td></tr>
-      </table>
+      </table></div>
     </div>
   </div>
 
@@ -1193,14 +1320,14 @@ t_avg = tL1 + (1−h1)tL2 + (1−h1)(1−h2)tmain
     </div>
     <div class="card cs full">
       <h3>🔎 Example Implementations</h3>
-      <table class="tbl sky-hd">
+      <div class="tbl-wrap"><table class="tbl sky-hd">
         <tr><th>Processor</th><th>Cache</th><th>Associativity</th><th>Line Size</th><th>Write Policy</th></tr>
         <tr><td class="lc">ARM600</td><td>4 KB unified</td><td>64-way set assoc</td><td>16 bytes</td><td>—</td></tr>
         <tr><td class="lc">StrongARM</td><td>16 KB inst + 16 KB data</td><td>32-way</td><td>32 bytes</td><td>Write-back (data)</td></tr>
         <tr><td class="lc">C5510</td><td>16 KB inst</td><td>2-way set assoc</td><td>16 bytes</td><td>—</td></tr>
         <tr><td class="lc">ARM7 (core)</td><td><strong>No cache</strong></td><td>—</td><td>—</td><td>Predictable timing</td></tr>
         <tr><td class="lc">ARM720T/740T</td><td>8 KB unified</td><td>2-way set assoc</td><td>32 bytes</td><td>Write-back</td></tr>
-      </table>
+      </table></div>
       <p style="margin-top:.6rem;font-size:.83rem;color:var(--mid)">ARM7 core has NO cache — this gives <strong>predictable timing</strong> (important for real-time systems), lower complexity, and lower power.</p>
     </div>
   </div>
@@ -1366,48 +1493,912 @@ P_dynamic = α × C × V² × f
 
 </div><!-- end ch3 -->
 
+
+<!-- ═══ CH4 ═══ -->
+<div class="ch-content" id="ch4">
+<div class="sec"><span class="pill p-sky">4.1</span><h2>Platform Components & DMA</h2></div>
+<div class="grid">
+  <div class="card csky">
+    <h3>🖥️ Computing Platform = Hardware + Software</h3>
+    <p><strong>Hardware:</strong> CPU · Memory · I/O devices · System Bus<br><strong>Software:</strong> Application code + embedded system software tightly coupled to hardware.</p>
+    <p style="margin-top:.5rem;font-size:.83rem">High-speed bus connects fast devices (CPU, RAM, DMA). Low-speed bus connects simpler peripherals via a <strong>bridge</strong>.</p>
+  </div>
+  <div class="card csky">
+    <h3>⚡ DMA — Direct Memory Access</h3>
+    <p>Transfers data between memory and peripherals <strong>without continuous CPU involvement</strong>. CPU is free to compute during transfer.</p>
+    <div class="steps">
+      <div class="step"><div class="sn ss">1</div><div class="sb"><strong>CPU configures</strong> DMA: source, destination, byte count</div></div>
+      <div class="step"><div class="sn ss">2</div><div class="sb"><strong>DMA requests bus</strong> → becomes bus master</div></div>
+      <div class="step"><div class="sn ss">3</div><div class="sb"><strong>Transfer occurs</strong> — CPU executes other instructions</div></div>
+      <div class="step"><div class="sn ss">4</div><div class="sb"><strong>DMA interrupts CPU</strong> when done</div></div>
+    </div>
+  </div>
+  <div class="card csky">
+    <h3>🏗️ System Bus Configurations</h3>
+    <div class="kv-list">
+      <div class="kv"><span class="kk">Single bus</span><span class="kv_">Simple, all devices share — bandwidth bottleneck</span></div>
+      <div class="kv"><span class="kk">Hierarchical</span><span class="kv_">Fast bus (CPU+RAM) + slow bus (peripherals) via bridge — most common</span></div>
+      <div class="kv"><span class="kk">Crossbar/Matrix</span><span class="kv_">Multiple simultaneous transfers — highest bandwidth (LPC1768)</span></div>
+    </div>
+  </div>
+  <div class="card csky">
+    <h3>🔧 Standard Bus Architectures</h3>
+    <div class="tbl-wrap"><table class="tbl sky-hd">
+      <tr><th>Bus</th><th>By</th><th>Where</th></tr>
+      <tr><td class="lc">CoreConnect</td><td>IBM</td><td>IBM PowerPC SoCs</td></tr>
+      <tr><td class="lc">Avalon</td><td>Altera</td><td>FPGAs</td></tr>
+      <tr><td class="lc">Wishbone</td><td>Opencores</td><td>Open-source IP cores</td></tr>
+    </table></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><span class="pill p-sky">4.2</span><h2>Memory Components</h2></div>
+<div class="grid">
+  <div class="card csky">
+    <h3>💾 Memory Types</h3>
+    <div class="tbl-wrap"><table class="tbl sky-hd">
+      <tr><th>Type</th><th>Volatile?</th><th>Key Properties</th></tr>
+      <tr><td class="lc">DRAM</td><td>Yes</td><td>1T+C cell, high density, needs periodic refresh, slower</td></tr>
+      <tr><td class="lc">SRAM</td><td>Yes</td><td>6-T cell, fast, no refresh, higher power &amp; cost, lower density</td></tr>
+      <tr><td class="lc">Flash</td><td>No</td><td>Block erase, non-volatile, used for program storage</td></tr>
+      <tr><td class="lc">EEPROM</td><td>No</td><td>Byte-erasable, smaller capacity than Flash</td></tr>
+    </table></div>
+    <p style="margin-top:.5rem;font-size:.82rem">Memory organized as 2-D array: row address (n bits) + column address (c bits).</p>
+  </div>
+  <div class="card csky">
+    <h3>📊 SDRAM Evolution</h3>
+    <div class="tbl-wrap"><table class="tbl sky-hd">
+      <tr><th>Type</th><th>Words/Cycle</th><th>Freq</th><th>Voltage</th></tr>
+      <tr><td class="lc">SDR</td><td>1</td><td>133 MHz</td><td>3.3 V</td></tr>
+      <tr><td class="lc">DDR</td><td>2</td><td>200 MHz</td><td>2.5 V</td></tr>
+      <tr><td class="lc">DDR2</td><td>4</td><td>533 MHz</td><td>1.8 V</td></tr>
+      <tr><td class="lc">DDR3</td><td>8</td><td>1066 MHz</td><td>1.5 V</td></tr>
+      <tr><td class="lc">DDR4</td><td>8</td><td>1600 MHz</td><td>1.2 V</td></tr>
+    </table></div>
+    <p style="margin-top:.4rem;font-size:.82rem">Burst access: activate row once → read multiple consecutive columns. Lower voltage = less power.</p>
+  </div>
+  <div class="card csky">
+    <h3>🎮 Memory Controller Role</h3>
+    <ul>
+      <li><strong>Protocol translation:</strong> CPU requests → DRAM commands (RAS, CAS, refresh timing)</li>
+      <li><strong>Scheduling:</strong> reorders accesses to reduce latency</li>
+      <li><strong>Arbitration:</strong> handles multiple requesters (CPU, DMA, GPU)</li>
+      <li><strong>Refresh:</strong> periodic DRAM refresh without CPU involvement</li>
+    </ul>
+    <p style="margin-top:.5rem;font-size:.82rem">CPU cannot directly manage DRAM timing — the memory controller hides this complexity.</p>
+  </div>
+  <div class="card csky">
+    <h3>📦 Packaging: SIMMs &amp; DIMMs</h3>
+    <div class="kv-list">
+      <div class="kv"><span class="kk">SIMM</span><span class="kv_">Single In-line Memory Module — 32-bit data path</span></div>
+      <div class="kv"><span class="kk">DIMM</span><span class="kv_">Dual In-line Memory Module — 64-bit data path</span></div>
+    </div>
+    <p style="margin-top:.5rem;font-size:.82rem">Same memory capacity in different data widths: e.g. 64 Mb as 64M×1b, 8M×8b, or 2M×32b.</p>
+  </div>
+</div>
+
+<div class="sec"><span class="pill p-sky">4.3</span><h2>Bus Bandwidth — Formulas & Interactive Calculator</h2></div>
+<div class="grid2">
+  <div class="cblk bsky">
+    <h3>📐 Simple Transfer Model</h3>
+    <div class="kv-list">
+      <div class="kv"><span class="kk">N</span><span class="kv_">Bytes to transfer</span></div>
+      <div class="kv"><span class="kk">W</span><span class="kv_">Bus width in bytes per transfer</span></div>
+      <div class="kv"><span class="kk">D</span><span class="kv_">Clock cycles per data transfer</span></div>
+      <div class="kv"><span class="kk">O</span><span class="kv_">Overhead cycles (O₁+O₂: address + handshake)</span></div>
+      <div class="kv"><span class="kk">f</span><span class="kv_">Bus clock frequency</span></div>
+    </div>
+    <div class="fbox fsky">T(N) = (D + O) × N/W     [total bus cycles]
+t(N) = T(N) / f           [seconds]
+BW   = W × f / (D + O)   [bytes/sec]</div>
+    <div class="ex esky">
+      <div class="ex-lbl lbl-sky">Quiz 3-171 / Quiz 3-252 — Bus Bandwidth</div>
+      <div class="ex-row"><strong>Setup:</strong> 10000 B / 10ms, 2MHz, 32-bit, D=1, O=2</div>
+      <div class="ex-row"><strong>T_bus =</strong> 3×10000/4 = 7500 cycles</div>
+      <div class="ex-row"><strong>t_bus =</strong> 7500/2MHz = 3.75 ms</div>
+      <div class="ex-row"><strong>CPU budget =</strong> 10−3.75 = <strong>6.25 ms</strong></div>
+      <div class="ex-row"><strong>Min f_CPU</strong> (30 cyc/B): 30×10000/6.25ms = <strong>48 MHz</strong></div>
+    </div>
+  </div>
+  <div class="cblk bsky">
+    <h3>⚡ Burst Transfer Model</h3>
+    <p class="desc">B transfers per burst amortize overhead O — much more efficient for bulk transfers.</p>
+    <div class="fbox fsky">Cycles per transfer = D + O/B
+T(N) = (BD + O) × N / (BW)
+BW_burst = W×f / (D + O/B)</div>
+  </div>
+</div>
+<!-- Bus Calculator Widget -->
+<div class="widget" style="border:1.5px solid var(--sky-l)">
+  <h3 style="margin-bottom:.8rem">🖩 Bus Bandwidth Calculator</h3>
+  <div class="slider-row"><label>Bus Width W (bytes)</label><input type="range" id="bW" min="1" max="8" value="4" oninput="calcBus()"><span class="sval sv-sky" id="bW-v">4 B</span></div>
+  <div class="slider-row"><label>Clock f (MHz)</label><input type="range" id="bf" min="1" max="200" value="25" oninput="calcBus()"><span class="sval sv-sky" id="bf-v">25 MHz</span></div>
+  <div class="slider-row"><label>Data cycles D</label><input type="range" id="bD" min="1" max="8" value="1" oninput="calcBus()"><span class="sval sv-sky" id="bD-v">1</span></div>
+  <div class="slider-row"><label>Overhead cycles O</label><input type="range" id="bO" min="0" max="16" value="2" oninput="calcBus()"><span class="sval sv-sky" id="bO-v">2</span></div>
+  <div class="slider-row"><label>Burst size B</label><input type="range" id="bB" min="1" max="16" value="1" oninput="calcBus()"><span class="sval sv-sky" id="bB-v">1</span></div>
+  <div class="out-box o-sky" id="bus-out">–</div>
+</div>
+</div><!-- end ch4 -->
+<!-- ═══ CH5: PROGRAM DESIGN ═══ -->
+<div class="ch-content" id="ch5">
+<div class="sec"><span class="pill p-peach">5.1</span><h2>Embedded Software Fundamentals</h2></div>
+<div class="grid">
+  <div class="card cpeach">
+    <h3>🔑 <code>volatile</code> Keyword — Critical!</h3>
+    <p>Prevents compiler from caching variable in register. Forces fresh memory read every access.</p>
+    <p style="margin-top:.4rem;font-size:.82rem;font-weight:600">Always use volatile for:</p>
+    <ul>
+      <li>Memory-mapped hardware registers</li>
+      <li>Variables shared between ISR and main loop</li>
+      <li>Variables modified by DMA</li>
+    </ul>
+  </div>
+  <div class="card cpeach">
+    <h3>🗺️ Memory-Mapped I/O in C</h3>
+    <p>Cast integer addresses to typed <code>volatile</code> pointers. Type must match register width.</p>
+    <pre>// Check bit 15 of 16-bit status register:
+while (!(*(volatile unsigned short*)0x1020 & (1<<15)));
+
+// Read 32-bit data register:
+int d = *(volatile int*) 0x1022;
+
+// Set bit 7 (transmit enable) of 8-bit reg:
+*(volatile char*)0x2024 |= (1<<7);
+
+// Clear bit 15 (data-ready flag):
+*(volatile unsigned short*)0x1020 &= ~(1<<15);</pre>
+  </div>
+  <div class="card cpeach">
+    <h3>⏱️ LPC Timer Registers</h3>
+    <div class="tbl-wrap"><table class="tbl peach-hd">
+      <tr><th>Register</th><th>Purpose</th></tr>
+      <tr><td class="mono lc">TCR</td><td>bit0=start, bit1=reset TC</td></tr>
+      <tr><td class="mono lc">PR</td><td>Prescaler: TC increments every PR+1 PCLK cycles</td></tr>
+      <tr><td class="mono lc">MR0</td><td>Match value: action when TC==MR0</td></tr>
+      <tr><td class="mono lc">MCR</td><td>0x03=IRQ+Reset (periodic), 0x05=IRQ+Stop (one-shot)</td></tr>
+      <tr><td class="mono lc">IR</td><td>Interrupt flags — write 1 to clear</td></tr>
+    </table></div>
+    <div class="fbox fpeach">MR0 = seconds × f_clk / (PR+1)
+1 sec at 25MHz, PR=0: MR0 = 25,000,000</div>
+  </div>
+  <div class="card cpeach">
+    <h3>🔌 GPIO Registers (LPC)</h3>
+    <div class="tbl-wrap"><table class="tbl peach-hd">
+      <tr><th>Register</th><th>Action</th></tr>
+      <tr><td class="mono lc">FIODIR</td><td>1=output, 0=input (per bit)</td></tr>
+      <tr><td class="mono lc">FIOSET</td><td>Set output HIGH (write 1 to bit)</td></tr>
+      <tr><td class="mono lc">FIOCLR</td><td>Set output LOW (write 1 to bit)</td></tr>
+      <tr><td class="mono lc">FIOPIN</td><td>Read current pin state</td></tr>
+      <tr><td class="mono lc">PINSEL</td><td>Pin function mux (GPIO / UART / PWM...)</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<div class="sec"><span class="pill p-peach">5.2</span><h2>Finite State Machines (FSMs)</h2></div>
+<div class="grid2">
+  <div class="cblk bpeach">
+    <h3>🔄 FSM Pattern in C</h3>
+    <p class="desc">System with finite states. At any moment, exactly one state is active. Events trigger transitions. ISRs <em>only set volatile flags</em> — FSM in main loop reads them.</p>
+    <pre>// Standard pattern — keep ISRs short!
+volatile int timer_flag = 0;
+void TIMER0_IRQHandler() {
+  timer_flag = 1;
+  LPC_TIM0->IR |= 1; // clear interrupt
+}
+
+int state = IDLE;
+while (1) {
+  switch (state) {
+    case IDLE:
+      if (seat) { state = SEATED; SetTimer0(T); }
+      break;
+    case SEATED:
+      if (belt)        state = BELTED;
+      else if (!seat)  state = IDLE;
+      else if (timer_flag) {
+        state = BUZZER; timer_flag=0;
+        buzzer_on = ON;
+      }
+      break;
+    /* ... */
+  }
+}</pre>
+  </div>
+  <div class="cblk bpeach">
+    <h3>🚗 Seat Belt Controller</h3>
+    <div class="tbl-wrap"><table class="tbl peach-hd">
+      <tr><th>State</th><th>Entry</th><th>Transitions</th></tr>
+      <tr><td class="mono lc">IDLE</td><td>buzzer OFF</td><td>seat → SEATED (start timer)</td></tr>
+      <tr><td class="mono lc">SEATED</td><td>timer ON</td><td>belt→BELTED | !seat→IDLE | timer→BUZZER</td></tr>
+      <tr><td class="mono lc">BELTED</td><td>buzzer OFF</td><td>!belt → SEATED</td></tr>
+      <tr><td class="mono lc">BUZZER</td><td>buzzer ON</td><td>belt→BELTED (off) | !seat→IDLE (off)</td></tr>
+    </table></div>
+    <div class="ex epeach" style="margin-top:.7rem">
+      <div class="ex-lbl lbl-peach">Couch Controller (Quiz 5-191)</div>
+      <div class="ex-row"><strong>TILT_OFF:</strong> motor=OFF. up_req→TILT_UP; down_req→TILT_DOWN</div>
+      <div class="ex-row"><strong>TILT_UP:</strong> motor=UP, reset timer. !up_req→TILT_DOWN_DISABLED</div>
+      <div class="ex-row"><strong>TILT_DOWN_DISABLED:</strong> motor=OFF. timer+up_req→TILT_UP; timer+!req→TILT_OFF</div>
+    </div>
+  </div>
+</div>
+
+<!-- Interactive FSM Simulator -->
+<div class="widget" style="border:1.5px solid var(--peach-l)">
+  <h3 style="margin-bottom:.7rem">🎮 Seat Belt FSM Simulator</h3>
+  <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.7rem" id="fsm-states"></div>
+  <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.7rem">
+    <button onclick="fsmEv('seat')" style="padding:6px 14px;border-radius:18px;border:2px solid var(--peach-d);background:var(--white);color:var(--peach-d);cursor:pointer;font-weight:600;font-size:.79rem">👤 Sit</button>
+    <button onclick="fsmEv('noseat')" style="padding:6px 14px;border-radius:18px;border:2px solid var(--peach-d);background:var(--white);color:var(--peach-d);cursor:pointer;font-weight:600;font-size:.79rem">🚶 Leave</button>
+    <button onclick="fsmEv('belt')" style="padding:6px 14px;border-radius:18px;border:2px solid var(--mint-d);background:var(--white);color:var(--mint-d);cursor:pointer;font-weight:600;font-size:.79rem">🔒 Belt On</button>
+    <button onclick="fsmEv('nobelt')" style="padding:6px 14px;border-radius:18px;border:2px solid var(--mint-d);background:var(--white);color:var(--mint-d);cursor:pointer;font-weight:600;font-size:.79rem">🔓 Belt Off</button>
+    <button onclick="fsmEv('timer')" style="padding:6px 14px;border-radius:18px;border:2px solid var(--sky-d);background:var(--white);color:var(--sky-d);cursor:pointer;font-weight:600;font-size:.79rem">⏰ Timer</button>
+    <button onclick="fsmReset()" style="padding:6px 14px;border-radius:18px;border:2px solid var(--rose-d);background:var(--white);color:var(--rose-d);cursor:pointer;font-weight:600;font-size:.79rem">↺ Reset</button>
+  </div>
+  <!-- FSM Activity Feed -->
+  <div style="margin-top:.5rem">
+    <div style="font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--light);margin-bottom:.4rem">Activity Log</div>
+    <div id="fsm-log" style="display:flex;flex-direction:column;gap:.35rem;max-height:160px;overflow-y:auto;padding-right:.2rem"></div>
+  </div>
+  <!-- FSM Current State Info Panel -->
+  <div id="fsm-info" style="margin-top:.7rem;background:var(--peach-l);border-radius:10px;padding:.7rem 1rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;border-left:4px solid var(--peach-d)">
+    <div style="font-size:.78rem;color:var(--peach-d)"><span style="font-weight:700">State:</span> <span id="fsm-cur-state" style="font-family:'Space Mono',monospace;font-weight:700">IDLE</span></div>
+    <div style="font-size:.78rem;color:var(--peach-d)"><span style="font-weight:700">Buzzer:</span> <span id="fsm-cur-buzz">⚫ OFF</span></div>
+    <div style="font-size:.78rem;color:var(--peach-d);flex:1"><span id="fsm-cur-desc">Waiting for passenger.</span></div>
+  </div>
+</div>
+
+<div class="sec"><span class="pill p-peach">5.3</span><h2>Circular Buffer & Queue</h2></div>
+<div class="grid2">
+  <div class="cblk bpeach">
+    <h3>🔄 Circular Buffer — IIR/FIR Filter</h3>
+    <div class="fbox fpeach">put(x):  pos = (pos+1) % SIZE; buffer[pos] = x;
+get(i):  return buffer[(pos - i + SIZE) % SIZE]
+         get(0) = newest; get(SIZE-1) = oldest</div>
+    <pre>/* Quiz 4-181 / Quiz 5-191 solution */
+#define SIZE 3
+int buffer[SIZE]; int pos;
+
+void init() {
+  for (int i=0; i&lt;SIZE; i++) buffer[i]=0;
+  pos = SIZE - 1; // so first put() → index 0
+}
+void put(int v) { pos=(pos+1)%SIZE; buffer[pos]=v; }
+int  get(int i) {
+  int idx = (pos-i) % SIZE;
+  return (idx>=0) ? buffer[idx] : buffer[SIZE+idx];
+}
+
+/* IIR filter (a[0]=0 convention) */
+int iir(int x) {
+  int i, aside=0, bside=0, v0, y;
+  for (i=0; i&lt;SIZE; i++) {
+    int t = get(i);
+    aside += -a[i+1] * t;  // feedback
+    bside +=  b[i+1] * t;  // feedforward of past
+  }
+  v0 = x + aside;
+  y  = b[0]*v0 + bside;
+  put(v0);
+  return y;
+}</pre>
+  </div>
+  <div class="cblk bpeach">
+    <h3>📋 Circular Buffer vs Queue</h3>
+    <div class="tbl-wrap"><table class="tbl peach-hd">
+      <tr><th></th><th>Circular Buffer</th><th>Queue (FIFO)</th></tr>
+      <tr><td class="lc">When full</td><td>Overwrites oldest</td><td>Rejects / blocks</td></tr>
+      <tr><td class="lc">Best for</td><td>ADC/FIR/IIR streams</td><td>UART I/O, task queues</td></tr>
+      <tr><td class="lc">Pointers</td><td>1 (pos)</td><td>2 (head + tail)</td></tr>
+    </table></div>
+    <div class="fbox fpeach" style="margin-top:.7rem">Producer-Consumer with ISR:
+Input ISR  → enqueue (advance tail)
+Output ISR → dequeue (advance head)
+Decouples different-speed producer &amp; consumer</div>
+    <div class="ex epeach" style="margin-top:.6rem">
+      <div class="ex-lbl lbl-peach">Trace: SIZE=3, init→pos=2</div>
+      <div class="ex-row"><strong>put(10):</strong> pos=0 buf=[10,0,0]</div>
+      <div class="ex-row"><strong>put(20):</strong> pos=1 buf=[10,20,0]</div>
+      <div class="ex-row"><strong>put(30):</strong> pos=2 buf=[10,20,30]</div>
+      <div class="ex-row"><strong>put(40):</strong> pos=0 buf=[40,20,30] ← 10 overwritten</div>
+      <div class="ex-row"><strong>get(0)=</strong>40 (newest) | <strong>get(1)=</strong>30</div>
+    </div>
+  </div>
+</div>
+
+<!-- Interactive Code Editor: IIR -->
+<div class="code-editor-wrap">
+  <div class="ce-header">
+    <span class="ce-title">💻 C Code Sandbox — Circular Buffer put/get trace</span>
+    <div style="display:flex;gap:.4rem">
+      <button class="ce-run-btn" onclick="runCode('ce1')">▶ Run</button>
+      <button class="ce-reset-btn" onclick="resetCode('ce1')">↺</button>
+    </div>
+  </div>
+  <textarea class="ce-code" id="ce1-code" rows="12">// ✏️ This code can be edited — try changing SIZE, values, or the put/get logic!
+// Simulate circular buffer SIZE=3
+const SIZE = 3;
+let buffer = [0,0,0], pos = SIZE-1;
+
+function put(v) { pos=(pos+1)%SIZE; buffer[pos]=v; }
+function get(i) {
+  let idx=(pos-i)%SIZE;
+  return idx>=0 ? buffer[idx] : buffer[SIZE+idx];
+}
+function init() { buffer=[0,0,0]; pos=SIZE-1; }
+
+init();
+put(10); console.log("After put(10): buf=" + JSON.stringify(buffer) + " pos=" + pos);
+put(20); console.log("After put(20): buf=" + JSON.stringify(buffer) + " pos=" + pos);
+put(30); console.log("After put(30): buf=" + JSON.stringify(buffer) + " pos=" + pos);
+put(40); console.log("After put(40): buf=" + JSON.stringify(buffer) + " pos=" + pos + " ← 10 overwritten");
+console.log("get(0)=" + get(0) + " (newest)");
+console.log("get(1)=" + get(1));
+console.log("get(2)=" + get(2) + " (oldest)");</textarea>
+  <div class="ce-output" id="ce1-out">Click ▶ Run to execute</div>
+</div>
+
+<!-- Interactive Circular Buffer Visualizer -->
+<div class="widget" style="border:1.5px solid var(--peach-l)">
+  <h3 style="margin-bottom:.4rem">🔄 Circular Buffer Visualizer (SIZE=5)</h3>
+  <p style="font-size:.8rem;color:var(--mid);margin-bottom:.7rem"><strong>pos</strong> = newest element index · <strong>Head</strong> = newest · <strong>Tail</strong> = oldest</p>
+  <div id="buf-disp" style="display:flex;gap:5px;flex-wrap:wrap;margin:.6rem 0"></div>
+  <div style="display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;margin-top:.4rem">
+    <input id="buf-val" type="number" value="42" style="padding:6px 10px;border-radius:8px;border:2px solid var(--peach-l);font-family:'Space Mono',monospace;font-size:.85rem;width:80px;text-align:center;outline:none;">
+    <button onclick="bufPut()" style="padding:6px 14px;border-radius:18px;border:2px solid var(--peach-d);background:var(--white);color:var(--peach-d);cursor:pointer;font-weight:600;font-size:.79rem">put(val)</button>
+    <button onclick="bufHead()" style="padding:6px 14px;border-radius:18px;border:2px solid var(--mint-d);background:var(--white);color:var(--mint-d);cursor:pointer;font-weight:600;font-size:.79rem">getHead — newest</button>
+    <button onclick="bufTail()" style="padding:6px 14px;border-radius:18px;border:2px solid var(--sky-d);background:var(--white);color:var(--sky-d);cursor:pointer;font-weight:600;font-size:.79rem">getTail — oldest</button>
+    <button onclick="bufReset()" style="padding:6px 14px;border-radius:18px;border:2px solid var(--rose-d);background:var(--white);color:var(--rose-d);cursor:pointer;font-weight:600;font-size:.79rem">↺ Reset</button>
+  </div>
+  <div id="buf-out" class="out-box o-peach" style="margin-top:.5rem">Buffer initialized. pos=4 → next put() writes index 0.</div>
+</div>
+</div><!-- end ch5 -->
+<!-- ═══ CH6: ADC ═══ -->
+<div class="ch-content" id="ch6">
+<div class="sec"><span class="pill p-mint">6.1</span><h2>ADC Fundamentals</h2></div>
+<div class="grid">
+  <div class="card cmint">
+    <h3>🌊 ADC Process</h3>
+    <div class="steps">
+      <div class="step"><div class="sn sm">1</div><div class="sb"><strong>Sampling</strong> — take snapshots at rate f_s (samples/sec)</div></div>
+      <div class="step"><div class="sn sm">2</div><div class="sb"><strong>Holding</strong> — sample-and-hold circuit freezes input during conversion</div></div>
+      <div class="step"><div class="sn sm">3</div><div class="sb"><strong>Quantization</strong> — round to nearest of 2ᴺ discrete levels</div></div>
+      <div class="step"><div class="sn sm">4</div><div class="sb"><strong>Encoding</strong> — represent level as N-bit binary code</div></div>
+    </div>
+  </div>
+  <div class="card cmint">
+    <h3>📐 Resolution, Step Size & SNR</h3>
+    <div class="fbox fmint">N bits → 2ᴺ levels
+Step size Q = (V_max − V_min) / 2ᴺ
+Max quantization error = ±Q/2
+
+SNR_ideal = 6.02N + 1.76  [dB]
+Each extra bit ≈ +6 dB SNR improvement
+
+ENOB = (SNR_measured − 1.76) / 6.02
+(Effective Number Of Bits — accounts for real noise)</div>
+    <div class="ex emint">
+      <div class="ex-lbl lbl-mint">Example: 12-bit ADC, measured SNR=70 dB</div>
+      <div class="ex-row"><strong>Ideal SNR:</strong> 6.02×12+1.76 = 74 dB</div>
+      <div class="ex-row"><strong>ENOB =</strong> (70−1.76)/6.02 = <strong>11.4 bits</strong></div>
+    </div>
+  </div>
+  <div class="card cmint">
+    <h3>📡 Nyquist Sampling Theorem</h3>
+    <div class="fbox fmint">f_s ≥ 2 × f_max       ← must satisfy!
+f_max = f_s / 2        ← Nyquist frequency
+
+Violation → ALIASING (distortion)
+Fix: Anti-aliasing low-pass filter before ADC
+
+Dynamic error: input changes during conversion
+  → max freq for signal A·sin(2πft):
+  f ≤ 1 / (2ᴺ × t_c)</div>
+    <div class="ex emint">
+      <div class="ex-lbl lbl-mint">Quiz 5-181: 8-bit ADC, t_c=100ns</div>
+      <div class="ex-row"><strong>Max f =</strong> 1/(256×100ns) = <strong>39.1 kHz</strong></div>
+    </div>
+  </div>
+  <div class="card cmint">
+    <h3>⚠️ ADC Error Types</h3>
+    <div class="kv-list">
+      <div class="kv"><span class="kk">Aliasing</span><span class="kv_">f_s &lt; 2f_max. Fix: anti-aliasing filter before ADC.</span></div>
+      <div class="kv"><span class="kk">Quantization</span><span class="kv_">Rounding to nearest level. Max = ±Q/2. Reduced by more bits N.</span></div>
+      <div class="kv"><span class="kk">Dynamic</span><span class="kv_">Input changes during conversion. Fix: sample-and-hold circuit.</span></div>
+      <div class="kv"><span class="kk">Offset/Gain</span><span class="kv_">Systematic calibration errors in comparators or reference DAC.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ADC Calculator -->
+<div class="widget" style="border:1.5px solid var(--mint-l)">
+  <h3 style="margin-bottom:.7rem">🧮 ADC Calculator — Resolution, Code & ENOB</h3>
+  <div class="slider-row"><label>Bits (N)</label><input type="range" id="aN" min="1" max="16" value="8" oninput="calcADC()"><span class="sval sv-mint" id="aN-v">8 bits</span></div>
+  <div class="slider-row"><label>V_min (V)</label><input type="range" id="aVmin" min="-10" max="0" value="0" step="0.5" oninput="calcADC()"><span class="sval sv-mint" id="aVmin-v">0 V</span></div>
+  <div class="slider-row"><label>V_max (V)</label><input type="range" id="aVmax" min="1" max="10" value="5" step="0.5" oninput="calcADC()"><span class="sval sv-mint" id="aVmax-v">5 V</span></div>
+  <div class="slider-row"><label>V_input (V)</label><input type="range" id="aVin" min="-10" max="10" value="2.5" step="0.05" oninput="calcADC()"><span class="sval sv-mint" id="aVin-v">2.50 V</span></div>
+  <div class="out-box o-mint" id="adc-out">–</div>
+</div>
+
+<div class="sec"><span class="pill p-mint">6.2</span><h2>ADC Types — Complete Comparison</h2></div>
+<div class="grid2">
+  <div class="cblk bmint">
+    <h3>⚡ Flash ADC — Fastest</h3>
+    <p class="desc"><strong>2ᴺ − 1 comparators in parallel</strong>. All compare simultaneously → result in 1 cycle.</p>
+    <div class="fbox fmint">Comparators = 2ᴺ − 1  (exponential cost!)
+Conversion time = 1 clock cycle
+Half-Flash (2-stage): each stage M bits
+  → comparators = 2×(2^M − 1) much cheaper</div>
+    <div class="ex emint">
+      <div class="ex-lbl lbl-mint">Quiz 5-181: Half-Flash 4-bit, 0–5V, V_in=4.6V</div>
+      <div class="ex-row"><strong>Stage 1 (2-bit):</strong> refs: 1.25, 2.5, 3.75V → 4.6&gt;3.75 → code=<strong>11</strong></div>
+      <div class="ex-row"><strong>Subtract DAC:</strong> 4.6−3.75 = 0.85V residue</div>
+      <div class="ex-row"><strong>Stage 2 (2-bit):</strong> refs: 0.3125, 0.625, 0.9375V → 0.85&gt;0.625 → code=<strong>10</strong></div>
+      <div class="ex-row"><strong>Result: 1110</strong></div>
+    </div>
+  </div>
+  <div class="cblk bmint">
+    <h3>🎯 SAR ADC — Most Common in MCUs</h3>
+    <p class="desc">Binary search. Tests one bit at a time MSB→LSB. <strong>Fixed time = N cycles</strong>.</p>
+    <div class="fbox fmint">Each bit weight = V_ref / 2^(bit_position+1)
+Set bit → compare → keep if V_in &gt; V_DAC
+                    clear if V_in &lt; V_DAC</div>
+    <div class="ex emint">
+      <div class="ex-lbl lbl-mint">Quiz 5-181: SAR 4-bit, 0–5V, V_in=4.6V</div>
+      <div class="ex-row"><strong>SAR=1000:</strong> V_DAC=2.5 → 4.6&gt;2.5 → keep → SAR=1000</div>
+      <div class="ex-row"><strong>SAR=1100:</strong> V_DAC=3.75 → 4.6&gt;3.75 → keep → SAR=1100</div>
+      <div class="ex-row"><strong>SAR=1110:</strong> V_DAC=4.375 → 4.6&gt;4.375 → keep</div>
+      <div class="ex-row"><strong>SAR=1111:</strong> V_DAC=4.6875 → 4.6&lt;4.6875 → clear → <strong>1110</strong></div>
+    </div>
+  </div>
+</div>
+<div class="card cmint full">
+  <h3>📊 ADC Type Comparison</h3>
+  <div class="tbl-wrap"><table class="tbl mint-hd">
+    <tr><th>Type</th><th>Speed</th><th>Resolution</th><th>Conversion Time</th><th>Cost</th><th>Best For</th></tr>
+    <tr><td class="lc">Flash ★fastest</td><td>Fastest</td><td>≤8b</td><td>1 cycle</td><td>Highest (2ᴺ−1 comparators)</td><td>Video, RF, oscilloscopes</td></tr>
+    <tr><td class="lc">Half-Flash</td><td>Fast</td><td>Medium</td><td>2 cycles</td><td>Medium</td><td>Moderate speed apps</td></tr>
+    <tr><td class="lc">Counter</td><td>Slowest</td><td>Any</td><td>Up to 2ᴺ−1 cycles (variable)</td><td>Lowest</td><td>Low-cost, slow signals</td></tr>
+    <tr><td class="lc">SAR ★balanced</td><td>Medium</td><td>8–16b</td><td>N cycles (fixed)</td><td>Low</td><td>MCU sensors — most common</td></tr>
+    <tr><td class="lc">Delta-Sigma ★precision</td><td>Slow</td><td>16–24b</td><td>Many cycles</td><td>Medium</td><td>Audio, precision instruments</td></tr>
+  </table></div>
+</div>
+
+<!-- SAR Simulator -->
+<div class="widget" style="border:1.5px solid var(--mint-l)">
+  <h3 style="margin-bottom:.7rem">🎯 SAR ADC Step-by-Step Simulator (0–5V)</h3>
+  <div class="slider-row"><label>V_in (0–5V)</label><input type="range" id="sarVin" min="0" max="5" step="0.01" value="4.6" oninput="sarReset()"><span class="sval sv-mint" id="sarVin-v">4.60 V</span></div>
+  <div class="slider-row"><label>Bits (N)</label><input type="range" id="sarN" min="2" max="8" value="4" oninput="sarReset()"><span class="sval sv-mint" id="sarN-v">4 bits</span></div>
+  <div id="sar-bits" class="sar-row"></div>
+  <div style="display:flex;gap:.6rem;margin:.5rem 0">
+    <button onclick="sarStep()" style="padding:7px 18px;border-radius:18px;border:2px solid var(--mint-d);background:var(--mint-d);color:#fff;cursor:pointer;font-weight:600;font-size:.8rem">▶ Next Bit</button>
+    <button onclick="sarReset()" style="padding:7px 18px;border-radius:18px;border:2px solid var(--mint-d);background:var(--white);color:var(--mint-d);cursor:pointer;font-weight:600;font-size:.8rem">↺ Reset</button>
+  </div>
+  <div id="sar-out" class="out-box o-mint">Ready. Click "Next Bit" to start binary search.</div>
+</div>
+</div><!-- end ch6 -->
+<!-- ═══ CH7: PWM ═══ -->
+<div class="ch-content" id="ch7">
+<div class="sec"><span class="pill p-rose">7.1</span><h2>PWM Fundamentals</h2></div>
+<div class="grid">
+  <div class="card crose">
+    <h3>🌊 Pulse Width Modulation</h3>
+    <div class="fbox frose">Duty Cycle = t_ON / T_period × 100%
+Avg Voltage = V_H × Duty Cycle + V_L × (1−Duty)
+For V_L=0: Avg = V_H × Duty Cycle
+
+Example (Quiz 5-181): 40% duty, VL=0, VH=5V
+  Avg = 0.4 × 5 = 2V</div>
+    <p style="font-size:.82rem;color:var(--mid);margin-top:.4rem">PWM simulates analog output using digital signals. The load sees the time-averaged voltage.</p>
+  </div>
+  <div class="card crose">
+    <h3>💡 PWM Applications</h3>
+    <ul>
+      <li><strong>LED brightness</strong> — duty cycle = perceived brightness</li>
+      <li><strong>RGB LED color mixing</strong> — 3 PWM channels for R, G, B</li>
+      <li><strong>DC motor speed</strong> — duty ∝ speed</li>
+      <li><strong>Servo position</strong> — pulse width encodes angle</li>
+      <li><strong>Power analog emulation</strong> — when no DAC available</li>
+    </ul>
+  </div>
+  <div class="card crose">
+    <h3>📐 Intersection (Analog) Method</h3>
+    <p>Compare reference signal against carrier (sawtooth or triangle wave). Output is HIGH whenever reference &gt; carrier.</p>
+    <ul>
+      <li><strong>Trailing-edge:</strong> carrier = sawtooth rising. Output HIGH at start, LOW when carrier crosses reference</li>
+      <li><strong>Leading-edge:</strong> carrier = sawtooth falling. Output LOW at start, HIGH when carrier crosses reference</li>
+      <li><strong>Center two-edge:</strong> carrier = triangle. Both edges modulated symmetrically</li>
+    </ul>
+  </div>
+  <div class="card crose">
+    <h3>⚙️ Single-Edge vs Double-Edge</h3>
+    <div class="kv-list">
+      <div class="kv"><span class="kk">Single-edge</span><span class="kv_">Output goes HIGH at TC=0 (MR0 reset). Falls LOW at TC==MRn. Simple, one MR per channel.</span></div>
+      <div class="kv"><span class="kk">Double-edge</span><span class="kv_">Both edges programmable. Rise at TC==MR_odd, Fall at TC==MR_even. Two MRs per channel. Allows leading-edge PWM.</span></div>
+    </div>
+    <div class="fbox frose">Leading-edge 80% duty, MR0=100 (Quiz 5-181):
+  Output LOW at start, HIGH at MR1
+  MR1 = 20 (rise at 20%), MR2 = 100 (=MR0, fall at end)
+  HIGH time = 100−20 = 80 → 80% duty ✓</div>
+  </div>
+</div>
+
+<div class="sec"><span class="pill p-rose">7.2</span><h2>LPC PWM Registers</h2></div>
+<div class="grid2">
+  <div class="cblk brose">
+    <h3>📋 PWM Register Reference</h3>
+    <div class="tbl-wrap"><table class="tbl rose-hd">
+      <tr><th>Register</th><th>Purpose</th></tr>
+      <tr><td class="mono lc">TCR</td><td>bit0=enable counter, bit1=reset, <strong>bit3=enable PWM mode</strong></td></tr>
+      <tr><td class="mono lc">MR0</td><td>Period register — sets when TC resets (end of cycle)</td></tr>
+      <tr><td class="mono lc">MR1–MR6</td><td>Set falling edge (single) or rise/fall edges (double)</td></tr>
+      <tr><td class="mono lc">MCR</td><td>3 bits per MR. For MR0: bit1=1 (Reset TC on match)</td></tr>
+      <tr><td class="mono lc">PCR</td><td>bits 2–6=PWMSEL2–6 (0=single, 1=double); bits 9–14=PWMENA1–6</td></tr>
+      <tr><td class="mono lc">LER</td><td>Load Enable — must write AFTER changing MR to latch new value</td></tr>
+    </table></div>
+    <div class="fbox frose" style="margin-top:.6rem">Key sequence to change duty:
+1. LPC_PWM1->MRn = new_value;
+2. LPC_PWM1->LER |= (1 &lt;&lt; n);  // latch it
+Change takes effect at next MR0 reset.</div>
+  </div>
+  <div class="cblk brose">
+    <h3>💻 RGB LED Code Example</h3>
+    <pre>// Pins 2.0/2.1/2.2 → PWM1.1/1.2/1.3
+LPC_PINCON->PINSEL4 |= (1&lt;&lt;0)|(1&lt;&lt;2)|(1&lt;&lt;4);
+
+LPC_PWM1->MCR = (1&lt;&lt;1);   // Reset TC on MR0
+LPC_PWM1->MR0 = 255;        // Period = 255
+LPC_PWM1->LER |= 1;         // latch MR0
+
+// Enable PWM outputs 1,2,3
+LPC_PWM1->PCR |= (1&lt;&lt;9)|(1&lt;&lt;10)|(1&lt;&lt;11);
+// Enable counter + PWM mode
+LPC_PWM1->TCR |= (1&lt;&lt;0)|(1&lt;&lt;3);
+
+// Set duty cycles: R=255, G=128, B=64
+LPC_PWM1->MR1=255; LPC_PWM1->LER|=(1&lt;&lt;1);
+LPC_PWM1->MR2=128; LPC_PWM1->LER|=(1&lt;&lt;2);
+LPC_PWM1->MR3=64;  LPC_PWM1->LER|=(1&lt;&lt;3);</pre>
+    <div class="ex erose">
+      <div class="ex-lbl lbl-rose">Quiz 3-171: MR0=100, MR1=41, MR2=78, MR3=53, MR4=27, MR5=65</div>
+      <div class="ex-row"><strong>PWM2 (double):</strong> rise@MR1=41, fall@MR2=78 → duty=(78−41)/100=<strong>37%</strong></div>
+      <div class="ex-row"><strong>PWM4 (double):</strong> rise@MR3=53, fall@MR4=27 → HIGH 0→27 + 53→100 = <strong>74%</strong></div>
+      <div class="ex-row"><strong>PWM5 (single):</strong> HIGH 0→65 → duty=<strong>65%</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- PWM Visualizer -->
+<div class="widget" style="border:1.5px solid var(--rose-l)">
+  <h3 style="margin-bottom:.7rem">🌊 PWM Waveform Visualizer</h3>
+  <div class="slider-row"><label>Period (MR0)</label><input type="range" id="pMR0" min="10" max="200" value="100" oninput="drawPWM()"><span class="sval sv-rose" id="pMR0-v">100</span></div>
+  <div class="slider-row"><label>CH1 match (single-edge)</label><input type="range" id="pMR1" min="0" max="100" value="65" oninput="drawPWM()"><span class="sval sv-rose" id="pMR1-v">65%</span></div>
+  <div class="slider-row"><label>CH2 rise (double-edge)</label><input type="range" id="pMR2a" min="0" max="100" value="30" oninput="drawPWM()"><span class="sval sv-rose" id="pMR2a-v">30%</span></div>
+  <div class="slider-row"><label>CH2 fall (double-edge)</label><input type="range" id="pMR2b" min="0" max="100" value="75" oninput="drawPWM()"><span class="sval sv-rose" id="pMR2b-v">75%</span></div>
+  <div class="pwm-wrap"><svg class="pwm" id="pwm-svg"></svg></div>
+  <div class="out-box o-rose" id="pwm-out">–</div>
+</div>
+
+<!-- PWM Code Sandbox -->
+<div class="code-editor-wrap">
+  <div class="ce-header">
+    <span class="ce-title">💻 PWM Duty Cycle Calculator</span>
+    <div style="display:flex;gap:.4rem">
+      <button class="ce-run-btn" onclick="runCode('ce2')">▶ Run</button>
+      <button class="ce-reset-btn" onclick="resetCode('ce2')">↺</button>
+    </div>
+  </div>
+  <textarea class="ce-code" id="ce2-code" rows="10">// ✏️ This code can be edited — try changing MR0, duty_pct, VH, or compute new values!
+// Calculate PWM values for LPC
+const MR0 = 100;     // Period (change me!)
+const duty_pct = 65; // Desired duty cycle %
+
+// Single-edge: output HIGH from 0 → MRn
+const MRn_single = Math.round(MR0 * duty_pct / 100);
+console.log("Single-edge: MRn = " + MRn_single + "  (HIGH from 0 to " + MRn_single + ")");
+console.log("Actual duty = " + (MRn_single/MR0*100).toFixed(1) + "%");
+
+// Leading-edge double: output LOW at start, HIGH at MR1
+const MR1_leading = Math.round(MR0 * (1 - duty_pct/100));
+const MR2_leading = MR0;
+console.log("\nLeading-edge 80% duty:");
+console.log("MR1 (rise) = " + Math.round(MR0*0.2) + "  MR2 (fall) = " + MR0);
+console.log("HIGH time = " + MR0 + " - " + Math.round(MR0*0.2) + " = " + (MR0-Math.round(MR0*0.2)) + " → " + (MR0-Math.round(MR0*0.2))/MR0*100 + "%");
+
+// Avg voltage
+const VH = 5, VL = 0;
+console.log("\nAvg voltage = " + (VH * duty_pct/100).toFixed(2) + " V");</textarea>
+  <div class="ce-output" id="ce2-out">Click ▶ Run to execute</div>
+</div>
+</div><!-- end ch7 -->
+
+<!-- ═══ CH8: SERIAL COMMS ═══ -->
+<div class="ch-content" id="ch8">
+<div class="sec"><span class="pill p-lav">8.1</span><h2>Serial Communication Overview</h2></div>
+<div class="grid">
+  <div class="card clav">
+    <h3>🔌 Parallel vs Serial</h3>
+    <div class="kv-list">
+      <div class="kv"><span class="kk">Parallel</span><span class="kv_">Multiple bits simultaneously — fast for short distance, but many pins, skew/ISI problems over long distances</span></div>
+      <div class="kv"><span class="kk">Serial</span><span class="kv_">One bit per clock on few wires — fewer pins, longer distance, lower cost</span></div>
+      <div class="kv"><span class="kk">Differential signals</span><span class="kv_">Used for long distances — doubles signal-to-noise ratio by comparing +/− pair</span></div>
+    </div>
+    <div class="fbox flav" style="margin-top:.6rem">Bit Rate (bps) = Baud Rate × log₂(M)
+  M = number of voltage levels per symbol
+  Binary (M=2): Bit Rate = Baud Rate
+
+Info Rate = Baud × log₂(M) × data_bits/frame_bits</div>
+    <div class="ex elav">
+      <div class="ex-lbl lbl-lav">Quiz 7-191: 57600 bps, 8 voltage levels</div>
+      <div class="ex-row"><strong>Baud rate =</strong> 57600/log₂(8) = 57600/3 = <strong>19200 Bd</strong></div>
+      <div class="ex-row"><strong>Info rate</strong> (8 data, 4 protocol bits): 57600×8/12 = <strong>38400 bps</strong></div>
+    </div>
+  </div>
+  <div class="card clav full">
+    <h3>📊 Protocol Comparison</h3>
+    <div class="tbl-wrap"><table class="tbl lav-hd">
+      <tr><th>Property</th><th>UART</th><th>SPI</th><th>I²C</th></tr>
+      <tr><td class="lc">Wires</td><td>2 (Tx, Rx)</td><td>4 + 1 SS per slave</td><td>2 only (SDA, SCL)</td></tr>
+      <tr><td class="lc">Clock</td><td>None (baud agreement)</td><td>Master SCLK</td><td>Master SCL</td></tr>
+      <tr><td class="lc">Duplex</td><td>Full duplex</td><td>Full duplex</td><td>Half duplex</td></tr>
+      <tr><td class="lc">Masters</td><td>Point-to-point</td><td>1 master (typically)</td><td>Multi-master ✓</td></tr>
+      <tr><td class="lc">Addressing</td><td>None (dedicated lines)</td><td>SS line per slave</td><td>7-bit address per slave</td></tr>
+      <tr><td class="lc">ACK</td><td>None</td><td>None</td><td>After every byte (9th clock)</td></tr>
+      <tr><td class="lc">Speed</td><td>~1 Mbps</td><td>No limit (tens of MHz)</td><td>3.4 Mbps HS mode</td></tr>
+      <tr><td class="lc">4 slaves wires (Quiz 7-191)</td><td>Point-to-point only</td><td>SCLK+MOSI+MISO+SS1+SS2+SS3+SS4 = 7 lines</td><td>SDA + SCL = 2 lines ★</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<div class="sec"><span class="pill p-lav">8.2</span><h2>UART — Asynchronous Serial</h2></div>
+<div class="grid2">
+  <div class="cblk blav">
+    <h3>📦 UART Frame Format</h3>
+    <p class="desc">Receiver syncs on <strong>falling edge of start bit</strong> then samples each bit at center of its period (typically at 16× baud rate clock).</p>
+    <div id="uart-static-frame" class="uart-frame"></div>
+    <div class="kv-list" style="margin-top:.6rem">
+      <div class="kv"><span class="kk">Start bit</span><span class="kv_">Always 0 — HIGH→LOW transition. Synchronizes receiver.</span></div>
+      <div class="kv"><span class="kk">Data bits</span><span class="kv_">5–8 bits, <strong>LSB first</strong></span></div>
+      <div class="kv"><span class="kk">Parity</span><span class="kv_">Even/Odd. Optional simple error detection.</span></div>
+      <div class="kv"><span class="kk">Stop bit(s)</span><span class="kv_">1, 1.5, or 2 HIGH bits. End marker + recovery time.</span></div>
+    </div>
+    <div class="ex elav" style="margin-top:.6rem">
+      <div class="ex-lbl lbl-lav">Quiz 6-181: Info rate calculation</div>
+      <div class="ex-row"><strong>Setup:</strong> 3 protocol bits, 5 data bits, 9600 Bd, 2 bits/symbol</div>
+      <div class="ex-row"><strong>Info rate =</strong> 9600 × 2 × 5/8 = <strong>12,000 bps</strong></div>
+    </div>
+  </div>
+  <div class="cblk blav">
+    <h3>⚠️ UART Errors &amp; LPC Code</h3>
+    <div class="kv-list">
+      <div class="kv"><span class="kk">Overrun</span><span class="kv_">New char assembled while Rx buffer/FIFO is full — data lost</span></div>
+      <div class="kv"><span class="kk">Parity Error</span><span class="kv_">Received parity ≠ computed — data corrupt</span></div>
+      <div class="kv"><span class="kk">Framing Error</span><span class="kv_">Stop bit detected as 0 — sync lost (Quiz 7-191)</span></div>
+      <div class="kv"><span class="kk">Break</span><span class="kv_">Rx held LOW for &gt;1 full frame</span></div>
+    </div>
+    <pre>/* Quiz 6-181: LPC UART Rx/Tx */
+// Receive: wait until LSR bit0=1 (char ready)
+while (!(LPC_UART0->LSR & 1));
+ch = LPC_UART0->RBR;
+
+// Transmit: wait until LSR bit5=1 (THR empty)
+while (!(LPC_UART0->LSR & (1&lt;&lt;5)));
+LPC_UART0->THR = ch;</pre>
+  </div>
+</div>
+
+<!-- UART Builder -->
+<div class="widget" style="border:1.5px solid var(--lav-l)">
+  <h3 style="margin-bottom:.7rem">🔨 UART Frame Builder</h3>
+  <div class="slider-row"><label>ASCII Character</label><input type="range" id="uChar" min="32" max="126" value="65" oninput="buildUART()"><span class="sval sv-lav" id="uChar-v">'A' (65)</span></div>
+  <div style="display:flex;gap:.8rem;align-items:center;margin:.4rem 0">
+    <label style="font-size:.81rem;font-weight:600">Parity:</label>
+    <select id="uPar" onchange="buildUART()" style="padding:5px 10px;border-radius:8px;border:1.5px solid var(--lav-l);font-family:'DM Sans',sans-serif;font-size:.81rem;background:var(--white)">
+      <option value="none">None (8N1)</option><option value="even">Even (8E1)</option><option value="odd">Odd (8O1)</option>
+    </select>
+  </div>
+  <div id="uart-frame" class="uart-frame" style="min-height:44px;gap:2px;background:#1e1a2e;padding:3px;border-radius:10px;flex-wrap:wrap"></div>
+  <div class="out-box o-lav" id="uart-out">–</div>
+</div>
+
+<div class="sec"><span class="pill p-lav">8.3</span><h2>SPI — 4-Wire Synchronous</h2></div>
+<div class="grid2">
+  <div class="cblk blav">
+    <h3>🔗 SPI Signals &amp; Operation</h3>
+    <div class="kv-list">
+      <div class="kv"><span class="kk">SCLK</span><span class="kv_">Serial Clock — master generates</span></div>
+      <div class="kv"><span class="kk">MOSI</span><span class="kv_">Master Out Slave In</span></div>
+      <div class="kv"><span class="kk">MISO</span><span class="kv_">Master In Slave Out</span></div>
+      <div class="kv"><span class="kk">SS̄ (active LOW)</span><span class="kv_">Slave Select — 1 per slave (independent), or shared (daisy chain)</span></div>
+    </div>
+    <div class="fbox flav" style="margin-top:.6rem">SPI Clock Modes (CPOL, CPHA):
+  CPOL=0,CPHA=0: idle LOW,  sample on rising  edge
+  CPOL=0,CPHA=1: idle LOW,  sample on falling edge
+  CPOL=1,CPHA=0: idle HIGH, sample on falling edge
+  CPOL=1,CPHA=1: idle HIGH, sample on rising  edge
+
+Daisy chain: MOSI→S1→S2→S3→MISO (1 SS for all)
+  All slaves shift simultaneously — more latency</div>
+    <pre>/* Quiz 6-181 / Quiz 7-191: LPC SPI read */
+LPC_SSP0->DR = 0;              // dummy write
+while (LPC_SSP0->SR & (1&lt;&lt;4)); // wait BSY
+data = LPC_SSP0->DR;            // read result</pre>
+  </div>
+  <div class="cblk blav">
+    <h3>✅ SPI Advantages &amp; Disadvantages</h3>
+    <div class="tbl-wrap"><table class="tbl lav-hd">
+      <tr><th>✓ Advantages</th><th>✗ Disadvantages</th></tr>
+      <tr><td>Full duplex simultaneously</td><td>Requires 1 SS pin per slave</td></tr>
+      <tr><td>High throughput</td><td>No hardware flow control from slave</td></tr>
+      <tr><td>Simple hardware interface</td><td>Typically only 1 master</td></tr>
+      <tr><td>No max clock speed limit</td><td>Short distances only</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<div class="sec"><span class="pill p-lav">8.4</span><h2>I²C — 2-Wire Synchronous</h2></div>
+<div class="grid2">
+  <div class="cblk blav">
+    <h3>🔗 I²C Characteristics</h3>
+    <div class="kv-list">
+      <div class="kv"><span class="kk">SDA</span><span class="kv_">Serial Data — bidirectional, open-drain (needs pull-up resistor)</span></div>
+      <div class="kv"><span class="kk">SCL</span><span class="kv_">Serial Clock — master generates</span></div>
+      <div class="kv"><span class="kk">Addressing</span><span class="kv_">7-bit (or 10-bit extended) slave address</span></div>
+      <div class="kv"><span class="kk">ACK/NACK</span><span class="kv_">After every byte: receiver pulls SDA LOW (ACK) or leaves HIGH (NACK)</span></div>
+      <div class="kv"><span class="kk">Multi-master</span><span class="kv_">Yes — with arbitration and clock synchronization</span></div>
+    </div>
+    <div class="fbox flav" style="margin-top:.6rem">Conditions (Quiz 6-181 / Quiz 7-191):
+  START: SDA HIGH→LOW while SCL = HIGH
+  STOP:  SDA LOW→HIGH while SCL = HIGH
+  Data:  SDA must be STABLE while SCL = HIGH
+         SDA can only change when SCL = LOW
+
+10-bit address write (first 2 bytes):
+  Byte1: 1 1 1 1 0 A9 A8 | 0 (R/W̄=write)
+  Byte2: A7 A6 A5 A4 A3 A2 A1 A0</div>
+  </div>
+  <div class="cblk blav">
+    <h3>✅ I²C Advantages &amp; Disadvantages + EEPROM</h3>
+    <div class="tbl-wrap"><table class="tbl lav-hd">
+      <tr><th>✓ Advantages</th><th>✗ Disadvantages</th></tr>
+      <tr><td>Only 2 wires regardless of slave count</td><td>Each slave needs unique address</td></tr>
+      <tr><td>Multi-master capability</td><td>Protocol overhead reduces throughput</td></tr>
+      <tr><td>ACK/NACK error handling</td><td>Requires pull-up resistors</td></tr>
+      <tr><td>Widely supported</td><td>Faulty device can hang entire bus</td></tr>
+    </table></div>
+    <div class="ex elav" style="margin-top:.6rem">
+      <div class="ex-lbl lbl-lav">Quiz 7-191: I²C EEPROM read (device addr=1010111)</div>
+      <div class="ex-row"><strong>Phase 1:</strong> START | 1010111+W | ACK | byte_addr | ACK</div>
+      <div class="ex-row"><strong>Phase 2:</strong> repeated START | 1010111+R | ACK</div>
+      <div class="ex-row"><strong>Phase 3:</strong> data byte | NACK (master) | STOP</div>
+    </div>
+  </div>
+</div>
+
+<!-- Code Sandbox: I2C / SPI / UART -->
+<div class="code-editor-wrap">
+  <div class="ce-header">
+    <span class="ce-title">💻 Serial Protocol Calculator / Sandbox</span>
+    <div style="display:flex;gap:.4rem">
+      <button class="ce-run-btn" onclick="runCode('ce3')">▶ Run</button>
+      <button class="ce-reset-btn" onclick="resetCode('ce3')">↺</button>
+    </div>
+  </div>
+  <textarea class="ce-code" id="ce3-code" rows="16">// ✏️ This code can be edited — try different baud rates, data bits, or voltage levels!
+// Quiz 6-181: UART info rate calculation
+function uart_info_rate(baud, bits_per_symbol, data_bits, total_frame_bits) {
+  const bit_rate = baud * bits_per_symbol;
+  const info_rate = bit_rate * data_bits / total_frame_bits;
+  console.log("Baud=" + baud + " Bd, " + bits_per_symbol + " bits/symbol");
+  console.log("Bit rate = " + bit_rate + " bps");
+  console.log("Info rate = " + info_rate + " bps");
+  return info_rate;
+}
+uart_info_rate(9600, 2, 5, 8);  // Quiz 6-181
+console.log("---");
+uart_info_rate(57600, 1, 8, 12); // Quiz 7-191
+
+// Quiz 7-191: baud rate from bit rate + voltage levels
+console.log("\n--- Baud rate calculation ---");
+const bit_rate = 57600, levels = 8;
+const baud_rate = bit_rate / Math.log2(levels);
+console.log("Bit rate=" + bit_rate + "bps, " + levels + " levels → Baud=" + baud_rate + " Bd");
+
+// I2C vs SPI: wires for N slaves
+console.log("\n--- Wires for 4 slaves ---");
+const N = 4;
+console.log("SPI: SCLK+MOSI+MISO + " + N + " SS = " + (3+N) + " wires");
+console.log("I2C: SDA + SCL = 2 wires (any number of slaves!)");</textarea>
+  <div class="ce-output" id="ce3-out">Click ▶ Run to execute</div>
+</div>
+</div><!-- end ch8 -->
+
   </div><!-- wrap -->
 </div><!-- page-guide -->
-
 
 <!-- ═══ PRACTICE ═══ -->
 <div class="page" id="page-practice">
   <div class="qhero">
     <div class="hero-tag">Past Quiz Questions + Conceptual MCQs</div>
     <h1>Practice by Chapter</h1>
-    <p>Exact questions from Quiz 1–3 Term 252 + Terms 171, 181, 191 · Plus conceptual questions</p>
+    <p>Chapters 1–8 · Exact past-quiz questions from Terms 171, 181, 191, 252 · Plus conceptual MCQs & interactive tools</p>
   </div>
   <div class="qwrap">
     <div id="score-wrap" class="sbar" style="display:none">
-      <div><div class="sc-num" id="score-txt">0/0</div><div class="sc-lbl">MCQ Score</div></div>
+      <div><div class="sc-num" id="score-txt">0/0</div><div class="sc-lbl">MCQ Score (Ch.1–3)</div></div>
     </div>
+    <div class="score-bar"><div class="score-num" id="sc-num">0/0</div><div class="score-lbl">Score (Ch.4–8)</div><div style="flex:1"></div><div style="font-size:.78rem;color:var(--light)">MCQ = click · Number = type &amp; check · Fill = complete blanks · Code = edit &amp; run</div></div>
     <div class="qch-tabs">
-      <button class="qch q1 active" onclick="switchQ(1,this)">🖥️ Ch.1 — Embedded Systems</button>
-      <button class="qch q2" onclick="switchQ(2,this)">⚙️ Ch.2 — Instruction Sets</button>
-      <button class="qch q3" onclick="switchQ(3,this)">🔌 Ch.3 — CPUs</button>
+      <button class="qch q1 active" onclick="switchQ(1,this)">🖥️ Ch.1</button>
+      <button class="qch q2" onclick="switchQ(2,this)">⚙️ Ch.2</button>
+      <button class="qch q3" onclick="switchQ(3,this)">🔌 Ch.3</button>
+      <button class="qch q4" onclick="switchQ(4,this)">📟 Ch.4</button>
+      <button class="qch q5" onclick="switchQ(5,this)">🧠 Ch.5</button>
+      <button class="qch q6" onclick="switchQ(6,this)">🎛️ Ch.6</button>
+      <button class="qch q7" onclick="switchQ(7,this)">🌊 Ch.7</button>
+      <button class="qch q8" onclick="switchQ(8,this)">📡 Ch.8</button>
     </div>
     <div class="qset active" id="qs1"><div id="q1c"></div></div>
     <div class="qset" id="qs2"><div id="q2c"></div></div>
     <div class="qset" id="qs3"><div id="q3c"></div></div>
+    <div class="qset" id="qs4"></div>
+    <div class="qset" id="qs5"></div>
+    <div class="qset" id="qs6"></div>
+    <div class="qset" id="qs7"></div>
+    <div class="qset" id="qs8"></div>
   </div>
 </div>
 
 <script>
-function showPage(id,btn){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));document.getElementById('page-'+id).classList.add('active');btn.classList.add('active');if(id==='practice')renderAll();}
-function openChapter(n){showPage('guide',document.querySelectorAll('.nav-btn')[1]);switchCh(n,document.querySelectorAll('.ch-tab')[n-1]);}
-function switchCh(n,btn){document.querySelectorAll('.ch-tab').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.ch-content').forEach(c=>c.classList.remove('active'));btn.classList.add('active');document.getElementById('ch'+n).classList.add('active');}
-function switchQ(n,btn){document.querySelectorAll('.qch').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.qset').forEach(s=>s.classList.remove('active'));btn.classList.add('active');document.getElementById('qs'+n).classList.add('active');}
-function toggleSol(btn){const s=btn.nextElementSibling;const v=s.classList.contains('vis');s.classList.toggle('vis',!v);btn.textContent=v?'Show Solution':'Hide Solution';}
+// ══════════════════════════════════════════════════
+// COE 306 COMPLETE STUDY GUIDE — MERGED JS
+// ══════════════════════════════════════════════════
 
-const sc={c1:{c:0,t:0},c2:{c:0,t:0},c3:{c:0,t:0}};
-function selOpt(el,ci){
+// ── NAV ──
+function showPage(id,btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  btn.classList.add('active');
+  if(id==='practice')renderAll();
+}
+function openChapter(n){
+  showPage('guide',document.querySelectorAll('.nav-btn')[1]);
+  const tabs=document.querySelectorAll('.ch-tab');
+  switchCh(n,tabs[n-1]);
+}
+function switchCh(n,btn){
+  document.querySelectorAll('.ch-tab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.ch-content').forEach(c=>c.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('ch'+n).classList.add('active');
+}
+function switchQ(n,btn){
+  document.querySelectorAll('.qch').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.qset').forEach(s=>s.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('qs'+n).classList.add('active');
+}
+function toggleSol(btn){
+  const s=btn.nextElementSibling;
+  const v=s.classList.contains('vis');
+  s.classList.toggle('vis',!v);
+  btn.textContent=v?'Show Solution':'Hide Solution';
+}
+
+// ══════════════════════════════════════════════════
+// CH.1-3 PRACTICE (MCQ + Written)
+// ══════════════════════════════════════════════════
+const sc_ch123={c1:{c:0,t:0},c2:{c:0,t:0},c3:{c:0,t:0}};
+function selOpt123(el,ci){
   const g=el.parentElement;if(g.dataset.a==='1')return;g.dataset.a='1';
   const correct=parseInt(g.dataset.correct);const key=g.dataset.key;
   g.querySelectorAll('.opt')[correct].classList.add('correct');
   if(ci!==correct)el.classList.add('wrong');
-  if(ci===correct)sc[key].c++;sc[key].t++;
+  if(ci===correct)sc_ch123[key].c++;sc_ch123[key].t++;
   g.querySelectorAll('.opt').forEach(o=>{if(!o.classList.contains('correct')&&!o.classList.contains('wrong'))o.style.opacity='0.5';});
-  const tot=sc.c1.c+sc.c2.c+sc.c3.c,totQ=sc.c1.t+sc.c2.t+sc.c3.t;
+  const tot=sc_ch123.c1.c+sc_ch123.c2.c+sc_ch123.c3.c,totQ=sc_ch123.c1.t+sc_ch123.c2.t+sc_ch123.c3.t;
   if(totQ>0){document.getElementById('score-wrap').style.display='flex';document.getElementById('score-txt').textContent=tot+'/'+totQ;}
 }
 
@@ -1415,7 +2406,7 @@ const L=['A','B','C','D','E','F'];
 function qMCQ(q,key){
   let h=`<div class="qcard"><div class="q-src">${q.src}</div><div class="qtext">${q.text}</div>`;
   h+=`<div class="opts" data-correct="${q.correct}" data-key="${key}" data-a="0">`;
-  q.opts.forEach((o,i)=>h+=`<div class="opt" onclick="selOpt(this,${i})"><span class="ol">${L[i]}</span>${o}</div>`);
+  q.opts.forEach((o,i)=>h+=`<div class="opt" onclick="selOpt123(this,${i})"><span class="ol">${L[i]}</span>${o}</div>`);
   h+=`</div></div>`;return h;
 }
 function qW(q){
@@ -1537,12 +2528,605 @@ const q3=[
   {src:'Conceptual · Ch.3',text:'What distinguishes an exception from a trap?',opts:['Exceptions are only caused by hardware; traps only by software','A trap is a synchronous, precise exception caused by the currently executing instruction; exceptions can also be asynchronous','Traps cannot be handled by the OS','Exceptions always cause a reboot','Traps only occur in user mode'],correct:1},
 ];
 
+
+
+// ══════════════════════════════════════════════════
+// CH.4-8 PRACTICE (Interactive)
+// ══════════════════════════════════════════════════
+// ── FILL ANSWERS REGISTRY ──
+var _fillAnswers={};
+
+// ── EVENT DELEGATION (num + fill buttons + Enter key) ──
+document.addEventListener('click',function(e){
+  var t=e.target;
+  if(t.classList.contains('num-chk')){
+    var row=t.closest('[data-id]'); if(row)checkN(row.dataset.id,+row.dataset.ans,+row.dataset.tol);
+  }
+  if(t.classList.contains('num-rst')){
+    var row=t.closest('[data-id]'); if(!row)return;
+    var id=row.dataset.id;
+    var inp=document.getElementById(id+'-i'), fb=document.getElementById(id+'-fb');
+    if(inp){inp.value='';inp.className='';inp.style.borderColor='';}
+    if(fb){fb.textContent='';fb.className='qfb';}
+  }
+  if(t.classList.contains('fill-chk'))checkFill(t.dataset.id);
+  if(t.classList.contains('fill-rst'))resetFill(t.dataset.id);
+});
+document.addEventListener('keydown',function(e){
+  if(e.key!=='Enter')return;
+  if(e.target.classList.contains('num-inp')){
+    var row=e.target.closest('[data-id]');
+    if(row&&row.dataset.ans!==undefined)checkN(row.dataset.id,+row.dataset.ans,+row.dataset.tol);
+  }
+  if(e.target.classList.contains('fb-blank')&&e.target.dataset.fillid)checkFill(e.target.dataset.fillid);
+});
+
+// ── CODE EDITOR ──
+const defaults={};
+function runCode(id){
+  const code=document.getElementById(id+'-code').value;
+  const out=document.getElementById(id+'-out');
+  const logs=[];
+  const fakeConsole={log:(...a)=>logs.push(a.map(x=>typeof x==='object'?JSON.stringify(x):String(x)).join(' ')),error:(...a)=>logs.push('ERROR: '+a.join(' '))};
+  try{
+    const fn=new Function('console',code);
+    fn(fakeConsole);
+    out.textContent=logs.join('\n')||'(no output)';
+    out.className='ce-output';
+  }catch(e){out.textContent='Error: '+e.message;out.className='ce-output err';}
+}
+function resetCode(id){if(defaults[id])document.getElementById(id+'-code').value=defaults[id];}
+document.addEventListener('DOMContentLoaded',()=>{
+  document.querySelectorAll('.ce-code').forEach(el=>{defaults[el.id.replace('-code','')]=el.value;});
+});
+
+// ── SCORE ──
+let sc=0,sq=0;
+function addSc(got){sc+=got;sq++;document.getElementById('sc-num').textContent=sc+'/'+sq;}
+const LL=['A','B','C','D','E'];
+
+function buildMCQ(id,src,text,opts,correct){
+  return`<div class="qcard"><div class="q-src">${src}</div><div class="qtext">${text}</div>
+  <div class="opts" id="${id}-opts" data-correct="${correct}" data-done="0">
+  ${opts.map((o,i)=>`<div class="opt" onclick="selOpt('${id}',${i})"><span class="ol">${LL[i]}</span>${o}</div>`).join('')}
+  </div></div>`;
+}
+function selOpt(id,ci){
+  const g=document.getElementById(id+'-opts');
+  if(g.dataset.done==='1')return;g.dataset.done='1';
+  const c=+g.dataset.correct;
+  g.querySelectorAll('.opt')[c].classList.add('correct');
+  if(ci!==c)g.querySelectorAll('.opt')[ci].classList.add('wrong');
+  g.querySelectorAll('.opt').forEach((o,i)=>{if(i!==c&&i!==ci)o.classList.add('dim');});
+  addSc(ci===c?1:0);
+}
+
+function buildNum(id,src,text,ans,unit,tol){
+  tol=tol||0;
+  return '<div class="qcard">'
+    +'<div class="q-src">'+src+'</div>'
+    +'<div class="qtext">'+text+'</div>'
+    +'<div class="num-q" data-id="'+id+'" data-ans="'+ans+'" data-tol="'+tol+'">'
+    +'<input type="number" id="'+id+'-i" step="any" placeholder="Your answer" class="num-inp">'
+    +'<span style="font-size:.83rem;color:var(--mid)">'+unit+'</span>'
+    +'<button class="chk-btn num-chk">Check</button>'
+    +'<button class="chk-btn num-rst" style="border-color:var(--light);color:var(--light)">Reset</button>'
+    +'</div>'
+    +'<div id="'+id+'-fb" class="qfb"></div></div>';
+}
+function checkN(id,ans,tol){
+  var inp=document.getElementById(id+'-i'), fb=document.getElementById(id+'-fb');
+  if(!inp||!fb)return;
+  var raw=inp.value.trim();
+  if(raw===''){
+    fb.innerHTML='&#9888; Enter a number first.';
+    fb.className='qfb bad'; inp.style.borderColor='var(--rose-d)'; return;
+  }
+  var v=parseFloat(raw);
+  if(isNaN(v)){
+    fb.innerHTML='&#9888; Invalid &mdash; digits only (e.g. 1024, 3.14).';
+    fb.className='qfb bad'; inp.style.borderColor='var(--rose-d)'; return;
+  }
+  var ok=Math.abs(v-ans)<=Math.max(tol,Math.abs(ans)*0.015);
+  inp.className=ok?'ok':'bad'; inp.style.borderColor='';
+  fb.innerHTML=ok?'&#x2705; Correct! Answer = '+ans:'&#10060; Got '+v+', expected '+ans;
+  fb.className='qfb '+(ok?'ok':'bad');
+  addSc(ok?1:0);
+}
+
+function buildFill(id,src,text,answers){
+  _fillAnswers[id]=answers;
+  var t=text;
+  answers.forEach(function(a,i){
+    t=t.replace('{'+i+'}','<input class="fb-blank" id="'+id+'-b'+i+'" autocomplete="off" spellcheck="false" type="text" data-fillid="'+id+'">');
+  });
+  return '<div class="qcard">'
+    +'<div class="q-src">'+src+'</div>'
+    +'<div class="qtext">'+t+'</div>'
+    +'<div style="margin-top:.6rem;display:flex;gap:.6rem;align-items:center;flex-wrap:wrap">'
+    +'<button class="chk-btn fill-chk" data-id="'+id+'">Check All</button>'
+    +'<button class="chk-btn fill-rst" style="border-color:var(--light);color:var(--light)" data-id="'+id+'">Reset</button>'
+    +'</div>'
+    +'<div id="'+id+'-fb" class="qfb"></div></div>';
+}
+function checkFill(id){
+  var answers=_fillAnswers[id];
+  if(!answers)return;
+  var fb=document.getElementById(id+'-fb');
+  if(!fb)return;
+  var blanks=answers.map(function(_,i){return document.getElementById(id+'-b'+i);});
+  var emptyIdx=-1;
+  for(var ei=0;ei<blanks.length;ei++){if(!blanks[ei]||blanks[ei].value.trim()===''){emptyIdx=ei;break;}}
+  if(emptyIdx!==-1){
+    fb.innerHTML='&#9888; Fill in blank '+(emptyIdx+1)+' before checking.';
+    fb.className='qfb bad';
+    blanks.forEach(function(el){if(el&&el.value.trim()==='')el.style.borderBottomColor='var(--rose-d)';});
+    return;
+  }
+  var all=true, wrongs=[];
+  answers.forEach(function(a,i){
+    var inp=blanks[i]; if(!inp)return;
+    var v=inp.value.trim().toLowerCase().replace(/\s+/g,' ');
+    var ta=String(a).toLowerCase().trim();
+    var numOk=!isNaN(+v)&&!isNaN(+ta)&&+ta!==0&&Math.abs(+v-+ta)<=Math.max(0.02,Math.abs(+ta)*0.02);
+    var textOk=v===ta||v.replace(/[^a-z0-9]/g,'')===ta.replace(/[^a-z0-9]/g,'');
+    var ok=textOk||numOk;
+    inp.className='fb-blank '+(ok?'ok':'bad');
+    inp.style.borderBottomColor='';
+    if(!ok){all=false;wrongs.push('Blank '+(i+1)+': expected <strong>'+a+'</strong>');}
+  });
+  fb.innerHTML=all?'&#x2705; All correct!':'&#10060; '+wrongs.join(' &middot; ');
+  fb.className='qfb '+(all?'ok':'bad');
+  addSc(all?1:0);
+}
+function resetFill(id){
+  var fb=document.getElementById(id+'-fb');
+  if(fb){fb.textContent='';fb.className='qfb';}
+  var answers=_fillAnswers[id]||[];
+  answers.forEach(function(_,i){
+    var inp=document.getElementById(id+'-b'+i);
+    if(inp){inp.value='';inp.className='fb-blank';inp.style.borderBottomColor='';}
+  });
+}
+
+function buildCodeQ(id,src,text,starter,hint){
+  return`<div class="qcard"><div class="q-src">${src}</div><div class="qtext">${text}</div>
+  <div class="code-q">
+    <textarea id="${id}-code" rows="8">${starter}</textarea>
+    <div class="q-check-area">
+      <button class="ce-run-btn" onclick="runCodeQ('${id}')">▶ Run</button>
+      <button class="hint-btn" onclick="toggleHint('${id}')">💡 Hint</button>
+    </div>
+    <div class="hint-box" id="${id}-hint">${hint}</div>
+    <div class="ce-output" id="${id}-out" style="margin-top:.4rem;border-radius:9px">Click ▶ Run to test your code</div>
+  </div></div>`;
+}
+function runCodeQ(id){
+  const code=document.getElementById(id+'-code').value;
+  const out=document.getElementById(id+'-out');
+  const logs=[];
+  const fc={log:(...a)=>logs.push(a.map(x=>typeof x==='object'?JSON.stringify(x):String(x)).join(' '))};
+  try{new Function('console',code)(fc);out.textContent=logs.join('\n')||'(no output)';out.className='ce-output';}
+  catch(e){out.textContent='Error: '+e.message;out.className='ce-output err';}
+}
+function toggleHint(id){const h=document.getElementById(id+'-hint');h.style.display=h.style.display==='block'?'none':'block';}
+
+// ── PRACTICE DATA ──
+
+function renderQ4(){
+  const h=[];
+  // Quiz 4-252: HAL vs API
+  h.push(buildMCQ('p4_1','Quiz 4-252 · Q1',
+    'What is the main difference between a HAL (Hardware Abstraction Layer) and an API?',
+    ['HAL is faster than API','HAL hides hardware register details for portability across MCUs; API provides higher-level functions for application code to access system services','API is lower-level than HAL','HAL and API are identical in embedded systems','HAL is only used in operating systems'],1));
+  // Quiz 4-252: DMA
+  h.push(buildFill('p4_2','Quiz 4-252 · Q2 · DMA Sequence',
+    'DMA transfer sequence: CPU {0} the DMA controller → DMA requests the {1} → DMA becomes bus {2} → performs transfer → {3} CPU when finished.',
+    ['configures','bus','master','interrupts']));
+  // Quiz 4-252: Bus Bridge
+  h.push(buildMCQ('p4_3','Quiz 4-252 · Q3 · Bus Bridge',
+    'On the high-speed side of a bus bridge, the bridge typically acts as a:',
+    ['Master that issues commands to fast devices','Slave that receives requests from the CPU or high-speed masters','Arbiter that manages bus priorities','Clock generator for the fast bus','DMA controller'],1));
+  h.push(buildMCQ('p4_4','Quiz 4-252 · Q3 · Bus Bridge',
+    'On the low-speed side of a bus bridge, the bridge typically acts as a:',
+    ['Slave waiting for peripheral requests','Master issuing transactions to slow peripherals','Passive observer only','Interrupt controller','Clock divider'],1));
+  // Quiz 4-252: Memory controller
+  h.push(buildMCQ('p4_5','Quiz 4-252 · Q4 · Memory Controller',
+    'Which is NOT a responsibility of a memory controller?',
+    ['Hide DRAM timing (RAS/CAS/refresh) from the CPU','Translate CPU requests to DRAM commands','Schedule and reorder requests to minimize latency','Execute program instructions directly on DRAM','Arbitrate between multiple requesters (CPU, DMA, GPU)'],3));
+  // Quiz 4-252: Channels vs Banks
+  h.push(buildMCQ('p4_6','Quiz 4-252 · Q5 · Memory Channels vs Banks',
+    'What is the key difference between memory channels and memory banks?',
+    ['Banks are faster than channels','Channels are independent physical interfaces allowing simultaneous transfers; banks are internal DRAM subdivisions sharing the channel bus','Channels are inside the DRAM chip; banks are external','They are the same thing with different names','Banks allow parallel access; channels do not'],1));
+  // Quiz 4-252: Bus Bandwidth
+  h.push(buildNum('p4_7','Quiz 4-252 · Q7 · Bus Bandwidth',
+    'Bus: W=2 B, D=1, O=3, f=1 MHz. Effective bandwidth (B/s)?',
+    500000,'B/s',0));
+  h.push(buildNum('p4_8','Quiz 3-171 / Quiz 3-252 · Bus Budget',
+    '10,000 bytes every 10ms over 2MHz 32-bit bus. D=1, O=2. CPU time budget (ms)?',
+    6.25,'ms',0.01));
+  h.push(buildNum('p4_9','Quiz 3-171 · Min CPU Frequency',
+    'Same scenario (6.25ms budget). 30 cycles/byte. Minimum CPU frequency (MHz)?',
+    48,'MHz',0.1));
+  h.push(buildMCQ('p4_10','Quiz 4-252 · Q6 · Debugging Tools',
+    'Which debugging tool allows you to inspect/modify CPU registers, set breakpoints, and single-step in embedded systems?',
+    ['UART printf logging','LED indicators','JTAG / In-Circuit Emulator (ICE)','Logic analyzer','Oscilloscope'],2));
+  h.push(buildMCQ('p4_11','Conceptual · DMA',
+    'The key advantage of DMA over CPU-driven I/O transfers is:',
+    ['DMA runs at higher clock frequency','DMA transfers data while the CPU executes other code simultaneously','DMA eliminates the need for interrupts','DMA requires no bus arbitration','DMA doubles effective bus width'],1));
+  h.push(buildMCQ('p4_12','Conceptual · DRAM',
+    'DRAM requires periodic refresh because:',
+    ['Its cells wear out from use','Capacitor charges leak over time and must be recharged periodically','Its controller mandates it for arbitration','It uses less power when refreshed','The operating system requires it for security'],1));
+  document.getElementById('qs4').innerHTML=h.join('');
+}
+
+function renderQ5(){
+  const h=[];
+  h.push(buildMCQ('p5_1','Conceptual · volatile',
+    'Why must variables shared between an ISR and main loop be declared volatile?',
+    ['To allocate them in SRAM','To make them faster to access','To prevent the compiler from caching them in a register, missing ISR updates','To prevent compiler warnings','To enable multi-core access'],2));
+  h.push(buildFill('p5_2','Quiz 5-191 / Quiz 4-181 · Circular Buffer',
+    'Circular buffer SIZE=3. init() sets pos={0}. The modular arithmetic formula for put(v) is: pos = (pos + {1}) % {2}; buffer[pos] = v;',
+    ['2','1','3']));
+  h.push(buildNum('p5_3','Quiz 4-181 / Quiz 5-191 · Trace',
+    'Circular buffer SIZE=3. After init(), then put(10), put(20), put(30), put(40). get(0) returns:',
+    40,'',0));
+  h.push(buildNum('p5_4','Quiz 4-181 / Quiz 5-191 · Trace',
+    'Same buffer above. get(1) returns:',
+    30,'',0));
+  h.push(buildFill('p5_6','Quiz 5-191 · Seat Belt FSM',
+    'In the Seat Belt FSM: from state SEATED, if the timer expires (belt not yet fastened), transition to state {0} and turn buzzer {1}.',
+    ['BUZZER','ON']));
+  h.push(buildNum('p5_7','Conceptual · Timer',
+    'LPC Timer0, f_clk=25MHz, PR=0. To generate interrupt every 2 seconds (periodic), what value should MR0 be?',
+    50000000,'counts',0));
+  document.getElementById('qs5').innerHTML=h.join('');
+}
+
+function renderQ6(){
+  const h=[];
+  h.push(buildMCQ('p6_1','Quiz 5-181 · ADC Process',
+    'The two main steps of the ADC conversion process are:',
+    ['Amplification and digitization','Sampling/holding and quantization/encoding','Filtering and sampling','Encoding and transmission','Comparison and latching'],1));
+  h.push(buildFill('p6_2','Quiz 5-181 / Quiz 6-191 · Nyquist',
+    'Aliasing occurs when the sampling frequency is {0} than {1} times the maximum frequency of the signal.',
+    ['less','2']));
+  h.push(buildNum('p6_3','Quiz 6-191 · Quantization Error',
+    'Analog signal range −5V to +5V, 3-bit ADC. Largest quantization error (V)? (use ±Q/2)',
+    0.625,'V',0.001));
+  h.push(buildNum('p6_4','Quiz 5-181 / Quiz 6-191 · Dynamic Error',
+    '8-bit ADC, conversion time t_c=100ns. Max frequency of A·sin(2πft) to guarantee accuracy (kHz)?',
+    39.1,'kHz',0.5));
+  h.push(buildNum('p6_5','Quiz 6-191 · ENOB',
+    'SNR = 6.02n+1.76 dB. 12-bit ADC with measured SNR=65.5dB. ENOB = ? (round to 1 decimal)',
+    10.6,'bits',0.15));
+  h.push(buildMCQ('p6_6','Quiz 5-181 · SAR ADC, 0–5V, V_in=4.6V',
+    'First step of 4-bit SAR: SAR=1000 → V_DAC=2.5V. Result?',
+    ['Bit kept (SAR=1000) because 4.6 > 2.5','Bit cleared (SAR=0000) because 4.6 > 2.5','Bit kept (SAR=1000) because 4.6 < 2.5','Conversion stops','SAR=0100 is tried next'],0));
+  h.push(buildFill('p6_7','Quiz 5-181 · SAR Result',
+    '4-bit SAR ADC, 0–5V, V_in=4.6V. Final digital output = {0} (in binary 4 bits).',
+    ['1110']));
+  h.push(buildNum('p6_8','Quiz 5-181 · Half-Flash',
+    '4-bit Half-Flash, 0–5V, V_in=4.6V. Stage 1 (2-bit) threshold for code "11" is at V = ? (V)',
+    3.75,'V',0.01));
+  h.push(buildNum('p6_9','Analog signal -5 to +5V, 8-bit SAR · Quiz 5-181',
+    'Analog value 2.5V converted to hex using 8-bit SAR ADC (range −5V to +5V). Decimal code = ? (then convert to hex = 0xC0)',
+    192,'decimal',0));
+  // Quiz 6-252: Flash ADC full worked example
+  h.push(buildNum('p6_10','Quiz 6-252 · Q(a) · Flash ADC 4-bit, 0–5V, V_in=2.8V',
+    '4-bit Flash ADC, range 0–5V, V_in=2.8V. The priority encoder outputs code 1000 (8 in decimal). What is the quantization error in volts? (midpoint = 8.5q where q=5/16)',
+    0.14375,'V',0.001));
+  h.push(buildNum('p6_11','Quiz 6-252 · Q(a) · Flash ADC Comparators',
+    '4-bit Flash ADC requires how many comparators?',
+    15,'comparators',0));
+  h.push(buildFill('p6_12','Quiz 6-252 · Q(b) · Half-Flash 4-bit, 0–5V, V_in=2.8V',
+    'Half-Flash ADC: Stage 1 (2-bit) compares 2.8V against thresholds 3.75V, 2.5V, 1.25V. Since 2.8V &lt; 3.75V and &gt; 2.5V, code = {0}. Residue = 2.8 − {1} = {2}V. Stage 2 gives code 00. Final 4-bit result = {3}.',
+    ['10','2.5','0.3','1000']));
+  h.push(buildFill('p6_13','Quiz 6-252 · Q(c) · SAR 4-bit, 0–5V, V_in=2.8V',
+    'SAR ADC (q=0.3125V): Cycle1: SAR=1000, V_DAC=2.5V, 2.8>2.5 → keep. Cycle2: SAR=1100, V_DAC={0}V, 2.8<{0}V → reset bit → SAR={1}. Cycle3: SAR=1010, V_DAC={2}V, 2.8<{2}V → reset → SAR={1}. Cycle4: SAR=1001, V_DAC={3}V, 2.8<{3}V → reset. Final code = {4}.',
+    ['3.75','1000','3.125','2.8125','1000']));
+  document.getElementById('qs6').innerHTML=h.join('');
+}
+
+function renderQ7(){
+  const h=[];
+  h.push(buildNum('p7_1','Quiz 5-181 · Average Voltage',
+    'PWM signal: duty cycle=40%, V_L=0V, V_H=5V. Average voltage (V) = ?',
+    2,'V',0));
+  h.push(buildMCQ('p7_2','Quiz 5-181 · ADC SNR',
+    'Adding 1 extra bit to an N-bit ADC increases SNR by approximately:',
+    ['1 dB','3 dB','6 dB','12 dB','0.5 dB'],2));
+  h.push(buildFill('p7_3','Quiz 5-181 · Leading-Edge PWM',
+    'MR0=100, PWMSEL2, PWMENA2. To configure PWM2 as leading-edge with 80% duty cycle:\nMR1 = {0} (rise edge), MR2 = {1} (fall edge).',
+    ['20','100']));
+  h.push(buildMCQ('p7_4','Conceptual · LPC PWM',
+    'Why must you write to LER register after changing a match register (MRn)?',
+    ['LER clears the interrupt flag','LER latches the new MRn value to take effect at next period reset','LER enables PWM output pin','LER resets the timer counter','LER sets the prescaler'],1));
+  h.push(buildNum('p7_5','Quiz 3-171 · Double-Edge PWM4',
+    'MR0=100, MR3=53 (rise), MR4=27 (fall), PWMSEL4=1 (double-edge). PWM4 duty cycle (%)?',
+    74,'%',0.1));
+  document.getElementById('qs7').innerHTML=h.join('');
+}
+
+function renderQ8(){
+  const h=[];
+  h.push(buildMCQ('p8_1','Quiz 6-181 / Quiz 7-191 · Serial Interfaces',
+    'Examples: parallel interface, synchronous serial, asynchronous serial:',
+    ['Ethernet, USB, Bluetooth','Parallel printer port, SPI/I²C, UART','UART, SPI, CAN','USB, UART, SPI','I²C, SPI, UART'],1));
+  h.push(buildFill('p8_2','Quiz 7-191 · Baud Rate',
+    'Transmission rate=57600 bps, 8 voltage levels per symbol. Baud rate = {0} Bd.',
+    ['19200']));
+  h.push(buildNum('p8_3','Quiz 6-181 · UART Info Rate',
+    'UART: 3 protocol bits (start/stop/parity), 5 data bits, 9600 baud, 2 bits/symbol. Info rate (bps)?',
+    12000,'bps',0));
+  h.push(buildNum('p8_4','Quiz 7-191 · UART Info Rate',
+    'UART: 4 protocol bits, 8 data bits, 57600 baud, 1 bit/symbol. Info rate (bps)?',
+    38400,'bps',0));
+  h.push(buildMCQ('p8_5','Quiz 7-191 · Interface Selection',
+    'To communicate with 4 slaves at speeds > 4 Mbps, which interface is best?',
+    ['UART','I²C','SPI','CAN','RS-485'],2));
+  h.push(buildFill('p8_6','Quiz 6-181 / Quiz 7-191 · I²C Conditions',
+    'I²C START condition: SCL = {0} and SDA changes from {1} to {2}.\nI²C STOP condition: SCL = {3} and SDA changes from {4} to {5}.',
+    ['1','1','0','1','0','1']));
+  h.push(buildMCQ('p8_7','Quiz 7-191 · UART Error',
+    'In UART, a framing error is caused by:',
+    ['The receive buffer being full','The parity bit being wrong','The stop bit of a received character being logic 0','A timeout in the transmitter','Clock mismatch between sender and receiver'],2));
+  h.push(buildFill('p8_8','Quiz 7-191 · UART Synchronization',
+    'The UART receiver synchronizes with the transmitter using the {0} edge of the {1} bit. It samples input at typically {2} times the baud rate.',
+    ['falling','start','16']));
+
+  document.getElementById('qs8').innerHTML=h.join('');
+}
+
+// ── BUS CALC ──
+function calcBus(){
+  const W=+document.getElementById('bW').value,f=+document.getElementById('bf').value;
+  const D=+document.getElementById('bD').value,O=+document.getElementById('bO').value,B=+document.getElementById('bB').value;
+  document.getElementById('bW-v').textContent=W+' B';
+  document.getElementById('bf-v').textContent=f+' MHz';
+  document.getElementById('bD-v').textContent=D;
+  document.getElementById('bO-v').textContent=O;
+  document.getElementById('bB-v').textContent=B;
+  const bw=(W*f*1e6/(D+O)/1e6).toFixed(2);
+  const bwB=B>1?(W*f*1e6/(D+O/B)/1e6).toFixed(2):'–';
+  const eff=((D/(D+O))*100).toFixed(0);
+  document.getElementById('bus-out').textContent=
+    `Simple BW = ${W}×${f}M/(${D}+${O}) = ${bw} MB/s  [efficiency ${eff}%]\n`+
+    (B>1?`Burst BW (B=${B}) = ${bwB} MB/s\n`:'')+
+    (parseFloat(bw)>=6.9?'✅ Sufficient for 30fps 320×240 video (need 6.9 MB/s)':'❌ Too slow for 30fps video (need 6.9 MB/s)');
+}
+calcBus();
+
+// ── ADC CALC ──
+function calcADC(){
+  const N=+document.getElementById('aN').value;
+  const vmin=+document.getElementById('aVmin').value,vmax=+document.getElementById('aVmax').value,vin=+document.getElementById('aVin').value;
+  document.getElementById('aN-v').textContent=N+' bits';
+  document.getElementById('aVmin-v').textContent=vmin.toFixed(1)+' V';
+  document.getElementById('aVmax-v').textContent=vmax.toFixed(1)+' V';
+  document.getElementById('aVin-v').textContent=vin.toFixed(2)+' V';
+  const L=Math.pow(2,N),Q=(vmax-vmin)/L;
+  const cv=Math.max(vmin,Math.min(vmax,vin));
+  const code=Math.min(Math.floor((cv-vmin)/Q),L-1);
+  const quant=vmin+(code+0.5)*Q;
+  const snr=(6.02*N+1.76).toFixed(2);
+  document.getElementById('adc-out').textContent=
+    `Levels = 2^${N} = ${L}\nStep Q = (${vmax}−${vmin})/${L} = ${Q.toFixed(4)} V = ${(Q*1000).toFixed(2)} mV\n`+
+    `Digital code = ${code} = 0b${code.toString(2).padStart(N,'0')} = 0x${code.toString(16).toUpperCase()}\n`+
+    `Quantized = ${quant.toFixed(4)} V | Error = ${(vin-quant).toFixed(4)} V (max ±${(Q/2*1000).toFixed(2)} mV)\n`+
+    `Ideal SNR = 6.02×${N}+1.76 = ${snr} dB`;
+}
+calcADC();
+
+// ── SAR ──
+let sarSt={N:4,vin:4.6,step:0,bits:[],done:false};
+function sarReset(){
+  sarSt.N=+document.getElementById('sarN').value;
+  sarSt.vin=+document.getElementById('sarVin').value;
+  sarSt.step=0;sarSt.bits=[];sarSt.done=false;
+  document.getElementById('sarN-v').textContent=sarSt.N+' bits';
+  document.getElementById('sarVin-v').textContent=sarSt.vin.toFixed(2)+' V';
+  renderSAR();
+}
+function sarStep(){
+  if(sarSt.done)return;
+  const{N,vin}=sarSt,vmax=5;
+  const bi=N-1-sarSt.step;
+  const tb=[...sarSt.bits];
+  while(tb.length<N)tb.push(0);
+  tb[bi]=1;for(let i=bi-1;i>=0;i--)tb[i]=0;
+  const tv=vmax*tb.reduce((s,b,i)=>s+(b<<(N-1-i)),0)/Math.pow(2,N);
+  while(sarSt.bits.length<N)sarSt.bits.push(0);
+  sarSt.bits[bi]=vin>=tv?1:0;
+  sarSt.step++;
+  if(sarSt.step>=sarSt.N)sarSt.done=true;
+  renderSAR();
+}
+function renderSAR(){
+  const{N,bits,step,done,vin}=sarSt,vmax=5;
+  let html='';
+  for(let i=N-1;i>=0;i--){
+    const idx=N-1-i,isTesting=(idx===step&&!done);
+    let cls='sar-bit '+(isTesting?'sb-test':(idx<step?(bits[i]?'sb-one':'sb-zero'):'sb-pend'));
+    html+=`<div class="${cls}"><span>${(idx<step&&!isTesting)?bits[i]:'?'}</span><span class="bl">B${i}</span></div>`;
+  }
+  document.getElementById('sar-bits').innerHTML=html;
+  let msg='';
+  if(done){
+    const code=bits.slice().reverse().reduce((s,b,i)=>s+(b<<i),0);
+    const qval=vmax*code/Math.pow(2,N);
+    msg=`✅ Done! Result: ${bits.slice().reverse().join('')} = ${code} = 0x${code.toString(16).toUpperCase()}\nQuantized: ${qval.toFixed(3)}V | Error: ${(vin-qval).toFixed(4)}V`;
+  } else if(step>0){
+    const testVal=vmax*bits.slice().reverse().reduce((s,b,i)=>s+(b<<i),0)/Math.pow(2,N);
+    msg=`Step ${step}/${N}: Bit ${N-step} = ${bits[N-step]}  | Test V_DAC ≈ ${testVal.toFixed(3)}V vs V_in=${vin.toFixed(2)}V\nClick "Next Bit" to continue...`;
+  } else {
+    msg=`V_in=${vin.toFixed(2)}V, ${N}-bit, 0–${vmax}V. Click "Next Bit" to start.`;
+  }
+  document.getElementById('sar-out').textContent=msg;
+}
+sarReset();
+
+// ── PWM ──
+function drawPWM(){
+  const MR0=+document.getElementById('pMR0').value;
+  const mr1=+document.getElementById('pMR1').value;
+  const mr2a=+document.getElementById('pMR2a').value;
+  const mr2b=+document.getElementById('pMR2b').value;
+  document.getElementById('pMR0-v').textContent=MR0;
+  document.getElementById('pMR1-v').textContent=mr1+'%';
+  document.getElementById('pMR2a-v').textContent=mr2a+'%';
+  document.getElementById('pMR2b-v').textContent=mr2b+'%';
+  const svg=document.getElementById('pwm-svg');
+  const W=svg.clientWidth||600,H=120,pad=6;
+  const w=W-2*pad,cy1=24,cy2=82,ht=16;
+  const rep=2,cw=w/rep;
+  let p1='',p2='';
+  for(let r=0;r<rep;r++){
+    const x0=pad+r*cw;const fe=x0+mr1/100*cw;
+    p1+=`M${x0},${cy1+ht}L${x0},${cy1-ht}L${fe},${cy1-ht}L${fe},${cy1+ht}L${x0+cw},${cy1+ht}`;
+    const rise=x0+mr2a/100*cw,fall=x0+mr2b/100*cw;
+    if(fall>rise){p2+=`M${x0},${cy2+ht}L${rise},${cy2+ht}L${rise},${cy2-ht}L${fall},${cy2-ht}L${fall},${cy2+ht}L${x0+cw},${cy2+ht}`;}
+    else{p2+=`M${x0},${cy2-ht}L${fall},${cy2-ht}L${fall},${cy2+ht}L${rise},${cy2+ht}L${rise},${cy2-ht}L${x0+cw},${cy2-ht}`;}
+  }
+  svg.innerHTML=`<rect width="${W}" height="${H}" fill="#1e1a2e" rx="8"/>
+    <text x="${pad+3}" y="16" fill="#f4a7b9" font-family="Space Mono" font-size="9" font-weight="700">CH1 single-edge (duty=${mr1}%)</text>
+    <path d="${p1}" stroke="#f4a7b9" stroke-width="2.2" fill="none"/>
+    <text x="${pad+3}" y="74" fill="#a8d8c8" font-family="Space Mono" font-size="9" font-weight="700">CH2 double-edge (rise=${mr2a}% fall=${mr2b}%)</text>
+    <path d="${p2}" stroke="#a8d8c8" stroke-width="2.2" fill="none"/>
+    <line x1="${pad+cw}" y1="0" x2="${pad+cw}" y2="${H}" stroke="#3a3050" stroke-width="1" stroke-dasharray="3"/>`;
+  const d2=(mr2b>mr2a?mr2b-mr2a:100-mr2a+mr2b).toFixed(0);
+  document.getElementById('pwm-out').textContent=`CH1 single-edge: duty=${mr1}% | CH2 double-edge: rise@${mr2a}% fall@${mr2b}% → duty=${d2}%`;
+}
+setTimeout(drawPWM,80);window.addEventListener('resize',drawPWM);
+
+// ── FSM ──
+let fsmSt='IDLE',fsmBz=false;
+const fsmT={
+  IDLE:{seat:()=>'SEATED'},
+  SEATED:{noseat:()=>'IDLE',belt:()=>'BELTED',timer:()=>{fsmBz=true;return'BUZZER';}},
+  BELTED:{nobelt:()=>'SEATED'},
+  BUZZER:{belt:()=>{fsmBz=false;return'BELTED';},noseat:()=>{fsmBz=false;return'IDLE';}}
+};
+const fsmColors={IDLE:['#deeef9','#6aabcf'],SEATED:['#fdf0e4','#e8a06a'],BELTED:['#e0f4ef','#6fbba6'],BUZZER:['#fce4ec','#e47fa0']};
+const fsmDesc={IDLE:'Waiting for passenger.',SEATED:'Passenger seated. Timer running — fasten belt!',BELTED:'Belt fastened. System safe ✅',BUZZER:'⚠️ Time expired without belt! Buzzer is ON.'};
+const evLabels={seat:'👤 Sit',noseat:'🚶 Leave',belt:'🔒 Belt On',nobelt:'🔓 Belt Off',timer:'⏰ Timer'};
+function fsmRender(){
+  document.getElementById('fsm-states').innerHTML=['IDLE','SEATED','BELTED','BUZZER'].map(s=>{
+    const[bg,fg]=fsmColors[s],active=fsmSt===s;
+    return`<div class="fsm-state-chip" style="background:${active?fg:bg};color:${active?'#fff':fg};border-color:${fg};transform:${active?'scale(1.06)':'scale(1)'}">${s}</div>`;
+  }).join('');
+  const[ibg,ifg]=fsmColors[fsmSt];
+  const info=document.getElementById('fsm-info');
+  if(info){info.style.background=ibg;info.style.borderColor=ifg;}
+  const cs=document.getElementById('fsm-cur-state');
+  if(cs){cs.textContent=fsmSt;cs.style.color=ifg;}
+  const cb=document.getElementById('fsm-cur-buzz');
+  if(cb){cb.textContent=fsmBz?'🔴 ON':'⚫ OFF';cb.style.color=fsmBz?'#e47fa0':ifg;}
+  const cd=document.getElementById('fsm-cur-desc');
+  if(cd){cd.textContent=fsmDesc[fsmSt];cd.style.color=ifg;}
+}
+function fsmAddLog(html){
+  const log=document.getElementById('fsm-log');
+  if(!log)return;
+  const entry=document.createElement('div');
+  entry.innerHTML=html;
+  log.insertBefore(entry,log.firstChild);
+}
+function fsmEv(ev){
+  const t=fsmT[fsmSt];
+  const evLabel=evLabels[ev]||ev;
+  if(t&&t[ev]){
+    const prev=fsmSt;
+    fsmSt=t[ev]();
+    fsmRender();
+    const[bg,fg]=fsmColors[fsmSt];
+    const[pbg,pfg]=fsmColors[prev];
+    fsmAddLog(`<div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;background:${bg};border-left:3px solid ${fg};border-radius:8px;padding:.45rem .8rem;margin-bottom:.3rem">
+      <span style="background:${pfg};color:#fff;border-radius:12px;padding:2px 9px;font-family:'Space Mono',monospace;font-size:.7rem;font-weight:700;white-space:nowrap">${evLabel}</span>
+      <span style="font-size:.8rem;color:var(--mid)">${prev} <span style="color:var(--light)">→</span> <strong style="color:${fg}">${fsmSt}</strong></span>
+      <span style="font-size:.76rem;color:var(--light);margin-left:auto">${fsmBz?'🔴 Buzzer ON':'⚫ Buzzer OFF'}</span>
+    </div>`);
+  } else {
+    fsmAddLog(`<div style="background:var(--butter-l);border-left:3px solid var(--butter-d);border-radius:8px;padding:.4rem .8rem;margin-bottom:.3rem;font-size:.78rem;color:var(--butter-d)">
+      ⚠️ <strong>${evLabel}</strong> has no effect in state <strong>${fsmSt}</strong>
+    </div>`);
+  }
+}
+function fsmReset(){
+  fsmSt='IDLE';fsmBz=false;fsmRender();
+  const ce=document.getElementById('fsm-cur-ev');if(ce)ce.textContent='—';
+  const log=document.getElementById('fsm-log');
+  if(log){log.innerHTML='';fsmAddLog('<div style="background:var(--sky-l);border-left:3px solid var(--sky-d);border-radius:8px;padding:.4rem .8rem;margin-bottom:.3rem;font-size:.78rem;color:var(--sky-d)">↺ System reset — State: IDLE | Buzzer: OFF</div>');}
+}
+fsmRender();
+setTimeout(()=>{fsmAddLog('<div style="background:var(--sky-l);border-left:3px solid var(--sky-d);border-radius:8px;padding:.4rem .8rem;margin-bottom:.3rem;font-size:.78rem;color:var(--sky-d)">System ready. Click the event buttons above to drive the FSM.</div>');},60);
+
+// ── CIRCULAR BUFFER VIZ ──
+const BSIZ=5;let bArr=new Array(BSIZ).fill(null),bPos=BSIZ-1;
+function bufRenderD(){
+  document.getElementById('buf-disp').innerHTML=bArr.map((v,i)=>{
+    const ip=i===bPos,ie=v===null;
+    return`<div class="buf-cell" style="border-color:${ip?'var(--peach-d)':'var(--peach-l)'};background:${ie?'var(--white)':'var(--peach-l)'};color:${ie?'var(--light)':'var(--peach-d)'}">
+      <span>${ie?'—':v}</span><span class="bi">[${i}]${ip?' ←pos':''}</span></div>`;
+  }).join('');
+}
+function bufPut(){const v=parseInt(document.getElementById('buf-val').value)||0;bPos=(bPos+1)%BSIZ;const ow=bArr[bPos]!==null;bArr[bPos]=v;bufRenderD();document.getElementById('buf-out').textContent=`put(${v}) → pos=${bPos}${ow?' ⚠️ overwrote old':''}.  buf=[${bArr.map(x=>x===null?'—':x).join(', ')}]`;}
+function bufHead(){
+  if(bArr.every(x=>x===null)){document.getElementById('buf-out').textContent='Buffer is empty!';return;}
+  const v=bArr[bPos];
+  document.getElementById('buf-out').textContent=`getHead (newest) = ${v===null?'(empty)':v}  [buffer[pos=${bPos}] = get(0)]`;
+}
+function bufTail(){
+  if(bArr.every(x=>x===null)){document.getElementById('buf-out').textContent='Buffer is empty!';return;}
+  const count=bArr.filter(x=>x!==null).length;
+  const tailIdx=(bPos-(count-1)+BSIZ)%BSIZ;
+  const v=bArr[tailIdx];
+  document.getElementById('buf-out').textContent=`getTail (oldest) = ${v===null?'(empty)':v}  [buffer[${tailIdx}] = get(${count-1})]`;
+}
+function bufReset(){bArr=new Array(BSIZ).fill(null);bPos=BSIZ-1;bufRenderD();document.getElementById('buf-out').textContent='Reset. pos=4. Next put() → index 0.';}
+bufReset();
+
+// ── UART ──
+function buildStaticUARTFrame(){
+  const fr=[{l:'IDLE',b:'#3a3050',c:'#9b8bd0'},{l:'START\n0',b:'#e47fa0',c:'#fff'},
+    {l:'D0',b:'#6fbba6',c:'#fff'},{l:'D1',b:'#4a8070',c:'#fff'},{l:'D2',b:'#6fbba6',c:'#fff'},{l:'D3',b:'#4a8070',c:'#fff'},
+    {l:'D4',b:'#6fbba6',c:'#fff'},{l:'D5',b:'#4a8070',c:'#fff'},{l:'D6',b:'#6fbba6',c:'#fff'},{l:'D7',b:'#4a8070',c:'#fff'},
+    {l:'PAR',b:'#c8a020',c:'#fff'},{l:'STOP\n1',b:'#6aabcf',c:'#fff'},{l:'IDLE',b:'#3a3050',c:'#9b8bd0'}];
+  const el=document.getElementById('uart-static-frame');
+  if(el)el.innerHTML=fr.map(f=>`<div class="uf" style="background:${f.b};color:${f.c};flex:1;min-width:28px;white-space:pre-line">${f.l}</div>`).join('');
+}
+function buildUART(){
+  const c=+document.getElementById('uChar').value,par=document.getElementById('uPar').value;
+  document.getElementById('uChar-v').textContent=`'${String.fromCharCode(c)}' (${c})`;
+  const bits=[];for(let i=0;i<8;i++)bits.push((c>>i)&1);
+  const ones=bits.reduce((a,b)=>a+b,0);
+  let pb=0;if(par==='even')pb=ones%2?1:0;else if(par==='odd')pb=ones%2?0:1;
+  const frames=[
+    {l:'IDLE',b:'#3a3050',c:'#9b8bd0',f:40},{l:'ST\n0',b:'#e47fa0',c:'#fff',f:30},
+    ...bits.map((b,i)=>({l:`D${i}\n${b}`,b:b?'#6fbba6':'#4a8070',c:'#fff',f:28})),
+    ...(par!=='none'?[{l:`P\n${pb}`,b:'#c8a020',c:'#fff',f:28}]:[]),
+    {l:'SP\n1',b:'#6aabcf',c:'#fff',f:30},{l:'IDLE',b:'#3a3050',c:'#9b8bd0',f:40}
+  ];
+  document.getElementById('uart-frame').innerHTML=frames.map(f=>
+    `<div class="uf" style="background:${f.b};color:${f.c};flex:${f.f};min-width:${f.f-5}px;font-family:'Space Mono',monospace;font-size:.65rem;font-weight:700;white-space:pre-line">${f.l}</div>`).join('');
+  const total=1+8+(par!=='none'?1:0)+1;
+  document.getElementById('uart-out').textContent=`'${String.fromCharCode(c)}' | Binary MSB-first: ${c.toString(2).padStart(8,'0')} | Wire LSB-first: ${bits.join('')}\nParity (${par}): ${par==='none'?'none':pb} | Frame: ${total} bits | Efficiency: ${(8/total*100).toFixed(1)}%`;
+}
+
+
+// ══════════════════════════════════════════════════
+// UNIFIED renderAll
+// ══════════════════════════════════════════════════
 let rendered=false;
 function renderAll(){
   if(rendered)return;rendered=true;
+  // Ch.1-3
   document.getElementById('q1c').innerHTML=q1.map(q=>q.opts?qMCQ(q,'c1'):qW(q)).join('');
   document.getElementById('q2c').innerHTML=q2.map(q=>q.opts?qMCQ(q,'c2'):qW(q)).join('');
   document.getElementById('q3c').innerHTML=q3.map(q=>q.opts?qMCQ(q,'c3'):qW(q)).join('');
+  // Ch.4-8
+  renderQ4();renderQ5();renderQ6();renderQ7();renderQ8();
+  buildStaticUARTFrame();buildUART();
 }
 </script>
 <footer style="text-align:center;padding:2rem;font-size:.75rem;color:#c0b8cc;letter-spacing:.04em;">made by lamar alotaibi</footer>
